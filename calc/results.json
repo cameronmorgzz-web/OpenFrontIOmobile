@@ -1,0 +1,472 @@
+{
+ "mass_props": {
+  "I_arm": 0.006,
+  "m_arm": 0.3,
+  "l_arm_cg": 0.1,
+  "I_beam_cup": 0.004
+ },
+ "mass_props_source": "pre-CAD estimate (calc/design.py EST)",
+ "motor": {
+  "3.0": {
+   "ok": true,
+   "t_cock": 1.0719231698986875,
+   "t_retract": 0.6357089974937344,
+   "Tm_peak": 2.197499850388626,
+   "Tm_peak_frac_stall": 0.555804611397183,
+   "I_peak": 3.05007626196308,
+   "I_mean": 2.228818324397833,
+   "E_cu": 12.610355017377913,
+   "E_mech": 10.367516624049918,
+   "P_elec_peak": 36.60091514355696,
+   "ring_torque_peak": 9.33937436415166,
+   "latency": 1.9119231698986876,
+   "cycle": 2.587632167392422,
+   "I_rms": 0.8334293411612491
+  },
+  "4.0": {
+   "ok": true,
+   "t_cock": 1.2871430532782822,
+   "t_retract": 0.6357089974937344,
+   "Tm_peak": 2.5878322974082453,
+   "Tm_peak_frac_stall": 0.6545297940146398,
+   "I_peak": 3.5474417653010253,
+   "I_mean": 2.7261838277357784,
+   "E_cu": 22.545366883039065,
+   "E_mech": 12.973337007108155,
+   "P_elec_peak": 42.5693011836123,
+   "ring_torque_peak": 10.998287263985041,
+   "latency": 2.1271430532782825,
+   "cycle": 2.8028520507720165,
+   "I_rms": 1.1143812151900299
+  },
+  "5.0": {
+   "ok": true,
+   "t_cock": 1.6278084245564006,
+   "t_retract": 0.6357089974937344,
+   "Tm_peak": 2.987441068668165,
+   "Tm_peak_frac_stall": 0.7556011992216738,
+   "I_peak": 4.056627253654643,
+   "I_mean": 3.235369316089397,
+   "E_cu": 40.352019020340265,
+   "E_mech": 15.641085203162346,
+   "P_elec_peak": 48.679527043855714,
+   "ring_torque_peak": 12.6966245418397,
+   "latency": 2.4678084245564005,
+   "cycle": 3.1435174220501354,
+   "I_rms": 1.4908630939329888
+  }
+ },
+ "gear_ratio": 5.0,
+ "ballistics": {
+  "3.0": {
+   "v0": 5.945325179276214,
+   "v_catch": 4.9630130856893295,
+   "peak": 1.4017065275233007,
+   "t": 0.7663512344859832,
+   "opt_angle": 49.15410441511432,
+   "opt_v_catch": 4.959726022285745,
+   "vac_v_catch": 5.010030798346757
+  },
+  "4.0": {
+   "v0": 6.750095536567412,
+   "v_catch": 5.821220841711901,
+   "peak": 1.6803087221450725,
+   "t": 0.9048001307220417,
+   "opt_angle": 47.89528391649126,
+   "opt_v_catch": 5.821194418101458,
+   "vac_v_catch": 5.900663395170837
+  },
+  "5.0": {
+   "v0": 7.484878756194621,
+   "v_catch": 6.565750857217798,
+   "peak": 1.9632625864081314,
+   "t": 1.0254601441269773,
+   "opt_angle": 47.07694439664307,
+   "opt_v_catch": 6.563519511746271,
+   "vac_v_catch": 6.6762228176811735
+  }
+ },
+ "max_range_at_4ms": 2.055223759786949,
+ "arm": {
+  "3.0": {
+   "x_rest_mm": 24.893397142460167,
+   "v0": 5.945325179276214,
+   "E_spring": 10.270144322533413,
+   "eff": 0.6109068814589668,
+   "a_peak": 149.63873242431936,
+   "t_swing": 0.11034823339312494,
+   "F_max": 100.92074433556847,
+   "omega": 24.77224471060294
+  },
+  "4.0": {
+   "x_rest_mm": 39.52225869301911,
+   "v0": 6.750095536567412,
+   "E_spring": 12.751872217324793,
+   "eff": 0.6342269397835303,
+   "a_peak": 194.0127737610784,
+   "t_swing": 0.09984649683973318,
+   "F_max": 118.4753781962392,
+   "omega": 28.125412347706717
+  },
+  "5.0": {
+   "x_rest_mm": 54.49877789808666,
+   "v0": 7.484878756194621,
+   "E_spring": 15.292578843718072,
+   "eff": 0.6502603464741762,
+   "a_peak": 239.55235915284567,
+   "t_swing": 0.0917216692254191,
+   "F_max": 136.44720124232026,
+   "omega": 31.186998492020553
+  }
+ },
+ "can500": {
+  "3.0": {
+   "x_rest_mm": 47.11920065495997,
+   "F": 127.59170855056823,
+   "ok": true
+  },
+  "4.0": {
+   "x_rest_mm": 67.14886165821922,
+   "F": 151.62730175447933,
+   "ok": false
+  },
+  "5.0": {
+   "x_rest_mm": 87.65030302464453,
+   "F": 176.22903139418972,
+   "ok": false
+  }
+ },
+ "latch": {
+  "F_catch": 266.96191547410484,
+  "min_e": {
+   "e": 0.001,
+   "M_close": 0.26696191547410486,
+   "F_finger_worst": 8.787127323346656,
+   "tau_trip": {
+    "best": 0.09176262252908408,
+    "nom": 0.11178476618964195,
+    "worst": 0.13180690985019983
+   },
+   "servo_margin_worst": 6.996143078143805,
+   "mg90s_margin_worst": 1.3396869724105158,
+   "trip_rotation_deg": 1.5485345814346574
+  },
+  "nom": {
+   "e": 0.0015,
+   "M_close": 0.4004428732111573,
+   "F_finger_worst": 11.01180995229753,
+   "tau_trip": {
+    "best": 0.1251328619633472,
+    "nom": 0.14515500562390504,
+    "worst": 0.16517714928446292
+   },
+   "servo_margin_worst": 5.58273347127404,
+   "mg90s_margin_worst": 1.0690340689673694,
+   "trip_rotation_deg": 2.3228018721519863
+  },
+  "max_e": {
+   "e": 0.002,
+   "M_close": 0.5339238309482097,
+   "F_finger_worst": 13.2364925812484,
+   "tau_trip": {
+    "best": 0.1585031013976103,
+    "nom": 0.17852524505816816,
+    "worst": 0.19854738871872601
+   },
+   "servo_margin_worst": 4.644432777236664,
+   "mg90s_margin_worst": 0.8893594679814888,
+   "trip_rotation_deg": 3.0970691628693148
+  },
+  "self_locking": true,
+  "reduction_vs_direct": 20.168629554652483,
+  "plain_hook_servo_force": 266.96191547410484
+ },
+ "stress": [
+  {
+   "part": "arm",
+   "case": "swing, 5 m",
+   "stress": 2.887773395813451,
+   "sf": 7.064266202318677,
+   "sf_static": 11.773777003864463,
+   "sf_fatigue": 7.064266202318677,
+   "sf_creep": null
+  },
+  {
+   "part": "arm",
+   "case": "absorber stop, 5 m",
+   "stress": 7.495839918338571,
+   "sf": 2.72150956026841,
+   "sf_static": 4.535849267114017,
+   "sf_fatigue": 2.72150956026841,
+   "sf_creep": null
+  },
+  {
+   "part": "arm",
+   "case": "DRY FIRE (accidental), 5 m",
+   "stress": 21.037494180598504,
+   "sf": 1.6161620632249996,
+   "sf_static": 1.6161620632249996,
+   "sf_fatigue": null,
+   "sf_creep": null
+  },
+  {
+   "part": "cup",
+   "case": "centripetal, 500 ml can @5 m speed",
+   "stress": 6.066286293008841,
+   "sf": 3.3628482097045445,
+   "sf_static": 5.604747016174241,
+   "sf_fatigue": 3.3628482097045445,
+   "sf_creep": null
+  },
+  {
+   "part": "hub",
+   "case": "bearing seat, cocked 5 m",
+   "stress": 1.586693370341589,
+   "sf": 12.856926474463187,
+   "sf_static": 21.42821079077198,
+   "sf_fatigue": 12.856926474463187,
+   "sf_creep": null
+  },
+  {
+   "part": "pivot shaft",
+   "case": "cocked 5 m",
+   "stress": 335.42309610827755,
+   "sf": 3.5775711748025527,
+   "sf_static": 3.5775711748025527,
+   "sf_fatigue": null,
+   "sf_creep": null
+  },
+  {
+   "part": "side plate",
+   "case": "shaft boss bearing, cocked 5 m",
+   "stress": 1.9089904611922244,
+   "sf": 10.686276550203168,
+   "sf_static": 17.810460917005283,
+   "sf_fatigue": 10.686276550203168,
+   "sf_creep": null
+  },
+  {
+   "part": "side plate",
+   "case": "root bending, cocked 5 m",
+   "stress": 0.4352639926208231,
+   "sf": 46.868108425801495,
+   "sf_static": 78.1135140430025,
+   "sf_fatigue": 46.868108425801495,
+   "sf_creep": null
+  },
+  {
+   "part": "motor pinion",
+   "case": "peak cocking torque",
+   "stress": 7.884926807084471,
+   "sf": 2.5872148846925187,
+   "sf_static": 4.3120248078208645,
+   "sf_fatigue": 2.5872148846925187,
+   "sf_creep": null
+  },
+  {
+   "part": "dog ring gear",
+   "case": "peak cocking torque",
+   "stress": 5.427763569527915,
+   "sf": 3.758454055465483,
+   "sf_static": 6.264090092442472,
+   "sf_fatigue": 3.758454055465483,
+   "sf_creep": null
+  },
+  {
+   "part": "ring latch",
+   "case": "nose bending, cocked 5 m",
+   "stress": 3.954991340357109,
+   "sf": 5.158039106643915,
+   "sf_static": 8.596731844406523,
+   "sf_fatigue": 5.158039106643915,
+   "sf_creep": null
+  },
+  {
+   "part": "ring latch",
+   "case": "pivot hole bearing (4 mm dowel, 10 mm)",
+   "stress": 6.674047886852621,
+   "sf": 3.056615766900097,
+   "sf_static": 5.094359611500162,
+   "sf_fatigue": 3.056615766900097,
+   "sf_creep": null
+  },
+  {
+   "part": "ring latch",
+   "case": "nose dowel hole bearing (4 mm dowel, 10 mm)",
+   "stress": 6.674047886852621,
+   "sf": 3.056615766900097,
+   "sf_static": 5.094359611500162,
+   "sf_fatigue": 3.056615766900097,
+   "sf_creep": null
+  },
+  {
+   "part": "dog ring gear",
+   "case": "latch-pin boss (pin in 2 cheeks, 2 x 8 mm)",
+   "stress": 4.171279929282888,
+   "sf": 4.890585227040156,
+   "sf_static": 8.15097537840026,
+   "sf_fatigue": 4.890585227040156,
+   "sf_creep": null
+  },
+  {
+   "part": "base rear",
+   "case": "M6 adjuster rod bearing on anchor wall, cocked 5 m",
+   "stress": 3.4111800310580067,
+   "sf": 4.255397254505033,
+   "sf_static": 9.967225326848142,
+   "sf_fatigue": 5.980335196108886,
+   "sf_creep": 4.255397254505033
+  },
+  {
+   "part": "base rear",
+   "case": "anchor wall shear-out",
+   "stress": 1.477084281889212,
+   "sf": 9.827419001589101,
+   "sf_static": 23.018320902117726,
+   "sf_fatigue": 13.810992541270634,
+   "sf_creep": 9.827419001589101
+  },
+  {
+   "part": "spring yoke",
+   "case": "bending between rods",
+   "stress": 4.360883562432111,
+   "sf": 3.32866629685727,
+   "sf_static": 7.7965851445567695,
+   "sf_fatigue": 4.677951086734061,
+   "sf_creep": 3.32866629685727
+  },
+  {
+   "part": "base front",
+   "case": "redirect pulley cheeks (2 x 8 mm)",
+   "stress": 4.522628497142352,
+   "sf": 3.209621605656667,
+   "sf_static": 7.5177521261105325,
+   "sf_fatigue": 4.510651275666319,
+   "sf_creep": 3.209621605656667
+  },
+  {
+   "part": "stop bracket",
+   "case": "absorber reaction, 5 m shot",
+   "stress": 1.4839556905694038,
+   "sf": 13.747041188387762,
+   "sf_static": 22.911735313979605,
+   "sf_fatigue": 13.747041188387762,
+   "sf_creep": 22.695452024026842
+  },
+  {
+   "part": "stop bracket",
+   "case": "DRY FIRE",
+   "stress": 4.864875603828064,
+   "sf": 6.988873461275381,
+   "sf_static": 6.988873461275381,
+   "sf_fatigue": null,
+   "sf_creep": null
+  },
+  {
+   "part": "Dyneema cord 2 mm",
+   "case": "cocked 5 m",
+   "stress": 409.3416037269608,
+   "sf": 5.863073721675379,
+   "sf_static": 5.863073721675379,
+   "sf_fatigue": null,
+   "sf_creep": null
+  }
+ ],
+ "stress_extra": {
+  "T_cock5": 12.280248111808824,
+  "T_rest5": 7.190868012993358,
+  "F_cord5": 409.3416037269608,
+  "F_sear5": 266.96191547410484,
+  "F_hub": 488.70155806520944,
+  "E_dry": 14.370094091307509,
+  "F_abs": 356.14936573665693,
+  "F_dry": 1167.5701449187352,
+  "abs_impact_v": 2.494959879361644
+ },
+ "button": {
+  "life": {
+   "I_sleep_uA": 52.2,
+   "mAh_per_day_sleep": 1.2528000000000001,
+   "mAh_per_press": 0.008027777777777778,
+   "mAh_per_day": 1.2929388888888889,
+   "self_discharge_mAh_day": 0.8223684210526316,
+   "days": 189.09781955561735,
+   "months": 6.220323011697939
+  },
+  "cap": {
+   "k_each": 0.11997618700490839,
+   "F_rest": 0.7198571220294503,
+   "F_actuate": 4.419618992078535,
+   "F_bottom": 5.1394761141079846,
+   "solid_len": 4.0,
+   "min_len": 9.5
+  }
+ },
+ "gate2": [
+  {
+   "name": "Peak height <= 2.3 m (5 m shot)",
+   "value": 1.9632625864081314,
+   "ok": true
+  },
+  {
+   "name": "Catch speed <= 4 m/s at 4 m",
+   "value": 5.821220841711901,
+   "ok": false
+  },
+  {
+   "name": "Press->launch <= 2.5 s at 4 m",
+   "value": 2.1271430532782825,
+   "ok": true
+  },
+  {
+   "name": "Press->launch <= 2.5 s at 5 m",
+   "value": 2.4678084245564005,
+   "ok": true
+  },
+  {
+   "name": "Cycle <= 8 s",
+   "value": 3.1435174220501354,
+   "ok": true
+  },
+  {
+   "name": "Motor < 90% stall at 5 m",
+   "value": 0.7556011992216738,
+   "ok": true
+  },
+  {
+   "name": "Servo trip margin >= 2 (worst mu, max e)",
+   "value": 4.644432777236664,
+   "ok": true
+  },
+  {
+   "name": "Latch self-locking at min e",
+   "value": 1.0,
+   "ok": true
+  },
+  {
+   "name": "Min SF (non-accidental) >= 2.5",
+   "value": 2.5872148846925187,
+   "ok": true
+  },
+  {
+   "name": "Dry-fire min SF >= 1 and absorber energy <= 20 J",
+   "value": 1.6161620632249996,
+   "ok": true
+  },
+  {
+   "name": "Battery >= 3 months",
+   "value": 6.220323011697939,
+   "ok": true
+  },
+  {
+   "name": "Cap actuation 3-5 N",
+   "value": 4.419618992078535,
+   "ok": true
+  },
+  {
+   "name": "Springs <= 85% Fn at 5 m (330 ml)",
+   "value": 0.818519503553211,
+   "ok": true
+  }
+ ]
+}
