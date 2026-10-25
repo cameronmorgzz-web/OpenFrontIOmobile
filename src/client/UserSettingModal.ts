@@ -425,6 +425,10 @@ export class UserSettingModal extends BaseModal {
     console.log("🤡 Emojis:", this.userSettings.emojis() ? "ON" : "OFF");
   }
 
+  private toggleBatterySaver() {
+    this.userSettings.toggleBatterySaver();
+  }
+
   private toggleAlertFrame() {
     this.userSettings.toggleAlertFrame();
 
@@ -1889,6 +1893,15 @@ export class UserSettingModal extends BaseModal {
 
   private renderGameplaySettings() {
     return html`
+      <!-- 🔋 Battery saver -->
+      <setting-toggle
+        label="${translateText("user_setting.battery_saver_label")}"
+        description="${translateText("user_setting.battery_saver_desc")}"
+        id="battery-saver-toggle"
+        .checked=${this.userSettings.batterySaver()}
+        @change=${this.toggleBatterySaver}
+      ></setting-toggle>
+
       <!-- 🚨 Alert frame -->
       <setting-toggle
         label="${translateText("user_setting.alert_frame_label")}"

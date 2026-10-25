@@ -30,6 +30,7 @@ import { ClientEnv } from "../client/ClientEnv";
 import { reloadForUpdate, translateText } from "../client/Utils";
 import { MapLayerController } from "./controllers/MapLayerController";
 import { isDesktopShell } from "./DesktopShell";
+import { FramePacer } from "./FramePacer";
 import { GameMetrics } from "./GameMetrics";
 import { createRenderer, GameRenderer } from "./hud/GameRenderer";
 import { goldRateTracker } from "./hud/layers/lib/GoldRateTracker";
@@ -565,6 +566,7 @@ function mountWebGLFrameLoop(
   gameView: GameView,
   eventBus: EventBus,
   onFrame: (nowMs: number) => void,
+  batterySaver: () => boolean,
 ): { builder: WebGLFrameBuilder; stopFrameLoop: () => void } {
   const gameMap = terrainMap.gameMap;
   const mapWidth = gameMap.width();
@@ -624,10 +626,42 @@ function mountWebGLFrameLoop(
   // TransformHandler, pushes it to WebGL, and synchronously invokes the
   // renderer's captured frame callback (which draws). One RAF = one
   // synchronized camera-update + WebGL render.
+  //
+  // Battery saver: skipped frames don't touch the camera or WebGL, so the
+  // browser presents nothing new and the GPU stays idle. A camera change
+  // (pan, zoom, goTo animation) or any input keeps the full frame rate.
+  const pacer = new FramePacer(batterySaver);
+  const markActive = (): void => pacer.markActive(performance.now());
+  const inputEvents = [
+    "pointerdown",
+    "pointermove",
+    "touchstart",
+    "touchmove",
+    "wheel",
+    "keydown",
+  ] as const;
+  for (const type of inputEvents) {
+    window.addEventListener(type, markActive, { capture: true, passive: true });
+  }
+  let lastScale = Number.NaN;
+  let lastOffsetX = Number.NaN;
+  let lastOffsetY = Number.NaN;
   let rafId: number | null = null;
   const driveFrame = (nowMs: number): void => {
-    onFrame(nowMs);
-    syncCamera();
+    if (
+      transformHandler.scale !== lastScale ||
+      transformHandler.offsetX !== lastOffsetX ||
+      transformHandler.offsetY !== lastOffsetY
+    ) {
+      lastScale = transformHandler.scale;
+      lastOffsetX = transformHandler.offsetX;
+      lastOffsetY = transformHandler.offsetY;
+      pacer.markActive(nowMs);
+    }
+    if (pacer.shouldDraw(nowMs)) {
+      onFrame(nowMs);
+      syncCamera();
+    }
     rafId = requestAnimationFrame(driveFrame);
   };
   rafId = requestAnimationFrame(driveFrame);
@@ -640,6 +674,9 @@ function mountWebGLFrameLoop(
     if (rafId !== null) {
       cancelAnimationFrame(rafId);
       rafId = null;
+    }
+    for (const type of inputEvents) {
+      window.removeEventListener(type, markActive, { capture: true });
     }
     resizeObs.disconnect();
   };
@@ -881,6 +918,7 @@ async function createClientGame(
       gameView,
       eventBus,
       (nowMs) => metrics.recordFrame(nowMs),
+      () => userSettings.batterySaver(),
     );
 
     // Releases all WebGL/DOM resources this game created. Without it, stopping

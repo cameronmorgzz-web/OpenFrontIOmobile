@@ -16,6 +16,7 @@ import {
 // DesktopShell.ts imports nothing, so this cannot introduce an import cycle
 // (verified with madge: 58 cycles before and after, none involving it).
 import { isDesktopShell } from "./DesktopShell";
+import { Platform } from "./Platform";
 
 export function getDefaultKeybinds(isMac: boolean): Record<string, string> {
   return {
@@ -411,6 +412,18 @@ export class UserSettings {
 
   emojis() {
     return this.getBool("settings.emojis", true);
+  }
+
+  // On by default on phones and tablets, where the battery is the constraint.
+  batterySaver() {
+    return this.getBool(
+      "settings.batterySaver",
+      Platform.isIOS || Platform.isAndroid,
+    );
+  }
+
+  toggleBatterySaver() {
+    this.setBool("settings.batterySaver", !this.batterySaver());
   }
 
   hudOpacity() {
