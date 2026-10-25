@@ -71,7 +71,7 @@ def rect_Z(h, b):
 # Geometry used by the checks (mirrors cad/src parts; asserted in tests)
 # ---------------------------------------------------------------------------
 ARM_ROOT_R = 0.045         # m, where the beam leaves the hub
-ARM_BEAM_H, ARM_BEAM_B = 48.0, 28.0   # mm in-plane height, thickness along y
+ARM_BEAM_H, ARM_BEAM_B = 52.0, 28.0   # mm in-plane height, thickness along y
 ARM_WALLS = 6 * 0.45       # 6 perimeters
 SKIN = 5 * 0.2             # 5 top/bottom layers
 ABS_R = 0.080              # m absorber strike radius on the hub
@@ -122,11 +122,11 @@ def run(st5, st4, cock_ring_torque, gear_force_t, mp) -> list[Check]:
     out.append(c)
 
     # 4 Cup floor: centripetal load of the can at release (500 ml worst case) ----
-    m500 = P.CANS["500"]["mass_full"]
-    F_cen = m500 * s5.v_release ** 2 / m5.L
+    # envelope of allowed settings: 330 ml at 5 m, 500 ml is spring-limited to ~3.3 m (v ~ 6.2 m/s)
+    F_cen = max(P.CANS["330"]["mass_full"] * s5.v_release ** 2 / m5.L, P.CANS["500"]["mass_full"] * 6.2 ** 2 / m5.L)
     # floor plate 60 wide, 4.5 mm thick, cantilever from the back-wall corner: 35 mm lever
     M_cup = F_cen * 0.035 / 2
-    out.append(petg("cup", "centripetal, 500 ml can @5 m speed", "M=F*a/2 on 60x6 plate",
+    out.append(petg("cup", "centripetal envelope (330 @5 m, 500 @3.3 m)", "M=F*a/2 on 60x6 plate",
                     f"F={F_cen:.0f} N", M_cup * 1e3 / rect_Z(6.0, 60.0)))
     # tongue/socket: 2 x M3 in double shear carry the can's tangential load; bearing on PETG
     F_tan = m5.m_can * s5.a_tan_peak + m5.m_can * G
@@ -206,10 +206,13 @@ def run(st5, st4, cock_ring_torque, gear_force_t, mp) -> list[Check]:
     # 12 Absorber bracket (M14 nut clamp in printed bracket; load along the absorber axis,
     #    bracket printed so the load is in-plane), sustained = rest preload on the bottomed absorber
     F_abs_rest = T_rest5 / ABS_R
-    out.append(petg("stop bracket", "absorber reaction, 5 m shot", "s=F/A_net, A_net=2x(10x12)",
-                    f"F={F_abs:.0f} N peak", F_abs / (2 * 10 * 12),
-                    sustained=F_abs_rest / (2 * 10 * 12)))
-    out.append(petg("stop bracket", "DRY FIRE", "s=F/A_net", f"F={F_dry:.0f} N", F_dry / (2 * 10 * 12),
+    # cantilever block (36 along the force x 40) from the left plate to the absorber axis (39 mm)
+    Zb_stop = rect_Z(36.0, 40.0)
+    lev = 0.039
+    out.append(petg("stop bracket", "absorber reaction, 5 m shot (cantilever bending)", "M=F*39mm; Z=40*36^2/6",
+                    f"F={F_abs:.0f} N peak", F_abs * lev * 1e3 / Zb_stop,
+                    sustained=F_abs_rest * lev * 1e3 / Zb_stop))
+    out.append(petg("stop bracket", "DRY FIRE", "M=F*39mm", f"F={F_dry:.0f} N", F_dry * lev * 1e3 / Zb_stop,
                     cyclic=False))
 
     # 13 Cord and hardware -------------------------------------------------------

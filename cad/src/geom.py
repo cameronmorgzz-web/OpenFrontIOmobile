@@ -17,7 +17,8 @@ PIVOT = (0.0, 260.0)  # (x, z) of the pivot axis, set from params in launcher.py
 
 def slab(sk, y0: float, y1: float) -> bd.Part:
     """Extrude an (x, z) profile over y0..y1 (y0 < y1)."""
-    return bd.Rot(90, 0, 0) * bd.Pos(0, 0, -y1) * bd.extrude(sk, y1 - y0)
+    # dir= makes the extrusion independent of the polygon winding (a clockwise polygon has a -Z normal)
+    return bd.Rot(90, 0, 0) * bd.Pos(0, 0, -y1) * bd.extrude(sk, y1 - y0, dir=(0, 0, 1))
 
 
 def ycyl(x: float, z: float, r: float, y0: float, y1: float) -> bd.Part:

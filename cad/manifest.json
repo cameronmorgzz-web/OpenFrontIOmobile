@@ -55,7 +55,7 @@
   "pulley_bracket": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_9",
+   "plate": "PETG_7",
    "walls": 5,
    "infill": 50,
    "layer": 0.2,
@@ -66,17 +66,17 @@
    ],
    "bed_zrot": 0,
    "size": [
-    48.0,
+    52.0,
     50.00000000000001,
-    20.999999999999996
+    24.999999999999996
    ],
    "loaded": true,
    "note": "top plate on the bed; cheeks grow up (pulley load across layers is low: 3.6 MPa)",
-   "volume_solid_mm3": 14498.12,
-   "volume_printed_mm3": 12965.92,
-   "grams": 16.47,
-   "minutes": 26.6,
-   "height": 21.0
+   "volume_solid_mm3": 25510.42,
+   "volume_printed_mm3": 19825.55,
+   "grams": 25.18,
+   "minutes": 39.82,
+   "height": 25.0
   },
   "side_plate_left": {
    "material": "PETG",
@@ -98,10 +98,10 @@
    ],
    "loaded": true,
    "note": "outer face down; loads in the layer plane",
-   "volume_solid_mm3": 359710.6,
-   "volume_printed_mm3": 206462.76,
-   "grams": 262.21,
-   "minutes": 391.54,
+   "volume_solid_mm3": 358587.66,
+   "volume_printed_mm3": 206700.51,
+   "grams": 262.51,
+   "minutes": 392.02,
    "height": 22.0
   },
   "side_plate_right": {
@@ -150,10 +150,10 @@
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 122571.77,
-   "volume_printed_mm3": 84887.63,
-   "grams": 107.81,
-   "minutes": 163.39,
+   "volume_solid_mm3": 121951.15,
+   "volume_printed_mm3": 84560.15,
+   "grams": 107.39,
+   "minutes": 162.78,
    "height": 44.0
   },
   "arm": {
@@ -171,15 +171,15 @@
    "bed_zrot": 81,
    "size": [
     174.2710237096685,
-    176.70059317024015,
+    176.70059317024013,
     28.000000000000043
    ],
    "loaded": true,
    "note": "lies flat: arm bending is in the layer plane",
-   "volume_solid_mm3": 182562.27,
-   "volume_printed_mm3": 106839.44,
-   "grams": 135.69,
-   "minutes": 203.15,
+   "volume_solid_mm3": 208742.27,
+   "volume_printed_mm3": 118382.66,
+   "grams": 150.35,
+   "minutes": 224.67,
    "height": 28.0
   },
   "hub_catch": {
@@ -212,8 +212,8 @@
    "material": "PETG",
    "qty": 1,
    "plate": "PETG_16",
-   "walls": 5,
-   "infill": 40,
+   "walls": 4,
+   "infill": 20,
    "layer": 0.2,
    "print_rot": [
     90,
@@ -222,16 +222,16 @@
    ],
    "bed_zrot": 42,
    "size": [
-    81.05445414762207,
-    118.47295189277992,
-    60.00000000000009
+    98.65273648973223,
+    110.36000451879977,
+    60.00000000000008
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 144893.95,
-   "volume_printed_mm3": 93328.68,
-   "grams": 118.53,
-   "minutes": 181.37,
+   "volume_solid_mm3": 159232.92,
+   "volume_printed_mm3": 74188.86,
+   "grams": 94.22,
+   "minutes": 146.02,
    "height": 60.0
   },
   "cup_pad": {
@@ -246,24 +246,24 @@
     0,
     0
    ],
-   "bed_zrot": 60,
+   "bed_zrot": 57,
    "size": [
-    60.38737014117292,
-    61.051210530439846,
+    55.10299460239759,
+    55.227916318397874,
     54.000000000000014
    ],
    "loaded": false,
    "note": "",
-   "volume_solid_mm3": 10914.33,
-   "volume_printed_mm3": 10914.33,
-   "grams": 13.32,
-   "minutes": 66.8,
+   "volume_solid_mm3": 10076.4,
+   "volume_printed_mm3": 10076.4,
+   "grams": 12.29,
+   "minutes": 62.09,
    "height": 54.0
   },
   "ring_gear": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_8",
+   "plate": "PETG_12",
    "walls": 5,
    "infill": 50,
    "layer": 0.2,
@@ -280,10 +280,10 @@
    ],
    "loaded": true,
    "note": "teeth in the layer plane",
-   "volume_solid_mm3": 237272.17,
-   "volume_printed_mm3": 179494.95,
-   "grams": 227.96,
-   "minutes": 339.83,
+   "volume_solid_mm3": 251775.66,
+   "volume_printed_mm3": 188360.63,
+   "grams": 239.22,
+   "minutes": 356.39,
    "height": 22.0
   },
   "ring_latch": {
@@ -315,7 +315,7 @@
   "stop_bracket": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_8",
+   "plate": "PETG_7",
    "walls": 6,
    "infill": 60,
    "layer": 0.2,
@@ -324,18 +324,18 @@
     0,
     0
    ],
-   "bed_zrot": 60,
+   "bed_zrot": 15,
    "size": [
-    42.06244584051394,
-    42.06244584051389,
-    49.000000000000014
+    40.00000000000003,
+    36.000000000000085,
+    49.00000000000003
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 25195.22,
-   "volume_printed_mm3": 20578.5,
-   "grams": 26.13,
-   "minutes": 43.53,
+   "volume_solid_mm3": 62912.6,
+   "volume_printed_mm3": 46153.08,
+   "grams": 58.61,
+   "minutes": 91.16,
    "height": 49.0
   },
   "latch_servo_mount": {
@@ -367,7 +367,7 @@
   "gear_guard": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_7",
+   "plate": "PETG_9",
    "walls": 3,
    "infill": 15,
    "layer": 0.2,
@@ -482,17 +482,17 @@
    ],
    "bed_zrot": 45,
    "size": [
-    65.05382386916239,
-    65.05382386916239,
-    18.00000000000002
+    67.88225099390857,
+    67.88225099390857,
+    20.00000000000002
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 16785.26,
-   "volume_printed_mm3": 15412.94,
-   "grams": 19.57,
-   "minutes": 30.85,
-   "height": 18.0
+   "volume_solid_mm3": 24631.57,
+   "volume_printed_mm3": 21125.42,
+   "grams": 26.83,
+   "minutes": 41.72,
+   "height": 20.0
   },
   "spring_yoke_rear": {
    "material": "PETG",
@@ -508,17 +508,17 @@
    ],
    "bed_zrot": 45,
    "size": [
-    65.05382386916239,
-    65.05382386916239,
-    18.00000000000002
+    67.88225099390858,
+    67.88225099390856,
+    20.00000000000002
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 16785.26,
-   "volume_printed_mm3": 15412.94,
-   "grams": 19.57,
-   "minutes": 30.85,
-   "height": 18.0
+   "volume_solid_mm3": 24631.57,
+   "volume_printed_mm3": 21125.42,
+   "grams": 26.83,
+   "minutes": 41.72,
+   "height": 20.0
   },
   "shaft_spacer_left": {
    "material": "PETG",
@@ -638,16 +638,16 @@
    ],
    "bed_zrot": 84,
    "size": [
-    126.13627840676384,
-    122.30045032958411,
-    21.00000000000008
+    125.22273743547092,
+    122.20443330441246,
+    21.000000000000078
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 85992.23,
-   "volume_printed_mm3": 47912.58,
-   "grams": 60.85,
-   "minutes": 92.58,
+   "volume_solid_mm3": 85952.13,
+   "volume_printed_mm3": 47677.17,
+   "grams": 60.55,
+   "minutes": 92.13,
    "height": 21.0
   },
   "mag_chute_right": {
@@ -664,16 +664,16 @@
    ],
    "bed_zrot": 6,
    "size": [
-    122.3004503295841,
-    126.13627840676382,
+    122.2044333044125,
+    125.22273743547096,
     21.000000000000114
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 87209.66,
-   "volume_printed_mm3": 48326.62,
-   "grams": 61.37,
-   "minutes": 93.35,
+   "volume_solid_mm3": 86750.65,
+   "volume_printed_mm3": 48097.16,
+   "grams": 61.08,
+   "minutes": 92.92,
    "height": 21.0
   },
   "mag_wall_left_lower": {
@@ -690,22 +690,22 @@
    ],
    "bed_zrot": 42,
    "size": [
-    224.4484160457318,
-    221.22673738727894,
+    224.448416003546,
+    229.9189989406258,
     30.000000000000075
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 159023.38,
-   "volume_printed_mm3": 83683.49,
-   "grams": 106.28,
-   "minutes": 161.2,
+   "volume_solid_mm3": 170674.19,
+   "volume_printed_mm3": 89339.69,
+   "grams": 113.46,
+   "minutes": 171.88,
    "height": 30.0
   },
   "mag_wall_left_upper": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_11",
+   "plate": "PETG_10",
    "walls": 3,
    "infill": 15,
    "layer": 0.2,
@@ -716,16 +716,16 @@
    ],
    "bed_zrot": 45,
    "size": [
-    200.29952846864308,
-    200.29952846864313,
+    205.60282932754228,
+    205.60282932754234,
     30.000000000000064
    ],
    "loaded": false,
    "note": "",
-   "volume_solid_mm3": 143962.19,
-   "volume_printed_mm3": 68480.56,
-   "grams": 86.97,
-   "minutes": 133.07,
+   "volume_solid_mm3": 150004.19,
+   "volume_printed_mm3": 71032.2,
+   "grams": 90.21,
+   "minutes": 137.91,
    "height": 30.0
   },
   "mag_wall_right_lower": {
@@ -742,22 +742,22 @@
    ],
    "bed_zrot": 48,
    "size": [
-    221.226737387279,
-    224.4484160457318,
+    229.91899894062587,
+    224.44841600354596,
     30.000000000000128
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 160384.87,
-   "volume_printed_mm3": 83989.56,
-   "grams": 106.67,
-   "minutes": 161.76,
+   "volume_solid_mm3": 172465.67,
+   "volume_printed_mm3": 89862.72,
+   "grams": 114.13,
+   "minutes": 172.86,
    "height": 30.0
   },
   "mag_wall_right_upper": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_12",
+   "plate": "PETG_11",
    "walls": 3,
    "infill": 15,
    "layer": 0.2,
@@ -768,16 +768,16 @@
    ],
    "bed_zrot": 45,
    "size": [
-    200.2995284686431,
-    200.29952846864308,
+    205.60282932754222,
+    205.60282932754217,
     30.000000000000128
    ],
    "loaded": false,
    "note": "",
-   "volume_solid_mm3": 143962.19,
-   "volume_printed_mm3": 68480.56,
-   "grams": 86.97,
-   "minutes": 133.07,
+   "volume_solid_mm3": 150004.19,
+   "volume_printed_mm3": 71032.2,
+   "grams": 90.21,
+   "minutes": 137.91,
    "height": 30.0
   },
   "mag_bridge_top": {
@@ -794,9 +794,9 @@
    ],
    "bed_zrot": 45,
    "size": [
-    93.47951647286168,
-    93.47951647286163,
-    20.000000000000053
+    93.4795164728617,
+    93.47951647286162,
+    20.000000000000025
    ],
    "loaded": false,
    "note": "ONLY part to reprint for 500 ml (CAN_SIZE)",
@@ -820,8 +820,8 @@
    ],
    "bed_zrot": 45,
    "size": [
-    93.47951647286163,
-    93.47951647286159,
+    93.47951647286169,
+    93.47951647286169,
     20.00000000000003
    ],
    "loaded": false,
@@ -846,8 +846,8 @@
    ],
    "bed_zrot": 24,
    "size": [
-    78.56035872132134,
-    79.13924536721078,
+    78.56035872132128,
+    79.1392453672108,
     8.000000000000028
    ],
    "loaded": true,
@@ -861,7 +861,7 @@
   "side_cheek_left": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_9",
+   "plate": "PETG_7",
    "walls": 3,
    "infill": 15,
    "layer": 0.2,
@@ -872,22 +872,22 @@
    ],
    "bed_zrot": 0,
    "size": [
-    207.73648054006793,
-    199.25189608529172,
+    220.7268615968345,
+    199.29736270021377,
     12.0
    ],
    "loaded": false,
    "note": "",
-   "volume_solid_mm3": 104678.82,
-   "volume_printed_mm3": 89753.28,
-   "grams": 113.99,
-   "minutes": 172.55,
+   "volume_solid_mm3": 112648.6,
+   "volume_printed_mm3": 96052.0,
+   "grams": 121.99,
+   "minutes": 184.57,
    "height": 12.0
   },
   "side_cheek_right": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_10",
+   "plate": "PETG_8",
    "walls": 3,
    "infill": 15,
    "layer": 0.2,
@@ -898,16 +898,16 @@
    ],
    "bed_zrot": 0,
    "size": [
-    207.73648054006793,
-    199.2518960852917,
+    220.7268615968345,
+    199.29736270021374,
     11.999999999999986
    ],
    "loaded": false,
    "note": "",
-   "volume_solid_mm3": 104678.82,
-   "volume_printed_mm3": 89753.28,
-   "grams": 113.99,
-   "minutes": 172.55,
+   "volume_solid_mm3": 112648.6,
+   "volume_printed_mm3": 96052.0,
+   "grams": 121.99,
+   "minutes": 184.57,
    "height": 12.0
   },
   "safety_pin_handle": {
@@ -1099,7 +1099,7 @@
     "side_plate_left"
    ],
    "material": "PETG",
-   "grams": 262.2,
+   "grams": 262.5,
    "minutes": 398.0
   },
   "PETG_2": {
@@ -1135,67 +1135,67 @@
     "mag_wall_right_lower"
    ],
    "material": "PETG",
-   "grams": 106.7,
-   "minutes": 168.0
+   "grams": 114.1,
+   "minutes": 179.0
   },
   "PETG_6": {
    "parts": [
     "mag_wall_left_lower"
    ],
    "material": "PETG",
-   "grams": 106.3,
-   "minutes": 167.0
+   "grams": 113.5,
+   "minutes": 178.0
   },
   "PETG_7": {
    "parts": [
-    "gear_guard",
-    "safety_pin_handle"
-   ],
-   "material": "PETG",
-   "grams": 96.4,
-   "minutes": 156.0
-  },
-  "PETG_8": {
-   "parts": [
-    "ring_gear",
+    "side_cheek_left",
+    "pulley_bracket",
+    "safety_pin_handle",
     "stop_bracket"
    ],
    "material": "PETG",
-   "grams": 254.1,
-   "minutes": 389.0
+   "grams": 211.1,
+   "minutes": 330.0
   },
-  "PETG_9": {
-   "parts": [
-    "side_cheek_left",
-    "pulley_bracket"
-   ],
-   "material": "PETG",
-   "grams": 130.5,
-   "minutes": 205.0
-  },
-  "PETG_10": {
+  "PETG_8": {
    "parts": [
     "side_cheek_right"
    ],
    "material": "PETG",
-   "grams": 114.0,
-   "minutes": 179.0
+   "grams": 122.0,
+   "minutes": 191.0
   },
-  "PETG_11": {
+  "PETG_9": {
+   "parts": [
+    "gear_guard"
+   ],
+   "material": "PETG",
+   "grams": 91.1,
+   "minutes": 147.0
+  },
+  "PETG_10": {
    "parts": [
     "mag_wall_left_upper"
    ],
    "material": "PETG",
-   "grams": 87.0,
-   "minutes": 139.0
+   "grams": 90.2,
+   "minutes": 144.0
   },
-  "PETG_12": {
+  "PETG_11": {
    "parts": [
     "mag_wall_right_upper"
    ],
    "material": "PETG",
-   "grams": 87.0,
-   "minutes": 139.0
+   "grams": 90.2,
+   "minutes": 144.0
+  },
+  "PETG_12": {
+   "parts": [
+    "ring_gear"
+   ],
+   "material": "PETG",
+   "grams": 239.2,
+   "minutes": 362.0
   },
   "PETG_13": {
    "parts": [
@@ -1206,8 +1206,8 @@
     "btn_cap"
    ],
    "material": "PETG",
-   "grams": 290.4,
-   "minutes": 456.0
+   "grams": 304.9,
+   "minutes": 478.0
   },
   "PETG_14": {
    "parts": [
@@ -1227,24 +1227,24 @@
     "btn_tray"
    ],
    "material": "PETG",
-   "grams": 209.7,
-   "minutes": 330.0
+   "grams": 224.3,
+   "minutes": 351.0
   },
   "PETG_16": {
    "parts": [
-    "mag_chute_left",
     "mag_chute_right",
-    "hub_drum",
-    "cup"
+    "mag_chute_left",
+    "cup",
+    "hub_drum"
    ],
    "material": "PETG",
-   "grams": 348.6,
-   "minutes": 537.0
+   "grams": 323.2,
+   "minutes": 500.0
   },
   "PETG_17": {
    "parts": [
-    "mag_bridge_top",
     "mag_bridge_back",
+    "mag_bridge_top",
     "escapement_rocker",
     "btn_shell"
    ],
@@ -1262,8 +1262,8 @@
     "foot"
    ],
    "material": "TPU",
-   "grams": 37.0,
-   "minutes": 185.0
+   "grams": 36.0,
+   "minutes": 180.0
   }
  }
 }

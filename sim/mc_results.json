@@ -1,0 +1,40 @@
+{
+ "nominal_preload_mm": 50.0,
+ "frame_preload_loss_mm": 0.0,
+ "calibrated": {
+  "label": "calibrated",
+  "n": 60,
+  "n_ok": 60,
+  "fail_rate": 0.0,
+  "range_mean": 4.010190282205496,
+  "range_sd": 0.1708894586348949,
+  "range_p5": 3.7779399803565803,
+  "range_p95": 4.314620206848844,
+  "v_catch_mean": 5.841742798561664,
+  "v_catch_max": 6.116833021797863,
+  "peak_mean": 1.6284501164728649,
+  "peak_max": 1.7846819907848621,
+  "v_release_sd_pct": 1.8195052529997893,
+  "angle_sd": 0.9576609959449092,
+  "a_peak_max": 689.4588594497045,
+  "t_feed_max": 0.613999999999965
+ },
+ "uncalibrated": {
+  "label": "uncalibrated",
+  "n": 8,
+  "n_ok": 8,
+  "fail_rate": 0.0,
+  "range_mean": 4.040281238513041,
+  "range_sd": 0.21692801818880125,
+  "range_p5": 3.8027285169621985,
+  "range_p95": 4.355648638841865,
+  "v_catch_mean": 5.865175000192215,
+  "v_catch_max": 6.126790244411987,
+  "peak_mean": 1.6421278376237751,
+  "peak_max": 1.7357812568808304,
+  "v_release_sd_pct": 2.3896360976459583,
+  "angle_sd": 0.4453507425352191,
+  "a_peak_max": 610.4370186974529,
+  "t_feed_max": 0.577999999999969
+ }
+}

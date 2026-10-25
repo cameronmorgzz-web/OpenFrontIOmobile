@@ -16,21 +16,21 @@ Release height 0.421 m (pivot 260.0 mm + arm 240.0 mm at alpha=138.0 deg), catch
 
 ## 2. Spring -> arm -> can (`calc/arm_dynamics.py`)
 
-3 x Gutekunst Z-141HI (R=1.2 N/mm, F0=14.5 N, Fn=166.7 N, sn=126.84 mm), drum r=30.0 mm, swing 90.0 deg, I_arm=0.0064 kg m2.
+3 x Gutekunst Z-141HI (R=1.2 N/mm, F0=14.5 N, Fn=166.7 N, sn=126.84 mm), drum r=30.0 mm, swing 90.0 deg, I_arm=0.0073 kg m2.
 
 | range | preload x_rest mm | max ext mm | F_max/spring N (% Fn) | spring E J | can KE J | arm KE J | gravity J | friction J | efficiency | release m/s | swing ms | peak can accel m/s2 (g) | min back-wall force N |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 3 m | 25.7 | 72.9 | 102 (61%) | 10.41 | 6.27 | 1.98 | 1.61 | 0.55 | 0.60 | 5.95 | 111 | 150 (15.3 g) | 12.1 |
-| 4 m | 40.6 | 87.7 | 120 (72%) | 12.93 | 8.09 | 2.55 | 1.61 | 0.68 | 0.63 | 6.75 | 100 | 194 (19.8 g) | 16.9 |
-| 5 m | 55.8 | 102.9 | 138 (83%) | 15.51 | 9.94 | 3.14 | 1.61 | 0.82 | 0.64 | 7.48 | 92 | 240 (24.4 g) | 21.8 |
+| 3 m | 27.7 | 74.8 | 104 (63%) | 10.74 | 6.27 | 2.25 | 1.65 | 0.57 | 0.58 | 5.95 | 111 | 150 (15.3 g) | 12.3 |
+| 4 m | 43.0 | 90.1 | 123 (74%) | 13.34 | 8.09 | 2.90 | 1.65 | 0.70 | 0.61 | 6.75 | 100 | 194 (19.8 g) | 17.1 |
+| 5 m | 58.7 | 105.8 | 141 (85%) | 16.01 | 9.94 | 3.57 | 1.65 | 0.84 | 0.62 | 7.48 | 92 | 240 (24.4 g) | 22.0 |
 
-Preload adjustment needed 3->5 m: **30.1 mm** of anchor travel (available 70 mm on the M6 adjusters; M6 pitch 1.0 mm -> 30 turns). Sensitivity at 4 m: 0.066 m range per mm preload.
+Preload adjustment needed 3->5 m: **31.0 mm** of anchor travel (available 70 mm on the M6 adjusters; M6 pitch 1.0 mm -> 31 turns). Sensitivity at 4 m: 0.064 m range per mm preload.
 
 ### 500 ml can (CAN_SIZE='500')
 
-- 3 m: preload 48.0 mm, spring 129 N (77% Fn) -> OK
-- 4 m: preload 68.2 mm, spring 153 N (92% Fn) -> NOT ALLOWED (exceeds 85% Fn)
-- 5 m: preload 88.9 mm, spring 178 N (107% Fn) -> NOT ALLOWED (exceeds 85% Fn)
+- 3 m: preload 49.9 mm, spring 131 N (79% Fn) -> OK
+- 4 m: preload 70.6 mm, spring 156 N (93% Fn) -> NOT ALLOWED (exceeds 85% Fn)
+- 5 m: preload 91.9 mm, spring 181 N (109% Fn) -> NOT ALLOWED (exceeds 85% Fn)
 
 ## 3. Cocking motor (`calc/motor.py`)
 
@@ -38,23 +38,23 @@ Preload adjustment needed 3->5 m: **30.1 mm** of anchor travel (available 70 mm 
 
 | range | t_cock s | t_retract s | peak motor torque N m (% stall) | peak current A | peak ring torque N m | press->launch s | min fire->fire s | I_rms (8 s cycle) / rated |
 |---|---|---|---|---|---|---|---|---|
-| 3 m | 1.08 | 0.64 | 2.22 (56%) | 3.08 | 9.4 | **1.92** | 2.60 | 0.85/1.5 = 0.56 |
-| 4 m | 1.31 | 0.64 | 2.61 (66%) | 3.58 | 11.1 | **2.15** | 2.82 | 1.14/1.5 = 0.76 |
-| 5 m | 1.66 | 0.64 | 3.02 (76%) | 4.10 | 12.8 | **2.50** | 3.18 | 1.53/1.5 = 1.02 |
+| 3 m | 1.10 | 0.64 | 2.27 (57%) | 3.14 | 9.6 | **1.94** | 2.62 | 0.88/1.5 = 0.58 |
+| 4 m | 1.35 | 0.64 | 2.67 (68%) | 3.66 | 11.4 | **2.19** | 2.86 | 1.19/1.5 = 0.79 |
+| 5 m | 1.75 | 0.64 | 3.09 (78%) | 4.19 | 13.1 | **2.59** | 3.27 | 1.61/1.5 = 1.08 |
 
 Latency budget: button wake+TX 0.25s, radio 0.01s, cock, feed 0.45s, settle 0.05s, latch trip 0.08s (the ring returns to park during RESET, after the shot, so it is not in the latency path); the 1.5 s warning starts with the motor (cocking is fully enclosed) and FIRE is blocked until it has run >= 1.5 s.
 
 ## 4. Ring latch / servo trip (`calc/latch.py`)
 
-Cocked torque at 5 m: 12.42 N m -> catch force 270 N on the 608 roller. Over-centre (toggle) latch on the cocking ring; steel nose dowel; servo MG996R.
+Cocked torque at 5 m: 12.73 N m -> catch force 277 N on the 608 roller. Over-centre (toggle) latch on the cocking ring; steel nose dowel; servo MG996R.
 
 | case | e mm (closing) | closing moment N m | finger force worst N | servo torque needed best/nom/worst N m | MG996R margin worst | (MG90S margin) | trip rotation deg |
 |---|---|---|---|---|---|---|---|
-| min_e | 1.0 | 0.270 | 8.9 | 0.093/0.113/0.133 | **6.9x** | 1.3x | 1.5 |
-| nom | 1.5 | 0.405 | 11.1 | 0.126/0.147/0.167 | **5.5x** | 1.1x | 2.3 |
-| max_e | 2.0 | 0.540 | 13.4 | 0.160/0.180/0.201 | **4.6x** | 0.9x | 3.1 |
+| min_e | 1.0 | 0.277 | 9.1 | 0.095/0.116/0.137 | **6.8x** | 1.3x | 1.5 |
+| nom | 1.5 | 0.415 | 11.4 | 0.130/0.150/0.171 | **5.4x** | 1.0x | 2.3 |
+| max_e | 2.0 | 0.554 | 13.7 | 0.164/0.185/0.206 | **4.5x** | 0.9x | 3.1 |
 
-Self-locking at e_min: **True** (holds with power off). The toggle cuts the force needed to release by 20x versus pulling a plain hook off the roller (270 N). An MG90S would not have a 2x margin, so the latch uses an MG996R; safety-pin shear if the servo is forced with the pin in: 13.4 N.
+Self-locking at e_min: **True** (holds with power off). The toggle cuts the force needed to release by 20x versus pulling a plain hook off the roller (277 N). An MG90S would not have a 2x margin, so the latch uses an MG996R; safety-pin shear if the servo is forced with the pin in: 13.7 N.
 
 ## 5. Hand stress checks (`calc/stress.py`)
 
@@ -62,29 +62,29 @@ PETG: sut_xy=34.0 MPa, sut_z=19.0 MPa (Z = 56% of XY), fatigue S/UTS=0.6 at 1e3 
 
 | part | case | load | stress MPa | dir | SF static | SF fatigue | SF creep | min SF | pass |
 |---|---|---|---|---|---|---|---|---|---|
-| arm | swing, 5 m | F_t=38 N, M=10.0 N m, Z=4994 mm3 | 2.01 | xy | 17.0 | 10.2 | - | **10.2** | PASS |
-| arm | absorber stop, 5 m | E=4.61 J, F_abs=374 N, M=35.8 N m | 7.17 | xy | 4.7 | 2.8 | - | **2.8** | PASS |
-| arm | DRY FIRE (accidental), 5 m | E=14.6 J (absorber max 20.0 J), M=97.8 N m | 19.58 | xy | 1.7 | - | - | **1.7** | PASS (accidental, need >=1) |
-| cup | centripetal, 500 ml can @5 m speed | F=123 N | 5.96 | xy | 5.7 | 3.4 | - | **3.4** | PASS |
-| cup | socket screw bearing (2 x M3, 2 cheeks x 15.8 mm) | F=38 N | 0.20 | xy | 167.7 | 100.6 | - | **100.6** | PASS |
-| hub_drum / arm / hub_catch | dowel bearing at the joints (3 x 4 mm, 10 mm) | T=12.4 N m -> 218 N per dowel | 5.45 | xy | 6.2 | 3.7 | - | **3.7** | PASS |
-| hub | bearing seat, cocked 5 m | F=494 N | 1.60 | xy | 21.2 | 12.7 | - | **12.7** | PASS |
-| pivot shaft | cocked 5 m | F=494 N, a=69 mm | 339.23 | steel | 3.5 | - | - | **3.5** | PASS |
-| side plate | shaft boss bearing, cocked 5 m | F/2=247 N | 1.93 | xy | 17.6 | 10.6 | - | **10.6** | PASS |
-| side plate | root bending, cocked 5 m | F_h/2=135 N | 0.44 | xy | 77.2 | 46.3 | - | **46.3** | PASS |
-| motor pinion (steel, bought) | peak cocking torque | Ft=128 N | 8.67 | steel | 28.8 | - | - | **28.8** | PASS |
-| dog ring gear | peak cocking torque | Ft=128 N | 5.97 | xy | 5.7 | 3.4 | - | **3.4** | PASS |
-| ring latch | nose bending, cocked 5 m | F_c=270 N | 4.00 | xy | 8.5 | 5.1 | - | **5.1** | PASS |
-| ring latch | pivot hole bearing (4 mm dowel, 10 mm) | F=270 N | 6.75 | xy | 5.0 | 3.0 | - | **3.0** | PASS |
-| ring latch | nose dowel hole bearing (4 mm dowel, 10 mm) | F=270 N | 6.75 | xy | 5.0 | 3.0 | - | **3.0** | PASS |
-| dog ring gear | latch-pin boss (pin in 2 cheeks, 2 x 8 mm) | F=270 N | 4.22 | xy | 8.1 | 4.8 | - | **4.8** | PASS |
-| base rear | M6 adjuster rod bearing on anchor wall, cocked 5 m | F=207 N | 3.45 | xy | 9.9 | 5.9 | 4.2 | **4.2** | PASS |
-| base rear | anchor wall shear-out | F=207 N | 1.49 | xy | 22.8 | 13.7 | 9.6 | **9.6** | PASS |
-| spring yoke | bending between rods | F=414 N | 4.41 | xy | 7.7 | 4.6 | 3.3 | **3.3** | PASS |
-| base front | redirect pulley cheeks (2 x 8 mm) | F=585 N | 4.57 | xy | 7.4 | 4.5 | 3.1 | **3.1** | PASS |
-| stop bracket | absorber reaction, 5 m shot | F=374 N peak | 1.56 | xy | 21.8 | 13.1 | 22.3 | **13.1** | PASS |
-| stop bracket | DRY FIRE | F=1186 N | 4.94 | xy | 6.9 | - | - | **6.9** | PASS (accidental, need >=1) |
-| Dyneema cord 2 mm | cocked 5 m | T=414 N | 413.99 | line | 5.8 | - | - | **5.8** | PASS |
+| arm | swing, 5 m | F_t=38 N, M=10.3 N m, Z=5662 mm3 | 1.82 | xy | 18.7 | 11.2 | - | **11.2** | PASS |
+| arm | absorber stop, 5 m | E=5.10 J, F_abs=414 N, M=39.4 N m | 6.96 | xy | 4.9 | 2.9 | - | **2.9** | PASS |
+| arm | DRY FIRE (accidental), 5 m | E=15.1 J (absorber max 20.0 J), M=101.7 N m | 17.96 | xy | 1.9 | - | - | **1.9** | PASS (accidental, need >=1) |
+| cup | centripetal envelope (330 @5 m, 500 @3.3 m) | F=84 N | 4.09 | xy | 8.3 | 5.0 | - | **5.0** | PASS |
+| cup | socket screw bearing (2 x M3, 2 cheeks x 15.8 mm) | F=38 N | 0.20 | xy | 168.9 | 101.3 | - | **101.3** | PASS |
+| hub_drum / arm / hub_catch | dowel bearing at the joints (3 x 4 mm, 10 mm) | T=12.7 N m -> 223 N per dowel | 5.59 | xy | 6.1 | 3.7 | - | **3.7** | PASS |
+| hub | bearing seat, cocked 5 m | F=507 N | 1.65 | xy | 20.7 | 12.4 | - | **12.4** | PASS |
+| pivot shaft | cocked 5 m | F=507 N, a=69 mm | 347.84 | steel | 3.4 | - | - | **3.4** | PASS |
+| side plate | shaft boss bearing, cocked 5 m | F/2=253 N | 1.98 | xy | 17.2 | 10.3 | - | **10.3** | PASS |
+| side plate | root bending, cocked 5 m | F_h/2=138 N | 0.45 | xy | 75.3 | 45.2 | - | **45.2** | PASS |
+| motor pinion (steel, bought) | peak cocking torque | Ft=131 N | 8.88 | steel | 28.1 | - | - | **28.1** | PASS |
+| dog ring gear | peak cocking torque | Ft=131 N | 6.12 | xy | 5.6 | 3.3 | - | **3.3** | PASS |
+| ring latch | nose bending, cocked 5 m | F_c=277 N | 4.10 | xy | 8.3 | 5.0 | - | **5.0** | PASS |
+| ring latch | pivot hole bearing (4 mm dowel, 10 mm) | F=277 N | 6.92 | xy | 4.9 | 2.9 | - | **2.9** | PASS |
+| ring latch | nose dowel hole bearing (4 mm dowel, 10 mm) | F=277 N | 6.92 | xy | 4.9 | 2.9 | - | **2.9** | PASS |
+| dog ring gear | latch-pin boss (pin in 2 cheeks, 2 x 8 mm) | F=277 N | 4.33 | xy | 7.9 | 4.7 | - | **4.7** | PASS |
+| base rear | M6 adjuster rod bearing on anchor wall, cocked 5 m | F=212 N | 3.54 | xy | 9.6 | 5.8 | 4.0 | **4.0** | PASS |
+| base rear | anchor wall shear-out | F=212 N | 1.53 | xy | 22.2 | 13.3 | 9.2 | **9.2** | PASS |
+| spring yoke | bending between rods | F=424 N | 4.52 | xy | 7.5 | 4.5 | 3.1 | **3.1** | PASS |
+| base front | redirect pulley cheeks (2 x 8 mm) | F=600 N | 4.69 | xy | 7.2 | 4.3 | 3.0 | **3.0** | PASS |
+| stop bracket | absorber reaction, 5 m shot (cantilever bending) | F=414 N peak | 1.87 | xy | 18.2 | 10.9 | 19.7 | **10.9** | PASS |
+| stop bracket | DRY FIRE | F=1226 N | 5.53 | xy | 6.1 | - | - | **6.1** | PASS (accidental, need >=1) |
+| Dyneema cord 2 mm | cocked 5 m | T=424 N | 424.50 | line | 5.7 | - | - | **5.7** | PASS |
 
 ## 6. Button (`calc/button.py`)
 
@@ -108,14 +108,14 @@ Cap springs: 4 x k=0.120 N/mm -> rest 0.72 N, actuation **4.32 N**, bottomed 4.6
 |---|---|---|
 | Peak height <= 2.3 m (5 m shot) | 1.963 | PASS |
 | Catch speed <= 4 m/s at 4 m | 5.821 | **FAIL** |
-| Press->launch <= 2.5 s at 4 m | 2.145 | PASS |
-| Press->launch <= 2.5 s at 5 m | 2.504 | **FAIL** |
-| Cycle <= 8 s | 3.180 | PASS |
-| Motor < 90% stall at 5 m | 0.764 | PASS |
-| Servo trip margin >= 2 (worst mu, max e) | 4.594 | PASS |
+| Press->launch <= 2.5 s at 4 m | 2.187 | PASS |
+| Press->launch <= 2.5 s at 5 m | 2.592 | **FAIL** |
+| Cycle <= 8 s | 3.268 | PASS |
+| Motor < 90% stall at 5 m | 0.783 | PASS |
+| Servo trip margin >= 2 (worst mu, max e) | 4.483 | PASS |
 | Latch self-locking at min e | 1.000 | PASS |
-| Min SF (non-accidental) >= 2.5 | 2.845 | PASS |
-| Dry-fire min SF >= 1 and absorber energy <= 20 J | 1.737 | PASS |
+| Min SF (non-accidental) >= 2.5 | 2.932 | PASS |
+| Dry-fire min SF >= 1 and absorber energy <= 20 J | 1.893 | PASS |
 | Battery >= 3 months | 6.220 | PASS |
 | Cap actuation 3-5 N | 4.324 | PASS |
-| Springs <= 85% Fn at 5 m (330 ml) | 0.828 | PASS |
+| Springs <= 85% Fn at 5 m (330 ml) | 0.849 | PASS |

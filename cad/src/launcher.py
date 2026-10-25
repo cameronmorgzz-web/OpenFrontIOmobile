@@ -73,7 +73,7 @@ PLATE_X = (-122.0, 118.0)
 # Magazine geometry (rel. pivot), see DECISIONS.md D7
 CUP_SEAT_COCKED = polar(P.ARM_L, A_COCKED)                      # can centre in the cup, cocked
 FEED_DIR = 150.0                                                # chute direction from the cup up to the magazine
-CAN1_T = 175.0          # can1 (next to feed) distance from the cup seat along the chute
+CAN1_T = 190.0          # can1 (next to feed) distance from the cup seat along the chute (>= 15 mm sweep clearance)
 CAN_PITCH = P.CAN_D + 0.3
 _fd = (math.cos(math.radians(FEED_DIR)), math.sin(math.radians(FEED_DIR)))
 CAN1 = (CUP_SEAT_COCKED[0] + CAN1_T * _fd[0], CUP_SEAT_COCKED[1] + CAN1_T * _fd[1])
@@ -188,9 +188,10 @@ def hub_drum_local() -> bd.Part:
 def arm_local() -> bd.Part:
     """Arm beam + hub disc (y -14..14). Bending is in the layer plane (prints flat)."""
     c0 = (0.0, PZ)
-    bh0, bh1 = 24.0, 16.0
-    beam_prof = bd.Polygon((18, PZ - bh0), (166, PZ - bh1), (166, PZ + bh1), (18, PZ + bh0)) + circle(c0, 27.0) \
-        + rect(160, 196, PZ - 14.0, PZ + 14.0)          # tongue: 28 x 28 into the cup socket
+    bh0, bh1 = 26.0, 16.0
+    # beam tapers straight into the 28 mm tongue (no step: FEA showed a stress raiser there)
+    beam_prof = bd.Polygon((18, PZ - bh0), (162, PZ - 17.5), (172, PZ - 14.0), (196, PZ - 14.0), (196, PZ + 14.0),
+                           (172, PZ + 14.0), (162, PZ + 17.5), (18, PZ + bh0)) + circle(c0, 27.0)
     beam = slab(G.round2d(beam_prof, 3.0), *P.Y_ARM)
     win = slab(G.round2d(bd.Polygon((62, PZ - 9), (176, PZ - 5.5), (176, PZ + 5.5), (62, PZ + 9)), 4.0),
                P.Y_ARM[0] - 1, P.Y_ARM[1] + 1)
@@ -233,7 +234,7 @@ def catch_pin_local():
 # ---------------------------------------------------------------------------
 CUP_Y = (-30.0, 30.0)
 CUP_SCREW_X = (183.0, 191.5)
-CUP_WALL = 4.5
+CUP_WALL = 5.0
 CUP_FLOOR = 6.0
 
 
@@ -260,9 +261,16 @@ def cup_local() -> bd.Part:
     p1 = (floor_in + 30 * math.sin(lip_ang), zc - 2 - 30 * math.cos(lip_ang))
     shell2d = shell2d + bd.Polygon(p0, p1, (p1[0] + w, p1[1] + 1.2), (p0[0] + w, p0[1]))
     shell2d = shell2d + rect(x_lip - 6, x_lip, back_in - 14, back_in)        # inner lip (14 mm)
-    cup = slab(G.round2d(shell2d, 1.5), *CUP_Y)
+    shell2d = shell2d + bd.Polygon((x_lip - 0.5, back_in + 0.5), (x_lip + 10, back_in + 0.5), (x_lip - 0.5, back_in - 10))  # gusset
+    # tapered stiffener on the trailing side: the floor's centripetal load reaches the arm through it
+    top = back_in + w
+    stiff = bd.Polygon((x_lip - 6, top), (x_lip - 6, top + 20), (floor_in + wf - 12, top + 5), (floor_in + wf, top + 2),
+                       (floor_in + wf, top))
+    win = bd.Polygon((x_lip + 42, top + 2.5), (x_lip + 42, top + 9.0), (floor_in - 18, top + 4.6), (floor_in - 18, top + 2.5))
+    stiff3d = slab(stiff, *CUP_Y) - slab(G.round2d(win, 3.0), CUP_Y[0] - 1, CUP_Y[1] + 1)
+    cup = slab(G.round2d(shell2d, 1.5), *CUP_Y) + stiff3d
     # socket around the arm tongue (x 170..196, |z| <= 17.8, |y| <= 14.2) with 3 mm walls
-    sock = box(167.0, x_lip, CUP_Y[0], CUP_Y[1], zc - 18.2, back_in + w) \
+    sock = box(176.0, x_lip, CUP_Y[0], CUP_Y[1], zc - 18.2, back_in - 13.0) \
         - box(166.0, 196.2, P.Y_ARM[0] - 0.2, P.Y_ARM[1] + 0.2, zc - 14.2, zc + 14.2)   # ceiling = 28.4 mm bridge
     cup = cup + sock
     # ribs on the back of the back wall and floor (stiffen the L, 3 mm)
@@ -281,7 +289,7 @@ def cup_local() -> bd.Part:
 def cup_pad_local() -> bd.Part:
     L, r, pad, zc, back_in, floor_in = _cup_geom()
     t = 2.0
-    prof = rect(L - r + 2, floor_in, back_in - t, back_in) + rect(floor_in - t, floor_in, zc - 2, back_in)
+    prof = rect(L - r - pad + 12, floor_in, back_in - t, back_in) + rect(floor_in - t, floor_in, zc - 2, back_in)
     return slab(prof, CUP_Y[0] + 3, CUP_Y[1] - 3) - cup_local()
 
 
@@ -305,7 +313,9 @@ def ring_gear_local() -> bd.Part:
         spokes = s if spokes is None else spokes + s
     # latch pivot boss and park/cocked safety-pin bosses
     lo = (c0[0] + LATCH_O[0], c0[1] + LATCH_O[1])
-    boss = circle(lo, 10.0)
+    a_lo = math.degrees(math.atan2(LATCH_O[1], LATCH_O[0]))
+    boss = circle(lo, 10.0) + circles_hull([(lo[0], lo[1], 9.0), (*polar(rim_in + 3, a_lo, c0), 9.0)]) \
+        + circles_hull([(lo[0], lo[1], 7.0), (*polar(15.0, a_lo, c0), 6.0)])     # strut: latch load -> rim + hub
     pin_cocked = (c0[0] + LATCH_PINHOLE[0], c0[1] + LATCH_PINHOLE[1])
     a_pin = math.degrees(math.atan2(LATCH_PINHOLE[1], LATCH_PINHOLE[0]))
     r_pin = math.hypot(*LATCH_PINHOLE)
@@ -313,7 +323,7 @@ def ring_gear_local() -> bd.Part:
     prof = web + hubring + spokes + boss + circle(pin_cocked, 7.0) + circle(pin_park, 7.0)
     ring = slab(prof, y0, y1)
     # latch boss stand-off towards the latch slab (y 68..70), plus stop bump
-    ring = ring + slab(circle(lo, 7.0), P.Y_LATCH[1], y0 + 0.01)
+    ring = ring + slab(circle(lo, 7.0), P.Y_LATCH[1], y0 + 1.0)
     # bores
     ring = ring - ycyl(0, PZ, P.BEARING_608_BORE / 2, y0 - 1, y0 + 7) - ycyl(0, PZ, P.BEARING_608_BORE / 2, y1 - 7, y1 + 1)
     ring = ring - ycyl(0, PZ, 9.0, y0, y1)  # centre lip leaves 2 x 7 mm seats + 6 mm web at r 9..11
@@ -405,7 +415,8 @@ def side_plate(right: bool) -> bd.Part:
         # 3 detent hole pairs for the stop bracket (release 134/138/142 deg)
         for d in (-4.0, 0.0, 4.0):
             for hx, hz in _stop_bracket_holes(d):
-                pl = pl - ycyl(hx, hz, P.M3_INSERT_HOLE / 2, y1 - P.M3_INSERT_DEPTH, y1 + 1)
+                pl = pl - ycyl(hx, hz, P.M3_CLEAR / 2, y0 - 1, y1 + 1)
+                pl = pl - ycyl(hx, hz, P.M3_HEAD_D / 2 + 0.3, y0 - 1, y0 + P.M3_HEAD_H)
     return pl
 
 
@@ -445,33 +456,29 @@ def absorber_solid(detent=0.0, pressed=0.0):
     return rod + seg(body0, end, ABS_BODY_D / 2)
 
 
+STOP_BLOCK = (36.0, 40.0)    # along / across the absorber axis (deep section: the bracket is a cantilever)
+
+
 def _stop_bracket_holes(detent):
     tip, d = absorber_axis(detent)
     mid = (tip[0] + 55 * d[0], tip[1] + 55 * d[1])
     nrm = (-d[1], d[0])
-    return [(mid[0] + 14 * nrm[0] - 8 * d[0], mid[1] + 14 * nrm[1] - 8 * d[1]),
-            (mid[0] - 14 * nrm[0] - 8 * d[0], mid[1] - 14 * nrm[1] - 8 * d[1])]
+    a, c = STOP_BLOCK[0] / 2 - 6, STOP_BLOCK[1] / 2 - 6
+    return [(mid[0] + sa * a * d[0] + sc * c * nrm[0], mid[1] + sa * a * d[1] + sc * c * nrm[1])
+            for sa in (-1, 1) for sc in (-1, 1)]
 
 
 def stop_bracket(detent=0.0) -> bd.Part:
+    """Solid block on the left plate holding the AC1416 by its M14 body (two nuts on the 36 mm bore).
+    4 x M3 screws from outside the plate into inserts in the block."""
     tip, d = absorber_axis(detent)
     mid = (tip[0] + 55 * d[0], tip[1] + 55 * d[1])
-    nrm = (-d[1], d[0])
     ang = math.degrees(math.atan2(d[1], d[0]))
-    # clamp wall (perpendicular to the absorber axis) in the absorber slab + flange to the left plate
-    wall_c = (mid[0] + 2 * d[0], mid[1] + 2 * d[1])
-    wall = bd.Pos(wall_c[0], -Y_IN + (Y_IN + P.Y_ABS[0]) / 2 + (P.Y_ABS[1] - P.Y_ABS[0]) / 2 + 2, wall_c[1])
-    ya0, ya1 = -Y_IN, P.Y_ABS[1] + 3
-    wall2d = bd.Pos(*wall_c) * bd.Rot(0, 0, ang) * bd.Rectangle(12, 40)
-    flange2d = bd.Pos(mid[0] - 8 * d[0], mid[1] - 8 * d[1]) * bd.Rot(0, 0, ang) * bd.Rectangle(10, 44)
-    br = slab(G.round2d(wall2d, 3), ya0, ya1) + slab(G.round2d(flange2d, 3), -Y_IN, -Y_IN + 6)
-    # gusset in the middle of the span
-    br = br + slab(bd.Pos(*wall_c) * bd.Rot(0, 0, ang) * bd.Pos(-6, 0) * bd.Rectangle(14, 10), ya0, ya1)
-    # M14 hole for the absorber body
+    blk2d = bd.Pos(*mid) * bd.Rot(0, 0, ang) * bd.Rectangle(*STOP_BLOCK)
+    br = slab(G.round2d(blk2d, 4), -Y_IN, P.Y_ABS[1] + 3)
     br = br - _abs_bore(detent, 7.2)
     for hx, hz in _stop_bracket_holes(detent):
-        br = br - ycyl(hx, hz, P.M3_CLEAR / 2, -Y_IN - 1, -Y_IN + 7)
-    del wall
+        br = br - ycyl(hx, hz, P.M3_INSERT_HOLE / 2, -Y_IN - 1, -Y_IN + P.M3_INSERT_DEPTH)
     return br
 
 
@@ -481,8 +488,8 @@ def _abs_bore(detent, r):
     ya = sum(P.Y_ABS) / 2
     ang = math.degrees(math.atan2(d[1], d[0]))
     c = (tip[0] + 57 * d[0], tip[1] + 57 * d[1])
-    cyl = bd.Pos(c[0], ya, c[1]) * bd.Rot(0, 90 - ang, 0) * bd.Cylinder(r, 40)
-    roof = bd.Pos(c[0], ya, c[1]) * bd.Rot(0, 90 - ang, 0) * bd.Rot(0, 0, 45) * bd.Box(2 * r, 2 * r, 40)
+    cyl = bd.Pos(c[0], ya, c[1]) * bd.Rot(0, 90 - ang, 0) * bd.Cylinder(r, 60)
+    roof = bd.Pos(c[0], ya, c[1]) * bd.Rot(0, 90 - ang, 0) * bd.Rot(0, 0, 45) * bd.Box(2 * r, 2 * r, 60)
     return cyl + (roof & box(-1000, 1000, ya, 1000, -1000, 1000))
 
 
@@ -618,18 +625,18 @@ def pulley_bracket() -> bd.Part:
     """Bridge over the spring channel carrying the 608 redirect pulley on an 8 mm axle."""
     px, pz = PULLEY_C
     y0, y1 = P.Y_DRUM - 25, P.Y_DRUM + 25
-    top = bd.fillet(box(px - 24, px + 24, y0, y1, BASE_H, BASE_H + 5).edges().filter_by(bd.Axis.Z), 5)
+    top = bd.fillet(box(px - 26, px + 26, y0, y1, BASE_H, BASE_H + 8).edges().filter_by(bd.Axis.Z), 5)
     cheeks = None
-    for yc0, yc1 in ((P.Y_DRUM - 16, P.Y_DRUM - 8), (P.Y_DRUM + 8, P.Y_DRUM + 16)):
-        c = slab(G.hull2d([(px - 12, BASE_H + 5), (px + 12, BASE_H + 5), (px + 10, pz - 2), (px, pz - 12),
-                           (px - 10, pz - 2)]) + circle((px, pz), 10.0), yc0, yc1)
+    for yc0, yc1 in ((P.Y_DRUM - 16.4, P.Y_DRUM - 5.2), (P.Y_DRUM + 5.2, P.Y_DRUM + 16.4)):
+        c = slab(G.hull2d([(px - 14, BASE_H + 5), (px + 14, BASE_H + 5), (px + 12, pz - 2), (px, pz - 13),
+                           (px - 12, pz - 2)]) + circle((px, pz), 11.0), yc0, yc1)
         cheeks = c if cheeks is None else cheeks + c
-    br = top + (cheeks & box(-1000, 1000, -1000, 1000, -1000, BASE_H + 5))
+    br = top + (cheeks & box(-1000, 1000, -1000, 1000, -1000, BASE_H + 8))
     br = br - ycyl(px, pz, 4.05, P.Y_DRUM - 17, P.Y_DRUM + 17)
     for hx, hy in _pulley_bracket_holes():
         br = br - zcyl(hx, hy, BASE_H - 1, BASE_H + 6, P.M3_CLEAR / 2)
     # cord passes down through the deck plate
-    br = br - box(px - 14, px - 8, P.Y_DRUM - 6, P.Y_DRUM + 6, BASE_H - 1, BASE_H + 6)
+    br = br - box(px - 15, px - 8, P.Y_DRUM - 4.8, P.Y_DRUM + 4.8, BASE_H - 1, BASE_H + 9)
     return br
 
 
@@ -652,9 +659,9 @@ def spring_positions(state_ext_mm: float):
     """x of the cord yoke front face and the anchor yoke back face for a spring extension."""
     x_cy_front = PULLEY_C[0] - 13.0 - 30.0       # cord yoke sits 30 mm behind the pulley tangent
     L = P.SPRING.l0 + state_ext_mm
-    x_cy_back = x_cy_front - 16.0
+    x_cy_back = x_cy_front - 20.0
     x_ay_front = x_cy_back - L
-    return x_cy_front, x_cy_back, x_ay_front, x_ay_front - 16.0
+    return x_cy_front, x_cy_back, x_ay_front, x_ay_front - 20.0
 
 
 SPRING_ROD_Y = (-82.0, -18.0)
@@ -662,15 +669,16 @@ SPRING_ROD_Y = (-82.0, -18.0)
 
 def spring_yoke(x_front) -> bd.Part:
     y0, y1 = -88.0, -12.0
-    z0, z1 = P.SPRING_Z - 9, P.SPRING_Z + 9
-    yk = box(x_front - 16, x_front, y0, y1, z0, z1)
+    z0, z1 = P.SPRING_Z - 9, P.SPRING_Z + 11
+    yk = box(x_front - 20, x_front, y0, y1, z0, z1)
     yk = bd.chamfer(yk.edges().filter_by(bd.Axis.X), 2.0)
     for yr in SPRING_ROD_Y:
-        yk = yk - xcyl(x_front - 17, x_front + 1, yr, P.SPRING_Z, 3.3)
+        yk = yk - xcyl(x_front - 21, x_front + 1, yr, P.SPRING_Z, 3.3)
     # dowel along y for the spring hooks + slots for the hooks
     yk = yk - ycyl(x_front - 8, P.SPRING_Z, 2.05, y0 - 1, y1 + 1)
     for ys in P.SPRING_Y:
         yk = yk - box(x_front - 12, x_front + 1, ys - 2.5, ys + 2.5, z0 - 1, z1 + 1)
+    yk = yk - box(x_front - 21, x_front - 15, -60, -40, z0 - 1, z1 + 1) if False else yk
     return yk
 
 
