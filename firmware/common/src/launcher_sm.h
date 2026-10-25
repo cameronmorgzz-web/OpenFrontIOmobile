@@ -63,7 +63,9 @@ enum class FaultCode : uint8_t {
 
 enum class MotorDir : uint8_t { Coast, Forward, Reverse, Brake };
 enum class Latch : uint8_t { Hold, Trip };
-enum class Escapement : uint8_t { Closed, Release };
+// Stage: pre-positioned during COCK (f1 still blocks can1, f2 already up behind it: nothing can
+// roll); Release finishes the stroke at the cocked position (DECISIONS.md D8b).
+enum class Escapement : uint8_t { Closed, Stage, Release };
 
 struct Inputs {
   bool arm_home = false;       // SW_ARM_HOME closed

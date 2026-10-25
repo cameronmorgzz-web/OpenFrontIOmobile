@@ -83,6 +83,9 @@ MAG_XC = CAN2[0]          # vertical column sits above can2
 N_COLUMN = 3              # cans in the column above can2 -> capacity = 2 + 3 = 5
 MAG_Y_IN = P.CAN_L / 2 + 1.5                                     # wall inner face |y|
 MAG_WALL_T = 8.0
+# column guide clearance per side: a can yawed against the end walls (1.5 mm each) spans 71.6 mm,
+# so guides 72.5 mm apart can never wedge it (1 mm per side jammed in sim/feed_sim.py)
+COL_CLR = 3.2
 RAIL_END_R = 281.0
 
 
@@ -753,8 +756,8 @@ def mag_wall(right: bool, part: str):
     w = slab(prof, y0, y1) - box(BASE_REAR_X[0], BASE_REAR_X[1], -200, 200, -1, BASE_H)
     fy0, fy1 = (yin - 22, yin) if right else (-yin, -yin + 22)
     # column guides: back flange full height, front flange stops above can2 so it can roll out
-    w = w + box(xc - r - 7, xc - r - 1, fy0, fy1, zc2 - 10, MAG_TOP - 4)
-    w = w + box(xc + r + 1, xc + r + 7, fy0, fy1, zc2 + r + 12, MAG_TOP - 4)
+    w = w + box(xc - r - COL_CLR - 6, xc - r - COL_CLR, fy0, fy1, zc2 - 10, MAG_TOP - 4)
+    w = w + box(xc + r + COL_CLR, xc + r + COL_CLR + 6, fy0, fy1, zc2 + r + 12, MAG_TOP - 4)
     # chute rail ledge (13 mm) under the can ends
     a0, a1, d = _chute_pts()
     ry0, ry1 = (yin - 13, yin) if right else (-yin, -yin + 13)
@@ -821,15 +824,37 @@ def mag_bridge(which: int) -> bd.Part:
     return br
 
 
-# Seesaw escapement (DECISIONS.md D8): fingers poke up through the left rail ledge.
-ROCKER_S1 = 30.0                          # f1: 30 mm downhill of can1's contact (blocks can1)
-ROCKER_S2 = -CAN_PITCH + 26.0             # f2: 26 mm downhill of can2's contact (blocks can2)
-ROCKER_L1 = 23.1
-ROCKER_SM = ROCKER_S1 - ROCKER_L1         # axle station
-ROCKER_DEPTH = 25.0                       # axle below the rail surface
-ROCKER_Y = (-MAG_Y_IN + 1.0, -MAG_Y_IN + 9.0)
+# Seesaw escapement (DECISIONS.md D8). Chute coordinate s: + downhill, 0 = can1's rail contact.
+# f1: post taller than the can centre ahead of can1 (a cylinder cannot roll over it).
+# f2: short finger under the can1/can2 V; rises behind can1 and stops can2 (12-13 mm step).
+# Drive: servo horn + pushrod toggle (D8b). At hold the horn sits 8 deg past dead centre, so the
+# column load on f1 pushes the linkage into the servo along the rod (~0.03 N m at the servo);
+# the direct-drive version was back-driven by the column in sim/feed_sim.py.
+ROCKER_F1_H = 38.0
+ROCKER_F2_H = -4.5                            # f2 tip centre at hold: its 3.5 mm round top sits 1 mm below the rail
+ROCKER_S1 = P.CAN_D / 2 + 3.5 - 0.3           # f1 post face touches can1 at centre height
+ROCKER_S2 = -33.0                             # f2 under the can1/can2 V
+ROCKER_RATIO = 1.2                            # f2 rises ~21 mm: can2 + falling column cannot climb it (1.8 double-fed 1.4 %)
+ROCKER_SM = (ROCKER_S1 + ROCKER_RATIO * ROCKER_S2) / (1 + ROCKER_RATIO)
+ROCKER_L1 = ROCKER_S1 - ROCKER_SM
+ROCKER_DEPTH = 10.0                           # axle below the rail surface
+ROCKER_Y = (-48.0, -40.0)                     # acts on the can's straight body (the 330 neck tapers beyond |y| 50)
 ROCKER_HOLD_DEG = 0.0
-ROCKER_RELEASE_DEG = 30.0
+ROCKER_RELEASE_DEG = -48.0                    # clockwise: f1 top 2 mm below the rail, f2 ~21 mm up
+ESC_PHI_HOLD = -8.0                           # servo horn angle at hold (past dead centre, locks)
+ESC_PHI_REL = 125.0                           # servo horn angle at release
+ESC_PHI_STAGE = 65.0                          # pre-staged during COCK: f1 still 28 mm up (unclimbable), f2 8 mm up
+ESC_K = math.radians(ROCKER_RELEASE_DEG) / ((1 - math.cos(math.radians(ESC_PHI_REL)))
+                                            - (1 - math.cos(math.radians(ESC_PHI_HOLD))))
+
+
+def esc_theta(phi_deg: float) -> float:
+    """Rocker angle (rad) for servo horn angle phi (deg): ideal crank-rocker toggle, K = -crank/rocker arm."""
+    return ESC_K * ((1 - math.cos(math.radians(phi_deg))) - (1 - math.cos(math.radians(ESC_PHI_HOLD))))
+
+
+def esc_dtheta_dphi(phi_deg: float) -> float:
+    return ESC_K * math.sin(math.radians(phi_deg))
 
 
 def rocker_axle():
@@ -840,21 +865,21 @@ def rocker_axle():
 
 def escapement_rocker(released: bool = False) -> bd.Part:
     """Seesaw: arm along the chute under the rail, two finger posts up through the ledge slots.
-    Hold pose: f1 tip 11 mm above the rail (blocks can1), f2 tip 1 mm below.
-    Release: rotate so f1 drops below the rail and f2 rises ~19 mm into can2's front."""
+    Hold pose: f1 tip 41 mm above the rail (blocks can1), f2 tip 1 mm below.
+    Release: rotate clockwise so f2 rises into the can1/can2 V-gap, then f1 drops below the rail."""
     ax = rocker_axle()
     nrm = (-0.5, -0.866)
     up = (-nrm[0], -nrm[1])
     q1, q2 = chute_s(ROCKER_S1), chute_s(ROCKER_S2)
-    t1 = (q1[0] + 11.0 * up[0], q1[1] + 11.0 * up[1])
-    t2 = (q2[0] - 1.0 * up[0], q2[1] - 1.0 * up[1])
+    t1 = (q1[0] + ROCKER_F1_H * up[0], q1[1] + ROCKER_F1_H * up[1])
+    t2 = (q2[0] + ROCKER_F2_H * up[0], q2[1] + ROCKER_F2_H * up[1])
     b1 = (q1[0] - ROCKER_DEPTH * up[0], q1[1] - ROCKER_DEPTH * up[1])
     b2 = (q2[0] - ROCKER_DEPTH * up[0], q2[1] - ROCKER_DEPTH * up[1])
     prof = circles_hull([(ax[0], ax[1], 7.0), (b1[0], b1[1], 4.5), (b2[0], b2[1], 4.5)]) \
         + circles_hull([(b1[0], b1[1], 4.0), (t1[0], t1[1], 3.5)]) \
         + circles_hull([(b2[0], b2[1], 4.0), (t2[0], t2[1], 3.5)])
     rk = slab(prof, *ROCKER_Y) - ycyl(ax[0], ax[1], 1.6, ROCKER_Y[0] - 1, ROCKER_Y[1] + 1)
-    # sign: positive rotation (CCW) lowers f1 (downhill side) and raises f2
+    # sign: negative rotation (clockwise) lowers f1 (downhill side) and raises f2
     ang = ROCKER_RELEASE_DEG if released else ROCKER_HOLD_DEG
     return G.rot_about_pivot(rk, ang, pivot=ax) if ang else rk
 

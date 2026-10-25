@@ -69,7 +69,9 @@ def thermal(c: dict, cycle_s: float = 8.0, motor: dict = MOTOR) -> dict:
 # Press -> launch latency budget (s). Button: deep-sleep wake + Wi-Fi/ESP-NOW init + TX
 T_BUTTON_WAKE_TX = 0.25   # measured ESP32 ~160 ms boot [E5]; +90 ms radio init margin
 T_RADIO = 0.01
-T_FEED = 0.45             # escapement 0.25 s + roll down chute (sim/feed_sim.py)
+T_ESC_OPEN = 0.23         # pre-staged escapement 65 -> 125 deg until can1 is 60 mm past the gate (sim/feed_sim.py max of 1500 cycles)
+T_ROLL = 0.37             # 60 mm past the gate -> seated in the cup (sim/launch.py t_feed_after_60mm)
+T_FEED = T_ESC_OPEN + T_ROLL
 T_SEAR_TRIP = 0.08        # MG90S 60 deg in 0.1 s; finger needs ~45 deg
 T_SETTLE = 0.05
 T_WARN_MIN = 1.5

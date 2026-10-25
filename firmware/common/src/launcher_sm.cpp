@@ -339,6 +339,8 @@ void LauncherSM::tickWarn(uint32_t now) {
 
 void LauncherSM::tickCock(uint32_t now) {
   out_.latch = Latch::Hold;
+  // Pre-stage the escapement only when a feed will follow (no can already in the cup).
+  out_.esc = (!preloaded_ && !in_.can_in_cup && !in_.mag_empty) ? Escapement::Stage : Escapement::Closed;
   drive(MotorDir::Forward, cfg::kCockPwmPct, now);
   if (in_.arm_cocked) {
     if (ring_pos_known_ && ring_pos_ > 0) cock_stroke_edges_ = static_cast<uint32_t>(ring_pos_);

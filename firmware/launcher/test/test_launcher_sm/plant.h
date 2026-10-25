@@ -34,7 +34,7 @@ struct PlantParams {
   double return_ms = 670;         // 100 % reverse, no load
   double fire_ms = 80;            // latch trip -> arm home
   uint32_t trip_release_ms = 60;  // servo finger travel until the latch lets go
-  uint32_t can_drop_ms = 350;     // escapement release -> can in cup (+100 ms stable = 0.45 s feed)
+  uint32_t can_drop_ms = 500;     // escapement release -> can in cup (sim: 0.23 s open + 0.37 s roll; +100 ms stable)
   double coast_backdrive = 0.5;   // backdrive speed, fraction of v_load, motor coasting
   double brake_backdrive = 0.1;   // ... motor shorted (BTS7960 both HIGH)
   double end_stop_extra = 150;    // ring mechanical end stop beyond the cocked angle
@@ -59,6 +59,7 @@ class Plant {
   bool can_falling = false;
   uint32_t can_land_at = 0;
   Escapement last_esc = Escapement::Closed;
+  bool staged_while_cocking = false;  // STAGE seen while the arm was between home and cocked
   Latch latch_cmd = Latch::Hold;
   uint32_t latch_cmd_since = 0;
   double enc_accum = 0;
@@ -162,8 +163,9 @@ class Plant {
       }
     }
 
-    // --- escapement: one can per RELEASE edge (rocker)
-    if (o.esc == Escapement::Release && last_esc == Escapement::Closed && !esc_jammed && mag > 0) {
+    // --- escapement: one can per RELEASE edge (rocker). STAGE moves nothing (f1 still blocks can1).
+    if (o.esc == Escapement::Stage && a > 0 && a < P.stroke - P.switch_hyst) staged_while_cocking = true;
+    if (o.esc == Escapement::Release && last_esc != Escapement::Release && !esc_jammed && mag > 0) {
       --mag;
       can_falling = true;
       can_land_at = t + P.can_drop_ms;

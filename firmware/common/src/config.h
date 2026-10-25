@@ -91,7 +91,7 @@ constexpr uint32_t kCockedLostMs = 30;          // SW_ARM_COCKED open this long 
 constexpr uint32_t kHoldSettledEdges = 10;      // FIRE only with |error| <= this
 
 // FEED [MECH] (starts at the SW_ARM_COCKED edge, while holding)
-constexpr uint32_t kEscReleaseMs = 250;         // escapement RELEASE dwell
+constexpr uint32_t kEscReleaseMs = 450;         // escapement RELEASE dwell (horn 65->125 deg + can clears f1: <=0.23 s in sim)
 constexpr uint32_t kFeedWaitMs = 800;           // after CLOSED, wait this long for the can
 constexpr uint32_t kCanStableMs = 100;          // SNS_CAN_IN_CUP must be LOW this long
 
@@ -131,8 +131,9 @@ constexpr uint32_t kPairingChirpOnMs = 40;
 // Servo pulse widths, microseconds [MECH: calibrate on the bench]
 constexpr uint16_t kLatchHoldUs = 1100;
 constexpr uint16_t kLatchTripUs = 1900;
-constexpr uint16_t kEscClosedUs = 1000;
-constexpr uint16_t kEscReleaseUs = 1700;
+constexpr uint16_t kEscClosedUs = 1000;         // horn -8 deg: pushrod 8 deg past dead centre (locks)
+constexpr uint16_t kEscStageUs = 1400;          // horn 65 deg
+constexpr uint16_t kEscReleaseUs = 1730;        // horn 125 deg
 
 // Motor PWM (BTS7960 / IBT-2: RPWM=GPIO0, LPWM=GPIO1, R_EN=L_EN=3V3)
 constexpr uint32_t kMotorPwmHz = 20000;

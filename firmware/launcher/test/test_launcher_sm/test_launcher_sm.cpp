@@ -179,6 +179,7 @@ static void nominalFromPacket(const PlantParams& pp, const char* label, long max
   TEST_ASSERT_LESS_OR_EQUAL_MESSAGE(max_pkt_to_fire, latency_pkt, "packet -> fire latency");
   TEST_ASSERT_LESS_OR_EQUAL_MESSAGE(8000, cycle, "cycle back to IDLE");
   TEST_ASSERT_EQUAL_INT_MESSAGE(r.cocked_at, r.esc_release_at, "feed starts at the SW_ARM_COCKED edge");
+  TEST_ASSERT_TRUE_MESSAGE(r.p.staged_while_cocking, "escapement pre-staged during COCK");
   TEST_ASSERT_TRUE_MESSAGE(r.coast_at_trip, "motor must coast at the moment of TRIP");
   TEST_ASSERT_FALSE(r.latch_trip_while_driving);
   TEST_ASSERT_LESS_OR_EQUAL_MESSAGE(10, r.max_hold_err_real, "ring held at the cocked angle");

@@ -132,7 +132,8 @@ void apply(const launcher::Outputs& o) {
       break;
   }
   pwmWrite(kPinServoLatch, kChLatch, servoDuty(o.latch == Latch::Trip ? cfg::kLatchTripUs : cfg::kLatchHoldUs));
-  pwmWrite(kPinServoEsc, kChEsc, servoDuty(o.esc == Escapement::Release ? cfg::kEscReleaseUs : cfg::kEscClosedUs));
+  pwmWrite(kPinServoEsc, kChEsc, servoDuty(o.esc == Escapement::Release ? cfg::kEscReleaseUs
+                                                 : o.esc == Escapement::Stage ? cfg::kEscStageUs : cfg::kEscClosedUs));
   digitalWrite(kPinWarn, o.warn ? HIGH : LOW);
 }
 

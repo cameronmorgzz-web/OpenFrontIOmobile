@@ -31,6 +31,7 @@ class Result:
     reason: str = ""
     t_cock: float = float("nan")
     t_feed: float = float("nan")
+    t_feed_after_60mm: float = float("nan")   # roll time from 60 mm past the gate to seated (feed_sim measures up to 60 mm)
     v_release: float = float("nan")
     angle_release: float = float("nan")
     x_release: float = float("nan")
@@ -117,12 +118,16 @@ def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_
     d.mocap_pos[0] = [0, 0, -1]
     t_feed = 0.0
     seated = 0
+    t60 = None
+    c1 = np.array(L.abs_xz(L.CAN1)) * MM
     cs = np.array(L.abs_xz(L.CUP_SEAT_COCKED)) * MM
     while t_feed < 1.2:
         hold()
         mujoco.mj_step(m, d)
         t_feed += dt
         pos = d.xpos[can_id]
+        if t60 is None and (pos[[0, 2]] - c1) @ np.array([0.866, -0.5]) > 0.06:
+            t60 = t_feed
         v = np.linalg.norm(d.cvel[can_id][3:])
         if np.hypot(pos[0] - cs[0], pos[2] - cs[1]) < 0.006 and v < 0.05:
             seated += 1
@@ -131,6 +136,7 @@ def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_
         else:
             seated = 0
     res.t_feed = t_feed
+    res.t_feed_after_60mm = t_feed - (t60 if t60 is not None else 0.0)
     if seated * dt <= 0.03:
         res.reason = f"feed: can not seated (at {d.xpos[can_id].round(3)})"
         return res
