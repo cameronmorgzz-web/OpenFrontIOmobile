@@ -52,9 +52,14 @@ def petg(part, case, formula, load, stress, direction="xy", cyclic=True, sustain
     return Check(part, case, formula, load, stress, direction, s, s / stress, sf_f, sf_c)
 
 
-def hollow_rect_Z(h, b, t_wall, t_skin):
-    """Section modulus about the axis parallel to b (bending in the h direction)."""
-    I = (b * h ** 3 - (b - 2 * t_skin) * (h - 2 * t_wall) ** 3) / 12
+INFILL_CREDIT = 0.5   # fraction of the infill density credited to the core (conservative, DECISIONS D15)
+
+
+def hollow_rect_Z(h, b, t_wall, t_skin, infill=0.0):
+    """Section modulus about the axis parallel to b (bending in the h direction): printed shell
+    (perimeters + skins) plus the gyroid core credited at INFILL_CREDIT x infill fraction."""
+    I_core = (b - 2 * t_skin) * (h - 2 * t_wall) ** 3 / 12
+    I = (b * h ** 3) / 12 - I_core + INFILL_CREDIT * infill * I_core
     return I / (h / 2)
 
 
@@ -66,7 +71,7 @@ def rect_Z(h, b):
 # Geometry used by the checks (mirrors cad/src parts; asserted in tests)
 # ---------------------------------------------------------------------------
 ARM_ROOT_R = 0.045         # m, where the beam leaves the hub
-ARM_BEAM_H, ARM_BEAM_B = 42.0, 28.0   # mm in-plane height, thickness along y
+ARM_BEAM_H, ARM_BEAM_B = 48.0, 28.0   # mm in-plane height, thickness along y
 ARM_WALLS = 6 * 0.45       # 6 perimeters
 SKIN = 5 * 0.2             # 5 top/bottom layers
 ABS_R = 0.080              # m absorber strike radius on the hub
@@ -91,7 +96,7 @@ def run(st5, st4, cock_ring_torque, gear_force_t, mp) -> list[Check]:
     I_bc = mp["I_beam_cup"]
 
     # 1 Arm root bending during the swing (can reaction at L) -------------------
-    Zb = hollow_rect_Z(ARM_BEAM_H, ARM_BEAM_B, ARM_WALLS, SKIN)
+    Zb = hollow_rect_Z(ARM_BEAM_H, ARM_BEAM_B, ARM_WALLS, SKIN, infill=0.35)   # arm: 6 walls, 35 % gyroid
     F_t = m5.m_can * s5.a_tan_peak + m5.m_can * G
     M_swing = F_t * (m5.L - ARM_ROOT_R) + I_bc * s5.a_tan_peak / m5.L
     out.append(petg("arm", "swing, 5 m", "M=(m a_t+mg)(L-r_root)+I_bc*phidd; s=M/Z",
@@ -119,10 +124,18 @@ def run(st5, st4, cock_ring_torque, gear_force_t, mp) -> list[Check]:
     # 4 Cup floor: centripetal load of the can at release (500 ml worst case) ----
     m500 = P.CANS["500"]["mass_full"]
     F_cen = m500 * s5.v_release ** 2 / m5.L
-    # floor plate 80 wide, 5 mm thick, supported by back wall + side ribs: cantilever 33 mm
-    M_cup = F_cen * 0.033 / 2
-    out.append(petg("cup", "centripetal, 500 ml can @5 m speed", "M=F*a/2 on 80x5 plate",
-                    f"F={F_cen:.0f} N", M_cup * 1e3 / rect_Z(5.0, 80.0)))
+    # floor plate 60 wide, 4.5 mm thick, cantilever from the back-wall corner: 35 mm lever
+    M_cup = F_cen * 0.035 / 2
+    out.append(petg("cup", "centripetal, 500 ml can @5 m speed", "M=F*a/2 on 60x6 plate",
+                    f"F={F_cen:.0f} N", M_cup * 1e3 / rect_Z(6.0, 60.0)))
+    # tongue/socket: 2 x M3 in double shear carry the can's tangential load; bearing on PETG
+    F_tan = m5.m_can * s5.a_tan_peak + m5.m_can * G
+    out.append(petg("cup", "socket screw bearing (2 x M3, 2 cheeks x 15.8 mm)", "p=F/(n d t)",
+                    f"F={F_tan:.0f} N", F_tan / (2 * 3.0 * 2 * 15.8)))
+    # hub joints: 3 x 4 mm steel dowels at r 19 carry the full cocked torque (drum->arm->catch ear)
+    F_dw = T_cock5 / 0.019 / 3
+    out.append(petg("hub_drum / arm / hub_catch", "dowel bearing at the joints (3 x 4 mm, 10 mm)", "p=T/(r n d t)",
+                    f"T={T_cock5:.1f} N m -> {F_dw:.0f} N per dowel", F_dw / (4.0 * 10.0)))
 
     # 5 Hub bearing seats (2 x 608 in PETG hub) at the cocked position ----------
     F_latch = T_cock5 / (P.CATCH_R / 1000)
@@ -152,8 +165,8 @@ def run(st5, st4, cock_ring_torque, gear_force_t, mp) -> list[Check]:
     Y = {14: 0.277, 16: 0.296, 80: 0.43, 84: 0.43}
     s_pin = gear_force_t / (b * m_mod * Y[P.PINION_TEETH])
     s_ring = gear_force_t / (b * m_mod * Y[P.RING_TEETH])
-    out.append(petg("motor pinion", "peak cocking torque", "Lewis s=Ft/(b m Y)", f"Ft={gear_force_t:.0f} N",
-                    s_pin))
+    out.append(Check("motor pinion (steel, bought)", "peak cocking torque", "Lewis s=Ft/(b m Y)",
+                     f"Ft={gear_force_t:.0f} N", s_pin, "steel", 250.0, 250.0 / s_pin))
     out.append(petg("dog ring gear", "peak cocking torque", "Lewis s=Ft/(b m Y)", f"Ft={gear_force_t:.0f} N",
                     s_ring))
     # ring latch: nose bending (cantilever 8 mm from the hook root), 14 (tangential) x 7 (y) is

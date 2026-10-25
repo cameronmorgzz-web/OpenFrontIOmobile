@@ -1,0 +1,15 @@
+{
+  "name": "beer-common",
+  "version": "1.0.0",
+  "description": "Portable C++17 logic shared by the Beer Button and the Launcher: SHA-256/HMAC, packet protocol, replay guard, launcher state machine, button decision logic. No Arduino dependencies.",
+  "frameworks": "*",
+  "platforms": "*",
+  "build": {
+    "srcDir": "src",
+    "includeDir": "src",
+    "flags": [
+      "-Wall",
+      "-Wextra"
+    ]
+  }
+}

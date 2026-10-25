@@ -65,7 +65,7 @@ FRAME_INNER_W = CAN_L_MAX + 2 * 6.0   # clear width between the two side plates
 SIDE_PLATE_T = 8.0
 CUP_W = 100.0            # cradle width (supports both can lengths centred)
 CUP_WALL = 4.0
-CUP_PAD = 3.0            # TPU liner thickness
+CUP_PAD = 2.0            # TPU liner thickness
 
 # Shock absorber AC1416-1 strikes an ear on the hub; the arm rests bottomed on it
 ABS_R = 80.0             # strike radius
@@ -76,14 +76,29 @@ DOG_GAP_DEG = 3.0        # parked dog clearance to the hub lug at rest
 
 DRUM_R = 30.0            # spring-cord drum radius on the arm hub (calc/spring_select.py)
 HUB_R = 34.0
-CATCH_R = 46.0           # radius of the catch roller (608 on M8 pin) on the hub
-LATCH_PIVOT_R = 70.0     # ring-latch pivot radius on the ring gear
+CATCH_R = 46.0           # radius of the catch roller (608 on an 8 mm pin) on the hub
 
-# Gear (dog ring <- motor pinion)
-GEAR_MODULE = 2.0
+# ---- y-stack (pivot axis), mm. Left = -y, right = +y -------------------------
+Y_PLATE_IN = FRAME_INNER_W / 2          # 90: inner faces of the side plates
+Y_HUB = (-58.0, 56.0)                   # arm hub (one printed part with the arm)
+Y_DRUM = -50.0                          # cord plane (left), springs at -67/-50/-33
+Y_ABS = (-58.0, -44.0)                  # absorber strike ear slab, absorber axis y=-51
+Y_ARM = (-14.0, 14.0)                   # arm beam
+Y_CATCH_EAR = (37.0, 56.0)              # hub ear carrying the 8x30 catch pin
+Y_ROLLER = (58.5, 65.5)                 # 608 catch roller
+Y_LATCH = (57.0, 67.0)                  # ring latch slab (10 mm thick)
+Y_RING = (69.0, 89.0)                   # ring gear (face 20), 1 mm running gap to the plate
+SPRING_Y = (-67.0, -50.0, -33.0)
+SPRING_Z = 13.0
+LATCH_E = 1.5            # over-centre closing offset (calc/latch.py)
+
+# Gear (cocking ring <- motor pinion). Pinion is a bought STEEL m2.5 16T gear (6 mm bore,
+# set screws) on the motor shaft; the 80T ring is printed PETG.
+GEAR_MODULE = 2.5
 RING_TEETH = 80          # ratio 5.0 (calc/motor.py: latency optimum, motor <= 80 % stall at 5 m)
 PINION_TEETH = 16
-GEAR_FACE = 34.0         # wide face: pinion Lewis fatigue SF >= 2.5 (calc/stress.py)
+GEAR_FACE = 20.0
+PINION_STEEL = True
 GEAR_CENTRE = GEAR_MODULE * (RING_TEETH + PINION_TEETH) / 2  # 98 mm
 
 # --------------------------------------------------------------------------
@@ -144,8 +159,8 @@ CORD_BREAK_N = 2400.0
 # Button
 # --------------------------------------------------------------------------
 BTN_OD = 78.0
-BTN_H = 46.0
+BTN_H = 52.0
 BTN_CAP_D = 62.0
-BTN_CAP_TRAVEL = 4.0
+BTN_CAP_TRAVEL = 3.0
 BTN_SWITCH_D = 16.0     # 16 mm metal momentary switch, panel hole 16.2
 LIPO = dict(name="503035", l=35.0, w=30.0, t=5.0, mah=500)

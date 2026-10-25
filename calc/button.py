@@ -51,7 +51,7 @@ def battery_life(presses_per_day: float = 5.0, capacity_mah: float = CAPACITY_MA
 # 6 active coils (spec printed on the assortment box/listing). Music wire G = 79 GPa.
 CAP_SPRING = dict(d=0.5, D=10.0 - 0.5, na=6.0, L0=15.0, G=79e3)
 CAP_INSTALLED = 13.5   # mm installed height (cap at rest) -> 1.5 mm preload stops cap rattle
-CAP_TRAVEL = 4.0       # mm (params.BTN_CAP_TRAVEL); switch actuates at 2.5 mm of cap travel
+CAP_TRAVEL = 3.0       # mm hard stop (params.BTN_CAP_TRAVEL); 1.5 mm free travel, contact at ~2.3 mm
 SWITCH_FORCE = 2.5     # N, 16 mm metal momentary: not published -> measured in CALIBRATION.md
 
 
@@ -63,7 +63,7 @@ def cap_force() -> dict:
     k = coil_rate(CAP_SPRING["d"], CAP_SPRING["D"], CAP_SPRING["na"], CAP_SPRING["G"])
     pre = CAP_SPRING["L0"] - CAP_INSTALLED
     f_rest = 4 * k * pre
-    f_actuate = 4 * k * (pre + 2.5) + SWITCH_FORCE
+    f_actuate = 4 * k * (pre + 2.3) + SWITCH_FORCE
     f_bottom = 4 * k * (pre + CAP_TRAVEL) + SWITCH_FORCE
     solid = CAP_SPRING["d"] * (CAP_SPRING["na"] + 2)
     return dict(k_each=k, F_rest=f_rest, F_actuate=f_actuate, F_bottom=f_bottom,
