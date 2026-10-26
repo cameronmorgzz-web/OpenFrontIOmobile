@@ -312,6 +312,18 @@ def cases() -> list[Case]:
                     [Load("FLOOR", lambda n: (np.abs(n[:, 0] - floor_x) < 0.4) & (np.abs(n[:, 2] - PZ) < 8), (F_cen, 0, 0)),
                      Load("BACK", lambda n: (np.abs(n[:, 2] - back_z) < 0.4) & (np.abs(n[:, 0] - Lr) < 10), (0, 0, 40.0))],
                     size=2.5, pose=to_hub))
+    # 7b) cup at the worst simulated can acceleration (Monte Carlo, 2 ms filtered), all of it on the
+    #     floor (radial) plus the tangential back-wall load: envelope of the contact transients
+    mc = Path(__file__).resolve().parent / "mc_results.json"
+    if mc.exists():
+        mcd = json.loads(mc.read_text())
+        a_pk = max(mcd["calibrated"]["a_peak_max"], mcd["uncalibrated"]["a_peak_max"])
+        F_pk = P.CANS["330"]["mass_full"] * 1.04 * a_pk          # Monte Carlo shots are 330 ml, mass +4 %
+        out.append(Case("cup", f"sim peak can acceleration {a_pk:.0f} m/s2 (Monte Carlo worst)", "y",
+                        [BC("SCREWS", any_of(*[near_ycyl(x, PZ, P.M3_CLEAR / 2, 0.6) for x in L.CUP_SCREW_X]))],
+                        [Load("FLOOR", lambda n: (np.abs(n[:, 0] - floor_x) < 0.4) & (np.abs(n[:, 2] - PZ) < 8), (F_pk, 0, 0)),
+                         Load("BACK", lambda n: (np.abs(n[:, 2] - back_z) < 0.4) & (np.abs(n[:, 0] - Lr) < 10), (0, 0, 40.0))],
+                        size=2.5, pose=to_hub))
     # 8) stop bracket: flange screws fixed, absorber peak force along its axis
     tip, d = L.absorber_axis(0.0)
     out.append(Case("stop_bracket", "absorber peak 5 m", "y",
@@ -352,11 +364,11 @@ def _yoke_dowel_sel():
 def main(only: set[str] | None = None):
     OUT.mkdir(parents=True, exist_ok=True)
     rows = []
-    old = {r["part"]: r for r in json.loads((OUT / "results.json").read_text())["cases"]} \
+    old = {(r["part"], r["case"]): r for r in json.loads((OUT / "results.json").read_text())["cases"]} \
         if only and (OUT / "results.json").exists() else {}
     for c in cases():
         if only and c.part not in only:
-            rows.append(old[c.part])
+            rows.append(old[(c.part, c.case)])
             continue
         try:
             r = run_case(c)

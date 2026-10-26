@@ -25,8 +25,8 @@ native env runs with `test_build_src = no`, so the host tests exercise exactly t
 . .venv/bin/activate                 # PlatformIO 6.2
 cd firmware/button   && pio run -e esp32c3 -t upload && pio device monitor
 cd firmware/launcher && pio run -e esp32c3 -t upload && pio device monitor   # 115200, USB CDC
-cd firmware/launcher && pio test -e native     # 64 tests: crypto, protocol, replay, 35 SM scenarios
-cd firmware/button   && pio test -e native     # 16 tests: button logic, button<->launcher radio checks
+cd firmware/launcher && pio test -e native     # crypto, protocol, replay, 36 state-machine scenarios
+cd firmware/button   && pio test -e native     # button logic, button<->launcher radio checks (82 tests in total)
 firmware/run_tests.sh                  # both esp32c3 builds + both native suites, non-zero on failure
 firmware/run_tests.sh --native         # host tests only
 ```
@@ -175,15 +175,16 @@ Console (115200): `status`, `fire`, `decock`, `pair`, `clear`; state changes are
 
 ### Simulated timing (host tests)
 
-Plant: cock 1.29 s (4 m) / 1.63 s (5 m), feed 0.45 s, trip 60 ms + fire 80 ms, ring return 0.67 s, plus
-250 ms button wake and radio before the packet arrives.
+Plant: cock 1.38 s (4 m) / 1.82 s (5 m) as in calc/RESULTS.md, escapement pre-staged during COCK, RELEASE 300 ms,
+can in cup 0.5 s after RELEASE + 100 ms stable, escapement at HOLD 400 ms before FIRE, trip 60 ms + fire 80 ms,
+ring return 0.67 s, plus 250 ms button wake and radio before the packet arrives.
 
 | | 4 m | 5 m | limit |
 |---|---|---|---|
-| packet -> FIRE | 1743 ms | 2083 ms | <= 2250 (4 m) / <= 2350 (5 m) |
-| press -> FIRE | 1993 ms | 2333 ms | |
-| beacon before FIRE | 1743 ms | 2083 ms | >= 1500 |
-| press -> back in IDLE | 3085 ms | 3422 ms | <= 8000 |
+| packet -> FIRE | 2081 ms | 2521 ms | <= 2250 (4 m) / pinned at <= 2550 (5 m misses the brief) |
+| press -> FIRE | 2331 ms | 2771 ms | brief: <= 2500 |
+| beacon before FIRE | 2081 ms | 2521 ms | >= 1500 |
+| press -> back in IDLE | 3421 ms | 3857 ms | <= 8000 |
 
 ## Beer Button power budget (assumptions to verify with a current probe)
 
@@ -230,3 +231,8 @@ it does not wake-loop.
    gearbox (dynamic braking only). The safety pin locks the ring.
 8. Single paired button. STATUS (type 5) is answered by the launcher but the button does not use it. The button
    has one LED, so the "red" low-battery pattern is 5 fast blinks.
+
+## Known security limit
+
+PAIR_REQ carries the new key unencrypted (it can only prove possession of the key it hands over), so a receiver listening
+during the 30 s pairing window could copy it. Pair at home; afterwards every packet is authenticated (KNOWN_LIMITATIONS #19).

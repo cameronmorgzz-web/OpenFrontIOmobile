@@ -85,12 +85,12 @@ def render_all():
     asm = L.assembly("rest")
     m = _scene(asm)
     look = [-0.12, 0.0, 0.2]
-    _shot(m, look, 1.25, 150, -18, OUT / "launcher_front_left.png")
-    _shot(m, look, 1.25, 35, -22, OUT / "launcher_rear_right.png")
-    _shot(m, look, 1.15, 90, -3, OUT / "launcher_side.png")
-    _shot(m, [-0.12, 0, 0.25], 1.35, 120, -45, OUT / "launcher_top.png")
+    _shot(m, look, 0.95, 150, -18, OUT / "launcher_front_left.png")
+    _shot(m, look, 0.95, 35, -22, OUT / "launcher_rear_right.png")
+    _shot(m, look, 0.9, 90, -3, OUT / "launcher_side.png")
+    _shot(m, [-0.12, 0, 0.25], 1.05, 120, -45, OUT / "launcher_top.png")
     cocked = L.assembly("cocked")
-    _shot(_scene(cocked), look, 1.15, 90, -3, OUT / "launcher_side_cocked.png")
+    _shot(_scene(cocked), look, 0.9, 90, -3, OUT / "launcher_side_cocked.png")
     # exploded view: groups pushed apart along y / z
     off = {}
     for n in asm:

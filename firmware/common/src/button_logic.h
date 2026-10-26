@@ -108,6 +108,13 @@ struct Feedback {
 
 Feedback decideFeedback(bool acked, bool low_battery);
 
+// Wake causes the button firmware distinguishes.
+enum class Wake : uint8_t { PowerOn, Press, Timer };
+
+// Only a fresh press (GPIO wake, which is armed only after a release was seen) may send FIRE.
+// A timer wake re-checks a switch that was stuck/held: it must never fire, whatever the switch reads.
+inline bool shouldSendFire(Wake wake, bool paired) { return paired && wake == Wake::Press; }
+
 // Radio checks done by the button. Both verify the HMAC with the given key, so a
 // forged or replayed ACK for an older press is ignored.
 //  ACK: signed with the paired key, payload acked-seq == the seq we just sent.

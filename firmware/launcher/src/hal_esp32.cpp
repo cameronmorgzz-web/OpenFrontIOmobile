@@ -85,9 +85,11 @@ void begin() {
   pwmSetup(kPinLpwm, kChLpwm, cfg::kMotorPwmHz, kMotorBits);
   pwmWrite(kPinRpwm, kChRpwm, 0);
   pwmWrite(kPinLpwm, kChLpwm, 0);
+  // Servos one after the other: never two MG996R start-up surges on the 3 A buck at once.
   pwmSetup(kPinServoEsc, kChEsc, cfg::kServoPwmHz, kServoBits);
-  pwmSetup(kPinServoLatch, kChLatch, cfg::kServoPwmHz, kServoBits);
   pwmWrite(kPinServoEsc, kChEsc, servoDuty(cfg::kEscClosedUs));
+  delay(300);
+  pwmSetup(kPinServoLatch, kChLatch, cfg::kServoPwmHz, kServoBits);
   pwmWrite(kPinServoLatch, kChLatch, servoDuty(cfg::kLatchHoldUs));
 
   const uint8_t inputs[] = {kPinEncA,  kPinArmHome, kPinArmCocked, kPinRingHome,

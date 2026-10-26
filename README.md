@@ -1,6 +1,6 @@
 # Beer Button 🍺 — a can launcher you print at home
 
-You press a wireless puck on the sofa. A 3D-printed catapult on the kitchen counter beeps for 1.5 s, cocks its arm, drops a can from its magazine and lobs it about 4 m to your hands.
+You press a wireless puck on the sofa. A 3D-printed catapult on the kitchen counter starts beeping and cocks its arm, drops a can from its magazine and lobs it about 4 m to your hands.
 
 The repo is the whole kit:
 - research, calculations and simulations
@@ -14,6 +14,18 @@ The repo is the whole kit:
 ## Key numbers
 
 <!-- BEGIN:key -->
+| | value | target |
+|---|---|---|
+| BOM, hardware + electronics | **EUR 148.99** (+ EUR 56 filament) | <= EUR 80 (**over**, see REPORT) |
+| Print | 3538 g, 93.7 h, 17 plates | fits 256 x 256 x 256 |
+| Dispersion at 4 m (calibrated, 1000 shots) | **sd 18.6 cm** (uncalibrated 30.2 cm) | <= 25 cm |
+| Catch speed at 4 m | 5.82 m/s (physics minimum 5.8) | <= 4 m/s (**impossible beyond 2.06 m**) |
+| Peak height | 1.91 m max | <= 2.3 m |
+| Press -> launch | 4 m: 2.42 s, 5 m: 2.86 s | <= 2.5 s (5 m **misses**) |
+| Cycle time | 3.5 s | <= 8 s |
+| Feed (escapement) | 1500/1500 single feeds | single feed |
+| Weakest printed part | SF 2.74: arm (absorber stop 5 m (beam+cup inertia)) | >= 2.5 |
+| Button battery | 6.2 months | >= 3 months |
 <!-- END:key -->
 
 Two brief targets are missed and are not hidden:

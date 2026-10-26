@@ -46,7 +46,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19599999999997975
+     "t_clear": 0.19600000000006546
     },
     {
      "cycle": 3,
@@ -94,28 +94,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1695000000000566
+     "t_clear": 0.16900000000005644
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17399999999999194
+     "t_clear": 0.17300000000005777
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17399999999990357
+     "t_clear": 0.17299999999990412
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17149999999990495
+     "t_clear": 0.1724999999999044
     }
    ],
    "jams": 0,
@@ -156,7 +156,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.14500000000004842
     },
     {
      "cycle": 3,
@@ -204,14 +204,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14450000000004826
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14300000000000912
+     "t_clear": 0.14350000000004792
     },
     {
      "cycle": 3,
@@ -259,14 +259,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14650000000004892
+     "t_clear": 0.14750000000004926
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14950000000000552
+     "t_clear": 0.1515000000000506
     },
     {
      "cycle": 3,
@@ -314,14 +314,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1440000000000481
+     "t_clear": 0.14150000000004725
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.14600000000004876
     },
     {
      "cycle": 3,
@@ -369,28 +369,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16600000000005544
+     "t_clear": 0.16450000000005494
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16349999999999776
+     "t_clear": 0.16250000000005427
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15899999999991188
+     "t_clear": 0.1594999999999116
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1574999999999127
+     "t_clear": 0.15799999999991243
     }
    ],
    "jams": 0,
@@ -424,28 +424,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.20500000000006846
+     "t_clear": 0.20550000000006863
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20549999999997448
+     "t_clear": 0.20550000000006863
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.20499999999988638
+     "t_clear": 0.2054999999998861
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.20599999999988583
+     "t_clear": 0.2054999999998861
     }
    ],
    "jams": 0,
@@ -479,28 +479,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1680000000000561
+     "t_clear": 0.16850000000005627
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16699999999999582
+     "t_clear": 0.16750000000005594
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.165999999999908
+     "t_clear": 0.16449999999990883
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16249999999990994
+     "t_clear": 0.16099999999991077
     }
    ],
    "jams": 0,
@@ -541,14 +541,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21349999999997005
+     "t_clear": 0.2135000000000713
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.2139999999998814
+     "t_clear": 0.21349999999988167
     },
     {
      "cycle": 4,
@@ -589,21 +589,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2090000000000698
+     "t_clear": 0.20850000000006963
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20849999999997282
+     "t_clear": 0.20850000000006963
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.2094999999998839
+     "t_clear": 0.20849999999988444
     },
     {
      "cycle": 4,
@@ -644,14 +644,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14350000000004792
+     "t_clear": 0.1425000000000476
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.145000000000008
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 3,
@@ -665,7 +665,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.14799999999991797
+     "t_clear": 0.1484999999999177
     }
    ],
    "jams": 0,
@@ -699,14 +699,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14650000000004892
+     "t_clear": 0.1455000000000486
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14950000000000552
+     "t_clear": 0.14800000000004943
     },
     {
      "cycle": 3,
@@ -754,21 +754,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14300000000004776
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14750000000000663
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1484999999999177
+     "t_clear": 0.14799999999991797
     },
     {
      "cycle": 4,
@@ -816,7 +816,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19649999999997947
+     "t_clear": 0.19650000000006562
     },
     {
      "cycle": 3,
@@ -830,7 +830,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1964999999998911
+     "t_clear": 0.19849999999989
     }
    ],
    "jams": 0,
@@ -864,28 +864,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16700000000005577
+     "t_clear": 0.1680000000000561
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16599999999999637
+     "t_clear": 0.16750000000005594
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.165999999999908
+     "t_clear": 0.1639999999999091
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16049999999991105
+     "t_clear": 0.16099999999991077
     }
    ],
    "jams": 0,
@@ -926,21 +926,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20949999999997226
+     "t_clear": 0.20950000000006996
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.2094999999998839
+     "t_clear": 0.2099999999998836
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.20899999999988417
+     "t_clear": 0.2094999999998839
     }
    ],
    "jams": 0,
@@ -974,28 +974,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.18750000000006262
+     "t_clear": 0.18800000000006278
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18749999999998446
+     "t_clear": 0.18750000000006262
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1879999999998958
+     "t_clear": 0.18749999999989608
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18749999999989608
+     "t_clear": 0.18849999999989553
     }
    ],
    "jams": 0,
@@ -1036,21 +1036,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18349999999998667
+     "t_clear": 0.18250000000006095
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1834999999998983
+     "t_clear": 0.18249999999989885
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18499999999989747
+     "t_clear": 0.18399999999989802
     }
    ],
    "jams": 0,
@@ -1091,21 +1091,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18099999999998806
+     "t_clear": 0.17950000000005994
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18099999999989969
+     "t_clear": 0.18049999999989996
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18249999999989885
+     "t_clear": 0.1814999999998994
     }
    ],
    "jams": 0,
@@ -1139,28 +1139,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2210000000000738
+     "t_clear": 0.22200000000007414
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2214999999999656
+     "t_clear": 0.22150000000007397
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.22199999999987696
+     "t_clear": 0.22149999999987724
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.22099999999987752
+     "t_clear": 0.22149999999987724
     }
    ],
    "jams": 0,
@@ -1194,21 +1194,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14450000000004826
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14650000000000718
+     "t_clear": 0.14900000000004976
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14899999999991742
+     "t_clear": 0.14949999999991714
     },
     {
      "cycle": 4,
@@ -1256,14 +1256,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20549999999997448
+     "t_clear": 0.20550000000006863
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.20599999999988583
+     "t_clear": 0.2054999999998861
     },
     {
      "cycle": 4,
@@ -1304,14 +1304,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14750000000004926
+     "t_clear": 0.1485000000000496
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1470000000000069
+     "t_clear": 0.14650000000004892
     },
     {
      "cycle": 3,
@@ -1359,14 +1359,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14150000000004725
+     "t_clear": 0.14050000000004692
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14400000000000857
+     "t_clear": 0.14500000000004842
     },
     {
      "cycle": 3,
@@ -1414,14 +1414,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.20350000000006796
+     "t_clear": 0.2030000000000678
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20299999999997587
+     "t_clear": 0.2030000000000678
     },
     {
      "cycle": 3,
@@ -1469,21 +1469,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14450000000004826
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14350000000000884
+     "t_clear": 0.14300000000004776
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14749999999991825
+     "t_clear": 0.14699999999991853
     },
     {
      "cycle": 4,
@@ -1524,28 +1524,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14600000000004876
+     "t_clear": 0.14650000000004892
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14550000000000773
+     "t_clear": 0.14750000000004926
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1484999999999177
+     "t_clear": 0.14799999999991797
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.14949999999991714
+     "t_clear": 0.14999999999991687
     }
    ],
    "jams": 0,
@@ -1586,21 +1586,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21799999999996755
+     "t_clear": 0.21850000000007297
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.2184999999998789
+     "t_clear": 0.21899999999987863
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.2184999999998789
+     "t_clear": 0.21899999999987863
     }
    ],
    "jams": 0,
@@ -1641,21 +1641,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1689999999999947
+     "t_clear": 0.16900000000005644
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17099999999990523
+     "t_clear": 0.16999999999990578
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16899999999990634
+     "t_clear": 0.16949999999990606
     }
    ],
    "jams": 0,
@@ -1689,14 +1689,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.13900000000004642
+     "t_clear": 0.14000000000004675
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1445000000000083
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 3,
@@ -1744,21 +1744,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1455000000000486
+     "t_clear": 0.14650000000004892
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14800000000000635
+     "t_clear": 0.14900000000004976
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.14899999999991742
     },
     {
      "cycle": 4,
@@ -1806,14 +1806,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19099999999998252
+     "t_clear": 0.19100000000006379
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19049999999989442
+     "t_clear": 0.19099999999989414
     },
     {
      "cycle": 4,
@@ -1854,28 +1854,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1815000000000606
+     "t_clear": 0.18050000000006028
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18099999999998806
+     "t_clear": 0.18200000000006078
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17999999999990024
+     "t_clear": 0.18049999999989996
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18099999999989969
+     "t_clear": 0.18249999999989885
     }
    ],
    "jams": 0,
@@ -1909,28 +1909,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21300000000007113
+     "t_clear": 0.2120000000000708
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2124999999999706
+     "t_clear": 0.2135000000000713
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21349999999988167
+     "t_clear": 0.2119999999998825
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21349999999988167
+     "t_clear": 0.21249999999988223
     }
    ],
    "jams": 0,
@@ -1964,14 +1964,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21550000000007197
+     "t_clear": 0.2150000000000718
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21499999999996922
+     "t_clear": 0.2150000000000718
     },
     {
      "cycle": 3,
@@ -1985,7 +1985,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21449999999988112
+     "t_clear": 0.21549999999988056
     }
    ],
    "jams": 0,
@@ -2019,14 +2019,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21100000000007046
+     "t_clear": 0.2105000000000703
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.209999999999972
+     "t_clear": 0.2105000000000703
     },
     {
      "cycle": 3,
@@ -2040,7 +2040,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21049999999988334
+     "t_clear": 0.2099999999998836
     }
    ],
    "jams": 0,
@@ -2074,21 +2074,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14200000000004742
+     "t_clear": 0.14150000000004725
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.14600000000004876
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14799999999991797
+     "t_clear": 0.1484999999999177
     },
     {
      "cycle": 4,
@@ -2136,21 +2136,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17599999999999083
+     "t_clear": 0.17650000000005894
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18099999999989969
+     "t_clear": 0.18249999999989885
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1814999999998994
+     "t_clear": 0.18249999999989885
     }
    ],
    "jams": 0,
@@ -2184,21 +2184,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15200000000005076
+     "t_clear": 0.15050000000005026
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14800000000000635
+     "t_clear": 0.14950000000004993
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1484999999999177
+     "t_clear": 0.14799999999991797
     },
     {
      "cycle": 4,
@@ -2239,14 +2239,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16600000000005544
+     "t_clear": 0.16400000000005477
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16299999999999804
+     "t_clear": 0.16400000000005477
     },
     {
      "cycle": 3,
@@ -2260,7 +2260,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15799999999991243
+     "t_clear": 0.1574999999999127
     }
    ],
    "jams": 0,
@@ -2294,21 +2294,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.18650000000006228
+     "t_clear": 0.18600000000006212
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.186499999999985
+     "t_clear": 0.18700000000006245
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18649999999989664
+     "t_clear": 0.18599999999989691
     },
     {
      "cycle": 4,
@@ -2349,28 +2349,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.20250000000006763
+     "t_clear": 0.20200000000006746
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20199999999997642
+     "t_clear": 0.2015000000000673
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.20349999999988722
+     "t_clear": 0.20199999999988805
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.20249999999988777
+     "t_clear": 0.2029999999998875
     }
    ],
    "jams": 0,
@@ -2404,14 +2404,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15950000000005327
+     "t_clear": 0.15650000000005226
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15400000000000302
+     "t_clear": 0.15350000000005126
     },
     {
      "cycle": 3,
@@ -2466,21 +2466,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1664999999999961
+     "t_clear": 0.16550000000005527
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16349999999990938
+     "t_clear": 0.16299999999990966
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16199999999991022
+     "t_clear": 0.16299999999990966
     }
    ],
    "jams": 0,
@@ -2514,28 +2514,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.18500000000006178
+     "t_clear": 0.18550000000006195
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18549999999998557
+     "t_clear": 0.18600000000006212
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1834999999998983
+     "t_clear": 0.18449999999989775
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18499999999989747
+     "t_clear": 0.18449999999989775
     }
    ],
    "jams": 0,
@@ -2569,14 +2569,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2015000000000673
+     "t_clear": 0.20200000000006746
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20199999999997642
+     "t_clear": 0.20200000000006746
     },
     {
      "cycle": 3,
@@ -2590,7 +2590,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.20149999999988832
+     "t_clear": 0.20199999999988805
     }
    ],
    "jams": 0,
@@ -2631,7 +2631,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20949999999997226
+     "t_clear": 0.2090000000000698
     },
     {
      "cycle": 3,
@@ -2679,28 +2679,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17800000000005944
+     "t_clear": 0.17900000000005978
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17849999999998944
+     "t_clear": 0.17900000000005978
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1789999999999008
+     "t_clear": 0.18299999999989858
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17999999999990024
+     "t_clear": 0.18099999999989969
     }
    ],
    "jams": 0,
@@ -2734,21 +2734,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.22200000000007414
+     "t_clear": 0.2225000000000743
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.22199999999996534
+     "t_clear": 0.2225000000000743
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.22249999999987669
+     "t_clear": 0.22199999999987696
     },
     {
      "cycle": 4,
@@ -2789,28 +2789,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.18200000000006078
+     "t_clear": 0.1815000000000606
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18149999999998778
+     "t_clear": 0.18250000000006095
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1814999999998994
+     "t_clear": 0.18199999999989913
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18249999999989885
+     "t_clear": 0.18499999999989747
     }
    ],
    "jams": 0,
@@ -2851,7 +2851,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19799999999997864
+     "t_clear": 0.19800000000006612
     },
     {
      "cycle": 3,
@@ -2899,21 +2899,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14350000000004792
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.1455000000000486
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14799999999991797
+     "t_clear": 0.14749999999991825
     },
     {
      "cycle": 4,
@@ -2954,28 +2954,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19450000000006495
+     "t_clear": 0.19350000000006462
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19349999999998113
+     "t_clear": 0.19350000000006462
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19399999999989248
+     "t_clear": 0.19349999999989276
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19399999999989248
+     "t_clear": 0.1944999999998922
     }
    ],
    "jams": 0,
@@ -3009,14 +3009,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14050000000004692
+     "t_clear": 0.14000000000004675
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14350000000000884
+     "t_clear": 0.14450000000004826
     },
     {
      "cycle": 3,
@@ -3064,14 +3064,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21700000000007247
+     "t_clear": 0.2165000000000723
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2169999999999681
+     "t_clear": 0.21700000000007247
     },
     {
      "cycle": 3,
@@ -3085,7 +3085,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21699999999987973
+     "t_clear": 0.21649999999988
     }
    ],
    "jams": 0,
@@ -3119,28 +3119,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16700000000005577
+     "t_clear": 0.16450000000005494
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.168499999999995
+     "t_clear": 0.16700000000005577
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16699999999990744
+     "t_clear": 0.16549999999990828
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16199999999991022
+     "t_clear": 0.16299999999990966
     }
    ],
    "jams": 0,
@@ -3174,28 +3174,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19800000000006612
+     "t_clear": 0.1985000000000663
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19799999999997864
+     "t_clear": 0.19800000000006612
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19799999999989026
+     "t_clear": 0.1989999999998897
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19849999999989
+     "t_clear": 0.19799999999989026
     }
    ],
    "jams": 0,
@@ -3236,7 +3236,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14950000000000552
+     "t_clear": 0.15050000000005026
     },
     {
      "cycle": 3,
@@ -3291,7 +3291,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.22049999999996617
+     "t_clear": 0.2210000000000738
     },
     {
      "cycle": 3,
@@ -3346,7 +3346,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21949999999996672
+     "t_clear": 0.22000000000007347
     },
     {
      "cycle": 3,
@@ -3394,14 +3394,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21700000000007247
+     "t_clear": 0.21600000000007213
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21649999999996838
+     "t_clear": 0.21600000000007213
     },
     {
      "cycle": 3,
@@ -3449,14 +3449,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2105000000000703
+     "t_clear": 0.20950000000006996
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20949999999997226
+     "t_clear": 0.20950000000006996
     },
     {
      "cycle": 3,
@@ -3470,7 +3470,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21049999999988334
+     "t_clear": 0.2094999999998839
     }
    ],
    "jams": 0,
@@ -3504,28 +3504,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1620000000000541
+     "t_clear": 0.16150000000005393
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1580000000000008
+     "t_clear": 0.15700000000005243
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15899999999991188
+     "t_clear": 0.156999999999913
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15399999999991465
+     "t_clear": 0.15449999999991437
     }
    ],
    "jams": 0,
@@ -3566,21 +3566,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18899999999998363
+     "t_clear": 0.18900000000006312
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18849999999989553
+     "t_clear": 0.18899999999989525
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18899999999989525
+     "t_clear": 0.18949999999989497
     }
    ],
    "jams": 0,
@@ -3614,21 +3614,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1425000000000476
+     "t_clear": 0.14300000000004776
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14550000000000773
+     "t_clear": 0.1455000000000486
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14799999999991797
+     "t_clear": 0.14749999999991825
     },
     {
      "cycle": 4,
@@ -3676,21 +3676,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17349999999999222
+     "t_clear": 0.17500000000005844
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17599999999990246
+     "t_clear": 0.17549999999990273
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17199999999990467
+     "t_clear": 0.1724999999999044
     }
    ],
    "jams": 0,
@@ -3724,28 +3724,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1650000000000551
+     "t_clear": 0.16700000000005577
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.168499999999995
+     "t_clear": 0.16750000000005594
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16449999999990883
+     "t_clear": 0.1639999999999091
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16299999999990966
+     "t_clear": 0.1639999999999091
     }
    ],
    "jams": 0,
@@ -3779,28 +3779,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1800000000000601
+     "t_clear": 0.17950000000005994
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18149999999998778
+     "t_clear": 0.1785000000000596
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1814999999998994
+     "t_clear": 0.17949999999990052
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18399999999989802
+     "t_clear": 0.1834999999998983
     }
    ],
    "jams": 0,
@@ -3841,21 +3841,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17399999999999194
+     "t_clear": 0.1710000000000571
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1744999999999033
+     "t_clear": 0.17749999999990163
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17299999999990412
+     "t_clear": 0.17349999999990384
     }
    ],
    "jams": 0,
@@ -3889,14 +3889,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1425000000000476
+     "t_clear": 0.14150000000004725
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1470000000000069
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 3,
@@ -3910,7 +3910,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15199999999991576
+     "t_clear": 0.15149999999991604
     }
    ],
    "jams": 0,
@@ -3944,14 +3944,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15050000000005026
+     "t_clear": 0.1515000000000506
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1470000000000069
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 3,
@@ -4006,21 +4006,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14550000000000773
+     "t_clear": 0.14450000000004826
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14799999999991797
+     "t_clear": 0.14699999999991853
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.14899999999991742
+     "t_clear": 0.14949999999991714
     }
    ],
    "jams": 0,
@@ -4054,14 +4054,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14800000000004943
+     "t_clear": 0.1485000000000496
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1445000000000083
+     "t_clear": 0.14450000000004826
     },
     {
      "cycle": 3,
@@ -4109,14 +4109,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19950000000006662
+     "t_clear": 0.19900000000006646
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19899999999997808
+     "t_clear": 0.19900000000006646
     },
     {
      "cycle": 3,
@@ -4130,7 +4130,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1989999999998897
+     "t_clear": 0.19949999999988943
     }
    ],
    "jams": 0,
@@ -4164,28 +4164,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2165000000000723
+     "t_clear": 0.21600000000007213
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21549999999996894
+     "t_clear": 0.21600000000007213
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.2159999999998803
+     "t_clear": 0.21549999999988056
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.2159999999998803
+     "t_clear": 0.21549999999988056
     }
    ],
    "jams": 0,
@@ -4226,7 +4226,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21999999999996644
+     "t_clear": 0.2210000000000738
     },
     {
      "cycle": 3,
@@ -4240,7 +4240,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21949999999987835
+     "t_clear": 0.21999999999987807
     }
    ],
    "jams": 0,
@@ -4274,14 +4274,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1440000000000481
+     "t_clear": 0.14150000000004725
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.14500000000004842
     },
     {
      "cycle": 3,
@@ -4295,7 +4295,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.14999999999991687
+     "t_clear": 0.14949999999991714
     }
    ],
    "jams": 0,
@@ -4329,21 +4329,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16400000000005477
+     "t_clear": 0.16550000000005527
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1619999999999986
+     "t_clear": 0.1620000000000541
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16049999999991105
+     "t_clear": 0.15899999999991188
     },
     {
      "cycle": 4,
@@ -4384,28 +4384,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1695000000000566
+     "t_clear": 0.16850000000005627
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16999999999999416
+     "t_clear": 0.17000000000005677
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17149999999990495
+     "t_clear": 0.16949999999990606
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16699999999990744
+     "t_clear": 0.1684999999999066
     }
    ],
    "jams": 0,
@@ -4446,7 +4446,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2014999999999767
+     "t_clear": 0.20200000000006746
     },
     {
      "cycle": 3,
@@ -4494,14 +4494,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14300000000004776
+     "t_clear": 0.14200000000004742
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.145000000000008
+     "t_clear": 0.1455000000000486
     },
     {
      "cycle": 3,
@@ -4549,21 +4549,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16150000000005393
+     "t_clear": 0.1635000000000546
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1555000000000022
+     "t_clear": 0.1560000000000521
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15549999999991382
+     "t_clear": 0.15449999999991437
     },
     {
      "cycle": 4,
@@ -4604,28 +4604,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16850000000005627
+     "t_clear": 0.16900000000005644
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.168499999999995
+     "t_clear": 0.16900000000005644
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17349999999990384
+     "t_clear": 0.17399999999990357
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17349999999990384
+     "t_clear": 0.17199999999990467
     }
    ],
    "jams": 0,
@@ -4659,21 +4659,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16250000000005427
+     "t_clear": 0.16150000000005393
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15750000000000108
+     "t_clear": 0.15650000000005226
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15399999999991465
+     "t_clear": 0.15349999999991493
     },
     {
      "cycle": 4,
@@ -4721,7 +4721,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18999999999998307
+     "t_clear": 0.19050000000006362
     },
     {
      "cycle": 3,
@@ -4735,7 +4735,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19049999999989442
+     "t_clear": 0.19099999999989414
     }
    ],
    "jams": 0,
@@ -4769,28 +4769,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1425000000000476
+     "t_clear": 0.14300000000004776
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14650000000000718
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14749999999991825
+     "t_clear": 0.14799999999991797
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.14949999999991714
+     "t_clear": 0.14999999999991687
     }
    ],
    "jams": 0,
@@ -4824,28 +4824,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17750000000005928
+     "t_clear": 0.1785000000000596
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17899999999998917
+     "t_clear": 0.17800000000005944
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17849999999990107
+     "t_clear": 0.1789999999999008
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18099999999989969
+     "t_clear": 0.18049999999989996
     }
    ],
    "jams": 0,
@@ -4879,28 +4879,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16450000000005494
+     "t_clear": 0.16400000000005477
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16099999999999914
+     "t_clear": 0.16150000000005393
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1594999999999116
+     "t_clear": 0.15899999999991188
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15799999999991243
+     "t_clear": 0.15899999999991188
     }
    ],
    "jams": 0,
@@ -4934,14 +4934,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19100000000006379
+     "t_clear": 0.19050000000006362
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18999999999998307
+     "t_clear": 0.19050000000006362
     },
     {
      "cycle": 3,
@@ -4996,7 +4996,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20949999999997226
+     "t_clear": 0.20950000000006996
     },
     {
      "cycle": 3,
@@ -5010,7 +5010,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21049999999988334
+     "t_clear": 0.20899999999988417
     }
    ],
    "jams": 0,
@@ -5044,14 +5044,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2120000000000708
+     "t_clear": 0.21150000000007063
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21099999999997143
+     "t_clear": 0.21100000000007046
     },
     {
      "cycle": 3,
@@ -5099,21 +5099,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14000000000004675
+     "t_clear": 0.14200000000004742
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14200000000000967
+     "t_clear": 0.14350000000004792
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14549999999991936
+     "t_clear": 0.14599999999991908
     },
     {
      "cycle": 4,
@@ -5154,28 +5154,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17200000000005744
+     "t_clear": 0.1725000000000576
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17599999999999083
+     "t_clear": 0.1770000000000591
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17599999999990246
+     "t_clear": 0.1769999999999019
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17349999999990384
+     "t_clear": 0.1744999999999033
     }
    ],
    "jams": 0,
@@ -5209,21 +5209,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21300000000007113
+     "t_clear": 0.21250000000007097
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2124999999999706
+     "t_clear": 0.21250000000007097
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21249999999988223
+     "t_clear": 0.2119999999998825
     },
     {
      "cycle": 4,
@@ -5264,14 +5264,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2030000000000678
+     "t_clear": 0.20250000000006763
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20199999999997642
+     "t_clear": 0.20200000000006746
     },
     {
      "cycle": 3,
@@ -5285,7 +5285,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.20249999999988777
+     "t_clear": 0.2029999999998875
     }
    ],
    "jams": 0,
@@ -5326,14 +5326,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21799999999996755
+     "t_clear": 0.2180000000000728
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21799999999987918
+     "t_clear": 0.2184999999998789
     },
     {
      "cycle": 4,
@@ -5374,14 +5374,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1395000000000466
+     "t_clear": 0.13900000000004642
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14400000000000857
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 3,
@@ -5429,28 +5429,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1425000000000476
+     "t_clear": 0.14200000000004742
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1445000000000083
+     "t_clear": 0.1455000000000486
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1484999999999177
+     "t_clear": 0.14799999999991797
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15149999999991604
+     "t_clear": 0.1509999999999163
     }
    ],
    "jams": 0,
@@ -5491,21 +5491,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1819999999999875
+     "t_clear": 0.1815000000000606
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18399999999989802
+     "t_clear": 0.18099999999989969
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18399999999989802
+     "t_clear": 0.18699999999989636
     }
    ],
    "jams": 0,
@@ -5546,21 +5546,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21299999999997032
+     "t_clear": 0.21300000000007113
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21349999999988167
+     "t_clear": 0.21299999999988195
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21349999999988167
+     "t_clear": 0.21299999999988195
     }
    ],
    "jams": 0,
@@ -5594,28 +5594,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16600000000005544
+     "t_clear": 0.1650000000000551
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.168499999999995
+     "t_clear": 0.16700000000005577
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16499999999990855
+     "t_clear": 0.165999999999908
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16199999999991022
+     "t_clear": 0.16249999999990994
     }
    ],
    "jams": 0,
@@ -5656,21 +5656,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18299999999998695
+     "t_clear": 0.18350000000006128
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18249999999989885
+     "t_clear": 0.1834999999998983
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18299999999989858
+     "t_clear": 0.18849999999989553
     }
    ],
    "jams": 0,
@@ -5704,28 +5704,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19150000000006395
+     "t_clear": 0.19100000000006379
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19099999999998252
+     "t_clear": 0.19100000000006379
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19149999999989387
+     "t_clear": 0.19099999999989414
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19149999999989387
+     "t_clear": 0.19099999999989414
     }
    ],
    "jams": 0,
@@ -5759,28 +5759,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1695000000000566
+     "t_clear": 0.1725000000000576
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17349999999999222
+     "t_clear": 0.17300000000005777
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17149999999990495
+     "t_clear": 0.17099999999990523
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1684999999999066
+     "t_clear": 0.16999999999990578
     }
    ],
    "jams": 0,
@@ -5814,28 +5814,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1830000000000611
+     "t_clear": 0.18200000000006078
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18349999999998667
+     "t_clear": 0.18200000000006078
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18099999999989969
+     "t_clear": 0.18299999999989858
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18649999999989664
+     "t_clear": 0.18599999999989691
     }
    ],
    "jams": 0,
@@ -5869,14 +5869,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14600000000004876
+     "t_clear": 0.14650000000004892
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14550000000000773
+     "t_clear": 0.14500000000004842
     },
     {
      "cycle": 3,
@@ -5931,14 +5931,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.22199999999996534
+     "t_clear": 0.22150000000007397
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.22199999999987696
+     "t_clear": 0.22149999999987724
     },
     {
      "cycle": 4,
@@ -5986,7 +5986,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21349999999997005
+     "t_clear": 0.2135000000000713
     },
     {
      "cycle": 3,
@@ -6034,28 +6034,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17800000000005944
+     "t_clear": 0.17900000000005978
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17749999999999
+     "t_clear": 0.17750000000005928
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1789999999999008
+     "t_clear": 0.18249999999989885
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1814999999998994
+     "t_clear": 0.18249999999989885
     }
    ],
    "jams": 0,
@@ -6096,21 +6096,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19449999999998058
+     "t_clear": 0.19450000000006495
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1944999999998922
+     "t_clear": 0.19549999999989165
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19549999999989165
+     "t_clear": 0.1944999999998922
     }
    ],
    "jams": 0,
@@ -6144,14 +6144,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2195000000000733
+     "t_clear": 0.21900000000007314
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.218999999999967
+     "t_clear": 0.21900000000007314
     },
     {
      "cycle": 3,
@@ -6206,21 +6206,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15500000000000247
+     "t_clear": 0.1545000000000516
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15349999999991493
+     "t_clear": 0.1529999999999152
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1509999999999163
+     "t_clear": 0.15149999999991604
     }
    ],
    "jams": 0,
@@ -6254,21 +6254,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1455000000000486
+     "t_clear": 0.14600000000004876
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14200000000000967
+     "t_clear": 0.1425000000000476
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14549999999991936
+     "t_clear": 0.14499999999991964
     },
     {
      "cycle": 4,
@@ -6309,28 +6309,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17800000000005944
+     "t_clear": 0.17750000000005928
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17749999999999
+     "t_clear": 0.1785000000000596
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18049999999989996
+     "t_clear": 0.18299999999989858
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18099999999989969
+     "t_clear": 0.1814999999998994
     }
    ],
    "jams": 0,
@@ -6371,21 +6371,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1729999999999925
+     "t_clear": 0.1740000000000581
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17349999999990384
+     "t_clear": 0.17299999999990412
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17299999999990412
+     "t_clear": 0.17349999999990384
     }
    ],
    "jams": 0,
@@ -6426,7 +6426,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18149999999998778
+     "t_clear": 0.18050000000006028
     },
     {
      "cycle": 3,
@@ -6440,7 +6440,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18499999999989747
+     "t_clear": 0.18299999999989858
     }
    ],
    "jams": 0,
@@ -6474,14 +6474,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17050000000005694
+     "t_clear": 0.1680000000000561
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17199999999999305
+     "t_clear": 0.1725000000000576
     },
     {
      "cycle": 3,
@@ -6529,14 +6529,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21700000000007247
+     "t_clear": 0.2165000000000723
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21649999999996838
+     "t_clear": 0.21750000000007264
     },
     {
      "cycle": 3,
@@ -6584,14 +6584,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1485000000000496
+     "t_clear": 0.14650000000004892
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15050000000000496
+     "t_clear": 0.1500000000000501
     },
     {
      "cycle": 3,
@@ -6605,7 +6605,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15449999999991437
+     "t_clear": 0.15399999999991465
     }
    ],
    "jams": 0,
@@ -6639,21 +6639,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16850000000005627
+     "t_clear": 0.16750000000005594
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16749999999999554
+     "t_clear": 0.1680000000000561
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16499999999990855
+     "t_clear": 0.16549999999990828
     },
     {
      "cycle": 4,
@@ -6694,28 +6694,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1665000000000556
+     "t_clear": 0.1680000000000561
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17049999999999388
+     "t_clear": 0.1710000000000571
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1679999999999069
+     "t_clear": 0.1684999999999066
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.165999999999908
+     "t_clear": 0.16549999999990828
     }
    ],
    "jams": 0,
@@ -6756,21 +6756,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14650000000000718
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1484999999999177
+     "t_clear": 0.14899999999991742
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.14999999999991687
     }
    ],
    "jams": 0,
@@ -6804,28 +6804,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15850000000005293
+     "t_clear": 0.15700000000005243
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15450000000000275
+     "t_clear": 0.1560000000000521
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1529999999999152
+     "t_clear": 0.15399999999991465
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15249999999991548
+     "t_clear": 0.1529999999999152
     }
    ],
    "jams": 0,
@@ -6859,28 +6859,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.18400000000006145
+     "t_clear": 0.18450000000006161
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18449999999998612
+     "t_clear": 0.18550000000006195
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18449999999989775
+     "t_clear": 0.18399999999989802
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18849999999989553
+     "t_clear": 0.1854999999998972
     }
    ],
    "jams": 0,
@@ -6921,7 +6921,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.209999999999972
+     "t_clear": 0.20950000000006996
     },
     {
      "cycle": 3,
@@ -6935,7 +6935,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.2094999999998839
+     "t_clear": 0.2099999999998836
     }
    ],
    "jams": 0,
@@ -6976,21 +6976,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21849999999996728
+     "t_clear": 0.2180000000000728
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21749999999987946
+     "t_clear": 0.21799999999987918
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21749999999987946
+     "t_clear": 0.21799999999987918
     }
    ],
    "jams": 0,
@@ -7031,14 +7031,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20449999999997504
+     "t_clear": 0.20500000000006846
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.20449999999988666
+     "t_clear": 0.20399999999988694
     },
     {
      "cycle": 4,
@@ -7079,21 +7079,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.20800000000006946
+     "t_clear": 0.2075000000000693
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20749999999997337
+     "t_clear": 0.2075000000000693
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.20799999999988472
+     "t_clear": 0.207499999999885
     },
     {
      "cycle": 4,
@@ -7134,21 +7134,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16250000000005427
+     "t_clear": 0.1635000000000546
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16599999999999637
+     "t_clear": 0.16900000000005644
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1639999999999091
+     "t_clear": 0.16449999999990883
     },
     {
      "cycle": 4,
@@ -7189,21 +7189,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1770000000000591
+     "t_clear": 0.17800000000005944
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17699999999999028
+     "t_clear": 0.1770000000000591
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17749999999990163
+     "t_clear": 0.17999999999990024
     },
     {
      "cycle": 4,
@@ -7251,21 +7251,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18349999999998667
+     "t_clear": 0.1830000000000611
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18449999999989775
+     "t_clear": 0.1834999999998983
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18249999999989885
+     "t_clear": 0.18399999999989802
     }
    ],
    "jams": 0,
@@ -7306,21 +7306,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21649999999996838
+     "t_clear": 0.2165000000000723
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21699999999987973
+     "t_clear": 0.21649999999988
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21649999999988
+     "t_clear": 0.2159999999998803
     }
    ],
    "jams": 0,
@@ -7361,7 +7361,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21099999999997143
+     "t_clear": 0.21100000000007046
     },
     {
      "cycle": 3,
@@ -7416,14 +7416,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1904999999999828
+     "t_clear": 0.19100000000006379
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19049999999989442
+     "t_clear": 0.19099999999989414
     },
     {
      "cycle": 4,
@@ -7464,28 +7464,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17800000000005944
+     "t_clear": 0.1785000000000596
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17799999999998972
+     "t_clear": 0.17650000000005894
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1769999999999019
+     "t_clear": 0.17799999999990135
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17999999999990024
+     "t_clear": 0.17949999999990052
     }
    ],
    "jams": 0,
@@ -7519,14 +7519,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15050000000005026
+     "t_clear": 0.1500000000000501
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1490000000000058
+     "t_clear": 0.14750000000004926
     },
     {
      "cycle": 3,
@@ -7574,28 +7574,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16600000000005544
+     "t_clear": 0.16450000000005494
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1644999999999972
+     "t_clear": 0.16450000000005494
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16299999999990966
+     "t_clear": 0.16199999999991022
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16099999999991077
+     "t_clear": 0.1614999999999105
     }
    ],
    "jams": 0,
@@ -7629,14 +7629,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14500000000004842
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14950000000000552
+     "t_clear": 0.1485000000000496
     },
     {
      "cycle": 3,
@@ -7684,28 +7684,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15250000000005093
+     "t_clear": 0.14950000000004993
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1490000000000058
+     "t_clear": 0.14900000000004976
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14899999999991742
+     "t_clear": 0.1484999999999177
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.1509999999999163
     }
    ],
    "jams": 0,
@@ -7739,14 +7739,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14800000000004943
+     "t_clear": 0.1500000000000501
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14750000000000663
+     "t_clear": 0.14750000000004926
     },
     {
      "cycle": 3,
@@ -7794,21 +7794,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16150000000005393
+     "t_clear": 0.1605000000000536
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15700000000000136
+     "t_clear": 0.15700000000005243
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1549999999999141
+     "t_clear": 0.15549999999991382
     },
     {
      "cycle": 4,
@@ -7856,14 +7856,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15650000000000164
+     "t_clear": 0.1545000000000516
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14999999999991687
+     "t_clear": 0.14949999999991714
     },
     {
      "cycle": 4,
@@ -7904,21 +7904,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1455000000000486
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15200000000000413
+     "t_clear": 0.1515000000000506
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1509999999999163
+     "t_clear": 0.15199999999991576
     },
     {
      "cycle": 4,
@@ -7959,14 +7959,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.20650000000006896
+     "t_clear": 0.20700000000006913
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20699999999997365
+     "t_clear": 0.20650000000006896
     },
     {
      "cycle": 3,
@@ -7980,7 +7980,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.20649999999988555
+     "t_clear": 0.20699999999988528
     }
    ],
    "jams": 0,
@@ -8021,21 +8021,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20049999999997725
+     "t_clear": 0.2000000000000668
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.20049999999988888
+     "t_clear": 0.20149999999988832
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.2009999999998886
+     "t_clear": 0.20049999999988888
     }
    ],
    "jams": 0,
@@ -8076,14 +8076,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19749999999997891
+     "t_clear": 0.19750000000006596
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19749999999989054
+     "t_clear": 0.19699999999989082
     },
     {
      "cycle": 4,
@@ -8124,28 +8124,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19450000000006495
+     "t_clear": 0.19500000000006512
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1949999999999803
+     "t_clear": 0.19500000000006512
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19549999999989165
+     "t_clear": 0.1944999999998922
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19549999999989165
+     "t_clear": 0.19499999999989193
     }
    ],
    "jams": 0,
@@ -8179,28 +8179,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15200000000005076
+     "t_clear": 0.15250000000005093
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14750000000000663
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1484999999999177
+     "t_clear": 0.14899999999991742
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.1509999999999163
     }
    ],
    "jams": 0,
@@ -8241,7 +8241,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2214999999999656
+     "t_clear": 0.2210000000000738
     },
     {
      "cycle": 3,
@@ -8255,7 +8255,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.22149999999987724
+     "t_clear": 0.22099999999987752
     }
    ],
    "jams": 0,
@@ -8289,14 +8289,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14650000000004892
+     "t_clear": 0.14500000000004842
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14950000000000552
+     "t_clear": 0.1500000000000501
     },
     {
      "cycle": 3,
@@ -8310,7 +8310,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15349999999991493
+     "t_clear": 0.15399999999991465
     }
    ],
    "jams": 0,
@@ -8344,28 +8344,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2135000000000713
+     "t_clear": 0.21300000000007113
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21299999999997032
+     "t_clear": 0.2135000000000713
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21299999999988195
+     "t_clear": 0.21349999999988167
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21349999999988167
+     "t_clear": 0.2139999999998814
     }
    ],
    "jams": 0,
@@ -8406,21 +8406,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.168499999999995
+     "t_clear": 0.1665000000000556
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.165999999999908
+     "t_clear": 0.16649999999990772
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16449999999990883
+     "t_clear": 0.16649999999990772
     }
    ],
    "jams": 0,
@@ -8461,21 +8461,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18349999999998667
+     "t_clear": 0.1830000000000611
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18399999999989802
+     "t_clear": 0.18299999999989858
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1834999999998983
+     "t_clear": 0.1854999999998972
     }
    ],
    "jams": 0,
@@ -8516,14 +8516,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21149999999997116
+     "t_clear": 0.21100000000007046
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.2119999999998825
+     "t_clear": 0.21099999999988306
     },
     {
      "cycle": 4,
@@ -8564,14 +8564,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21000000000007013
+     "t_clear": 0.20950000000006996
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20949999999997226
+     "t_clear": 0.21000000000007013
     },
     {
      "cycle": 3,
@@ -8585,7 +8585,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.2094999999998839
+     "t_clear": 0.2099999999998836
     }
    ],
    "jams": 0,
@@ -8619,21 +8619,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1970000000000658
+     "t_clear": 0.19650000000006562
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1969999999999792
+     "t_clear": 0.1970000000000658
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1964999999998911
+     "t_clear": 0.19699999999989082
     },
     {
      "cycle": 4,
@@ -8681,21 +8681,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19599999999997975
+     "t_clear": 0.19650000000006562
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19549999999989165
+     "t_clear": 0.1964999999998911
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19599999999989137
+     "t_clear": 0.19549999999989165
     }
    ],
    "jams": 0,
@@ -8729,14 +8729,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.22000000000007347
+     "t_clear": 0.2195000000000733
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21999999999996644
+     "t_clear": 0.22000000000007347
     },
     {
      "cycle": 3,
@@ -8791,14 +8791,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21349999999997005
+     "t_clear": 0.2135000000000713
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21349999999988167
+     "t_clear": 0.2139999999998814
     },
     {
      "cycle": 4,
@@ -8846,21 +8846,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.14500000000004842
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1484999999999177
+     "t_clear": 0.14799999999991797
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.14999999999991687
     }
    ],
    "jams": 0,
@@ -8901,21 +8901,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15050000000000496
+     "t_clear": 0.15050000000005026
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14949999999991714
+     "t_clear": 0.14999999999991687
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15149999999991604
+     "t_clear": 0.1509999999999163
     }
    ],
    "jams": 0,
@@ -8949,21 +8949,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15350000000005126
+     "t_clear": 0.15400000000005143
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15000000000000524
+     "t_clear": 0.1500000000000501
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14599999999991908
+     "t_clear": 0.1464999999999188
     },
     {
      "cycle": 4,
@@ -9004,21 +9004,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1395000000000466
+     "t_clear": 0.14200000000004742
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.145000000000008
+     "t_clear": 0.1455000000000486
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14749999999991825
+     "t_clear": 0.14799999999991797
     },
     {
      "cycle": 4,
@@ -9066,7 +9066,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1425000000000094
+     "t_clear": 0.14300000000004776
     },
     {
      "cycle": 3,
@@ -9121,7 +9121,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.22049999999996617
+     "t_clear": 0.2210000000000738
     },
     {
      "cycle": 3,
@@ -9135,7 +9135,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.22149999999987724
+     "t_clear": 0.2204999999998778
     }
    ],
    "jams": 0,
@@ -9169,28 +9169,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1455000000000486
+     "t_clear": 0.14600000000004876
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14850000000000607
+     "t_clear": 0.14900000000004976
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.14999999999991687
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1529999999999152
+     "t_clear": 0.15249999999991548
     }
    ],
    "jams": 0,
@@ -9224,14 +9224,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2045000000000683
+     "t_clear": 0.20400000000006813
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20449999999997504
+     "t_clear": 0.20400000000006813
     },
     {
      "cycle": 3,
@@ -9279,28 +9279,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1770000000000591
+     "t_clear": 0.17600000000005878
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17749999999999
+     "t_clear": 0.17650000000005894
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17799999999990135
+     "t_clear": 0.17599999999990246
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17949999999990052
+     "t_clear": 0.18199999999989913
     }
    ],
    "jams": 0,
@@ -9334,14 +9334,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19750000000006596
+     "t_clear": 0.19800000000006612
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19749999999997891
+     "t_clear": 0.19750000000006596
     },
     {
      "cycle": 3,
@@ -9355,7 +9355,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1964999999998911
+     "t_clear": 0.19699999999989082
     }
    ],
    "jams": 0,
@@ -9389,14 +9389,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1440000000000481
+     "t_clear": 0.14150000000004725
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14800000000000635
+     "t_clear": 0.14800000000004943
     },
     {
      "cycle": 3,
@@ -9451,21 +9451,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17499999999999138
+     "t_clear": 0.1755000000000586
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17549999999990273
+     "t_clear": 0.174999999999903
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.174999999999903
+     "t_clear": 0.1744999999999033
     }
    ],
    "jams": 0,
@@ -9506,7 +9506,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18299999999998695
+     "t_clear": 0.18450000000006161
     },
     {
      "cycle": 3,
@@ -9520,7 +9520,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18449999999989775
+     "t_clear": 0.18299999999989858
     }
    ],
    "jams": 0,
@@ -9554,21 +9554,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1545000000000516
+     "t_clear": 0.15350000000005126
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15000000000000524
+     "t_clear": 0.14950000000004993
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14699999999991853
+     "t_clear": 0.14749999999991825
     },
     {
      "cycle": 4,
@@ -9609,21 +9609,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21300000000007113
+     "t_clear": 0.21250000000007097
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21349999999997005
+     "t_clear": 0.21450000000007163
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21349999999988167
+     "t_clear": 0.21299999999988195
     },
     {
      "cycle": 4,
@@ -9664,14 +9664,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15350000000005126
+     "t_clear": 0.15200000000005076
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15000000000000524
+     "t_clear": 0.1500000000000501
     },
     {
      "cycle": 3,
@@ -9719,28 +9719,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1485000000000496
+     "t_clear": 0.14950000000004993
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15000000000000524
+     "t_clear": 0.15050000000005026
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15199999999991576
+     "t_clear": 0.15249999999991548
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15399999999991465
+     "t_clear": 0.15549999999991382
     }
    ],
    "jams": 0,
@@ -9774,14 +9774,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2135000000000713
+     "t_clear": 0.21400000000007147
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21349999999997005
+     "t_clear": 0.2135000000000713
     },
     {
      "cycle": 3,
@@ -9795,7 +9795,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21349999999988167
+     "t_clear": 0.2139999999998814
     }
    ],
    "jams": 0,
@@ -9836,7 +9836,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19799999999997864
+     "t_clear": 0.19800000000006612
     },
     {
      "cycle": 3,
@@ -9891,14 +9891,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21149999999997116
+     "t_clear": 0.21250000000007097
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21149999999988278
+     "t_clear": 0.2119999999998825
     },
     {
      "cycle": 4,
@@ -9946,7 +9946,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21849999999996728
+     "t_clear": 0.21850000000007297
     },
     {
      "cycle": 3,
@@ -10001,7 +10001,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17699999999999028
+     "t_clear": 0.17750000000005928
     },
     {
      "cycle": 3,
@@ -10049,14 +10049,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15700000000005243
+     "t_clear": 0.15650000000005226
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1535000000000033
+     "t_clear": 0.15350000000005126
     },
     {
      "cycle": 3,
@@ -10104,28 +10104,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16700000000005577
+     "t_clear": 0.16850000000005627
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1644999999999972
+     "t_clear": 0.16450000000005494
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16349999999990938
+     "t_clear": 0.16299999999990966
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16099999999991077
+     "t_clear": 0.15899999999991188
     }
    ],
    "jams": 0,
@@ -10159,28 +10159,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16750000000005594
+     "t_clear": 0.17000000000005677
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17199999999999305
+     "t_clear": 0.17150000000005727
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16999999999990578
+     "t_clear": 0.1704999999999055
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1679999999999069
+     "t_clear": 0.1684999999999066
     }
    ],
    "jams": 0,
@@ -10214,21 +10214,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1650000000000551
+     "t_clear": 0.1635000000000546
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16149999999999887
+     "t_clear": 0.16100000000005377
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15799999999991243
+     "t_clear": 0.15849999999991216
     },
     {
      "cycle": 4,
@@ -10276,21 +10276,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17649999999999055
+     "t_clear": 0.17750000000005928
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18249999999989885
+     "t_clear": 0.18099999999989969
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18199999999989913
+     "t_clear": 0.18049999999989996
     }
    ],
    "jams": 0,
@@ -10324,14 +10324,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14150000000004725
+     "t_clear": 0.1410000000000471
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1445000000000083
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 3,
@@ -10379,21 +10379,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1620000000000541
+     "t_clear": 0.16250000000005427
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15750000000000108
+     "t_clear": 0.15850000000005293
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15449999999991437
+     "t_clear": 0.1549999999999141
     },
     {
      "cycle": 4,
@@ -10441,7 +10441,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14350000000000884
+     "t_clear": 0.14200000000004742
     },
     {
      "cycle": 3,
@@ -10489,14 +10489,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14500000000004842
+     "t_clear": 0.14450000000004826
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.14600000000004876
     },
     {
      "cycle": 3,
@@ -10510,7 +10510,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15249999999991548
+     "t_clear": 0.1529999999999152
     }
    ],
    "jams": 0,
@@ -10551,7 +10551,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20049999999997725
+     "t_clear": 0.2015000000000673
     },
     {
      "cycle": 3,
@@ -10606,21 +10606,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1884999999999839
+     "t_clear": 0.18850000000006295
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18849999999989553
+     "t_clear": 0.18949999999989497
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18749999999989608
+     "t_clear": 0.18849999999989553
     }
    ],
    "jams": 0,
@@ -10654,28 +10654,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1755000000000586
+     "t_clear": 0.17500000000005844
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1754999999999911
+     "t_clear": 0.1755000000000586
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17949999999990052
+     "t_clear": 0.17549999999990273
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17849999999990107
+     "t_clear": 0.17799999999990135
     }
    ],
    "jams": 0,
@@ -10709,14 +10709,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1635000000000546
+     "t_clear": 0.16450000000005494
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15750000000000108
+     "t_clear": 0.1575000000000526
     },
     {
      "cycle": 3,
@@ -10771,21 +10771,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1904999999999828
+     "t_clear": 0.19100000000006379
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19049999999989442
+     "t_clear": 0.1899999999998947
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19149999999989387
+     "t_clear": 0.19049999999989442
     }
    ],
    "jams": 0,
@@ -10826,21 +10826,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1709999999999936
+     "t_clear": 0.17000000000005677
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1684999999999066
+     "t_clear": 0.1704999999999055
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16749999999990717
+     "t_clear": 0.16549999999990828
     }
    ],
    "jams": 0,
@@ -10874,14 +10874,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14200000000004742
+     "t_clear": 0.1425000000000476
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14650000000000718
+     "t_clear": 0.14600000000004876
     },
     {
      "cycle": 3,
@@ -10929,14 +10929,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1440000000000481
+     "t_clear": 0.14600000000004876
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15000000000000524
+     "t_clear": 0.1500000000000501
     },
     {
      "cycle": 3,
@@ -10984,28 +10984,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14500000000004842
+     "t_clear": 0.14200000000004742
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.145000000000008
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14799999999991797
+     "t_clear": 0.1484999999999177
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.14999999999991687
     }
    ],
    "jams": 0,
@@ -11046,21 +11046,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17049999999999388
+     "t_clear": 0.16900000000005644
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16749999999990717
+     "t_clear": 0.16699999999990744
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16549999999990828
+     "t_clear": 0.16449999999990883
     }
    ],
    "jams": 0,
@@ -11094,21 +11094,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.18050000000006028
+     "t_clear": 0.18100000000006045
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18149999999998778
+     "t_clear": 0.18200000000006078
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18449999999989775
+     "t_clear": 0.18399999999989802
     },
     {
      "cycle": 4,
@@ -11156,21 +11156,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20749999999997337
+     "t_clear": 0.2075000000000693
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.20849999999988444
+     "t_clear": 0.20699999999988528
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.20699999999988528
+     "t_clear": 0.207499999999885
     }
    ],
    "jams": 0,
@@ -11204,14 +11204,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17050000000005694
+     "t_clear": 0.1710000000000571
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17449999999999166
+     "t_clear": 0.1725000000000576
     },
     {
      "cycle": 3,
@@ -11225,7 +11225,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17399999999990357
+     "t_clear": 0.1724999999999044
     }
    ],
    "jams": 0,
@@ -11259,28 +11259,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16150000000005393
+     "t_clear": 0.1605000000000536
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15850000000000053
+     "t_clear": 0.15800000000005276
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1549999999999141
+     "t_clear": 0.15599999999991354
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15349999999991493
+     "t_clear": 0.15249999999991548
     }
    ],
    "jams": 0,
@@ -11314,14 +11314,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14800000000004943
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14750000000000663
+     "t_clear": 0.14800000000004943
     },
     {
      "cycle": 3,
@@ -11369,14 +11369,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2105000000000703
+     "t_clear": 0.21000000000007013
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21099999999997143
+     "t_clear": 0.21000000000007013
     },
     {
      "cycle": 3,
@@ -11424,21 +11424,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16250000000005427
+     "t_clear": 0.16000000000005343
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15700000000000136
+     "t_clear": 0.15650000000005226
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15399999999991465
+     "t_clear": 0.15449999999991437
     },
     {
      "cycle": 4,
@@ -11486,7 +11486,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21599999999996866
+     "t_clear": 0.2165000000000723
     },
     {
      "cycle": 3,
@@ -11541,7 +11541,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19549999999998002
+     "t_clear": 0.19500000000006512
     },
     {
      "cycle": 3,
@@ -11589,28 +11589,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17300000000005777
+     "t_clear": 0.17350000000005794
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17249999999999277
+     "t_clear": 0.17500000000005844
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17649999999990218
+     "t_clear": 0.17849999999990107
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17749999999990163
+     "t_clear": 0.17799999999990135
     }
    ],
    "jams": 0,
@@ -11644,14 +11644,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1815000000000606
+     "t_clear": 0.18200000000006078
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18149999999998778
+     "t_clear": 0.1815000000000606
     },
     {
      "cycle": 3,
@@ -11665,7 +11665,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18249999999989885
+     "t_clear": 0.1814999999998994
     }
    ],
    "jams": 0,
@@ -11706,7 +11706,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18949999999998335
+     "t_clear": 0.19050000000006362
     },
     {
      "cycle": 3,
@@ -11720,7 +11720,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19099999999989414
+     "t_clear": 0.1899999999998947
     }
    ],
    "jams": 0,
@@ -11754,21 +11754,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14200000000004742
+     "t_clear": 0.14350000000004792
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14550000000000773
+     "t_clear": 0.14650000000004892
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14799999999991797
+     "t_clear": 0.1484999999999177
     },
     {
      "cycle": 4,
@@ -11809,14 +11809,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.13900000000004642
+     "t_clear": 0.13850000000004625
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14400000000000857
+     "t_clear": 0.14350000000004792
     },
     {
      "cycle": 3,
@@ -11871,21 +11871,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18549999999998557
+     "t_clear": 0.18650000000006228
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1879999999998958
+     "t_clear": 0.18449999999989775
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18699999999989636
+     "t_clear": 0.1899999999998947
     }
    ],
    "jams": 0,
@@ -11919,14 +11919,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1725000000000576
+     "t_clear": 0.17300000000005777
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17799999999998972
+     "t_clear": 0.17750000000005928
     },
     {
      "cycle": 3,
@@ -11981,21 +11981,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19599999999997975
+     "t_clear": 0.1955000000000653
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19599999999989137
+     "t_clear": 0.19549999999989165
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19549999999989165
+     "t_clear": 0.19599999999989137
     }
    ],
    "jams": 0,
@@ -12029,14 +12029,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14050000000004692
+     "t_clear": 0.14150000000004725
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14650000000000718
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 3,
@@ -12050,7 +12050,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15149999999991604
+     "t_clear": 0.15199999999991576
     }
    ],
    "jams": 0,
@@ -12084,14 +12084,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1470000000000491
+     "t_clear": 0.14600000000004876
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.14450000000004826
     },
     {
      "cycle": 3,
@@ -12105,7 +12105,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.1509999999999163
     }
    ],
    "jams": 0,
@@ -12139,21 +12139,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21900000000007314
+     "t_clear": 0.2195000000000733
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21949999999996672
+     "t_clear": 0.2195000000000733
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21949999999987835
+     "t_clear": 0.21999999999987807
     },
     {
      "cycle": 4,
@@ -12194,14 +12194,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1500000000000501
+     "t_clear": 0.1515000000000506
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.1455000000000486
     },
     {
      "cycle": 3,
@@ -12249,28 +12249,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1800000000000601
+     "t_clear": 0.18050000000006028
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18049999999998834
+     "t_clear": 0.1800000000000601
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17949999999990052
+     "t_clear": 0.18199999999989913
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18499999999989747
+     "t_clear": 0.18299999999989858
     }
    ],
    "jams": 0,
@@ -12311,21 +12311,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19099999999998252
+     "t_clear": 0.1940000000000648
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19149999999989387
+     "t_clear": 0.19099999999989414
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19149999999989387
+     "t_clear": 0.19049999999989442
     }
    ],
    "jams": 0,
@@ -12366,7 +12366,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2144999999999695
+     "t_clear": 0.21450000000007163
     },
     {
      "cycle": 3,
@@ -12421,21 +12421,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1969999999999792
+     "t_clear": 0.19750000000006596
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1964999999998911
+     "t_clear": 0.19699999999989082
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19699999999989082
+     "t_clear": 0.1964999999998911
     }
    ],
    "jams": 0,
@@ -12469,14 +12469,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14350000000004792
+     "t_clear": 0.14450000000004826
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14850000000000607
+     "t_clear": 0.14900000000004976
     },
     {
      "cycle": 3,
@@ -12490,7 +12490,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15349999999991493
+     "t_clear": 0.1529999999999152
     }
    ],
    "jams": 0,
@@ -12531,7 +12531,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.218999999999967
+     "t_clear": 0.2195000000000733
     },
     {
      "cycle": 3,
@@ -12586,7 +12586,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21849999999996728
+     "t_clear": 0.21850000000007297
     },
     {
      "cycle": 3,
@@ -12634,28 +12634,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1665000000000556
+     "t_clear": 0.1680000000000561
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16399999999999748
+     "t_clear": 0.16300000000005443
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16199999999991022
+     "t_clear": 0.16349999999990938
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16099999999991077
+     "t_clear": 0.15849999999991216
     }
    ],
    "jams": 0,
@@ -12689,28 +12689,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21250000000007097
+     "t_clear": 0.2120000000000708
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2124999999999706
+     "t_clear": 0.21250000000007097
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.2119999999998825
+     "t_clear": 0.21249999999988223
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21299999999988195
+     "t_clear": 0.2119999999998825
     }
    ],
    "jams": 0,
@@ -12744,14 +12744,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14350000000004792
+     "t_clear": 0.14500000000004842
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1490000000000058
+     "t_clear": 0.14950000000004993
     },
     {
      "cycle": 3,
@@ -12799,28 +12799,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16850000000005627
+     "t_clear": 0.1665000000000556
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1689999999999947
+     "t_clear": 0.1695000000000566
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16749999999990717
+     "t_clear": 0.1679999999999069
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16699999999990744
+     "t_clear": 0.165999999999908
     }
    ],
    "jams": 0,
@@ -12861,21 +12861,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.168499999999995
+     "t_clear": 0.17000000000005677
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1684999999999066
+     "t_clear": 0.16899999999990634
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.165999999999908
+     "t_clear": 0.16649999999990772
     }
    ],
    "jams": 0,
@@ -12909,28 +12909,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14450000000004826
+     "t_clear": 0.14350000000004792
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1445000000000083
+     "t_clear": 0.14750000000004926
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14749999999991825
+     "t_clear": 0.14799999999991797
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.14899999999991742
+     "t_clear": 0.14999999999991687
     }
    ],
    "jams": 0,
@@ -12964,28 +12964,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1665000000000556
+     "t_clear": 0.16750000000005594
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16599999999999637
+     "t_clear": 0.1665000000000556
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16349999999990938
+     "t_clear": 0.1639999999999091
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1614999999999105
+     "t_clear": 0.16299999999990966
     }
    ],
    "jams": 0,
@@ -13026,7 +13026,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18499999999998584
+     "t_clear": 0.18450000000006161
     },
     {
      "cycle": 3,
@@ -13040,7 +13040,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1834999999998983
+     "t_clear": 0.18399999999989802
     }
    ],
    "jams": 0,
@@ -13074,21 +13074,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1530000000000511
+     "t_clear": 0.1545000000000516
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15050000000000496
+     "t_clear": 0.15050000000005026
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14899999999991742
+     "t_clear": 0.14949999999991714
     },
     {
      "cycle": 4,
@@ -13129,14 +13129,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16700000000005577
+     "t_clear": 0.16750000000005594
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16349999999999776
+     "t_clear": 0.16600000000005544
     },
     {
      "cycle": 3,
@@ -13150,7 +13150,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15799999999991243
+     "t_clear": 0.15899999999991188
     }
    ],
    "jams": 0,
@@ -13184,14 +13184,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1410000000000471
+     "t_clear": 0.14150000000004725
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1445000000000083
+     "t_clear": 0.14350000000004792
     },
     {
      "cycle": 3,
@@ -13246,7 +13246,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1969999999999792
+     "t_clear": 0.1970000000000658
     },
     {
      "cycle": 3,
@@ -13294,28 +13294,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17450000000005828
+     "t_clear": 0.1755000000000586
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17399999999999194
+     "t_clear": 0.1740000000000581
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17549999999990273
+     "t_clear": 0.17849999999990107
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17999999999990024
+     "t_clear": 0.1789999999999008
     }
    ],
    "jams": 0,
@@ -13349,28 +13349,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.18950000000006328
+     "t_clear": 0.19050000000006362
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18999999999998307
+     "t_clear": 0.18900000000006312
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19049999999989442
+     "t_clear": 0.18949999999989497
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18949999999989497
+     "t_clear": 0.19049999999989442
     }
    ],
    "jams": 0,
@@ -13404,14 +13404,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.20100000000006712
+     "t_clear": 0.20250000000006763
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20099999999997697
+     "t_clear": 0.2015000000000673
     },
     {
      "cycle": 3,
@@ -13459,21 +13459,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1440000000000481
+     "t_clear": 0.14300000000004776
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14300000000000912
+     "t_clear": 0.14350000000004792
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14699999999991853
+     "t_clear": 0.1464999999999188
     },
     {
      "cycle": 4,
@@ -13514,21 +13514,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1575000000000526
+     "t_clear": 0.1560000000000521
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15500000000000247
+     "t_clear": 0.15500000000005176
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15199999999991576
+     "t_clear": 0.1529999999999152
     },
     {
      "cycle": 4,
@@ -13569,14 +13569,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21900000000007314
+     "t_clear": 0.22000000000007347
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21949999999996672
+     "t_clear": 0.21900000000007314
     },
     {
      "cycle": 3,
@@ -13590,7 +13590,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.2184999999998789
+     "t_clear": 0.21949999999987835
     }
    ],
    "jams": 0,
@@ -13631,7 +13631,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20049999999997725
+     "t_clear": 0.20050000000006696
     },
     {
      "cycle": 3,
@@ -13645,7 +13645,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.20149999999988832
+     "t_clear": 0.20049999999988888
     }
    ],
    "jams": 0,
@@ -13679,28 +13679,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.18400000000006145
+     "t_clear": 0.18550000000006195
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1839999999999864
+     "t_clear": 0.18400000000006145
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1834999999998983
+     "t_clear": 0.18449999999989775
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1879999999998958
+     "t_clear": 0.18599999999989691
     }
    ],
    "jams": 0,
@@ -13734,28 +13734,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16450000000005494
+     "t_clear": 0.16600000000005544
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15750000000000108
+     "t_clear": 0.15950000000005327
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1594999999999116
+     "t_clear": 0.15999999999991132
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15799999999991243
+     "t_clear": 0.1574999999999127
     }
    ],
    "jams": 0,
@@ -13789,21 +13789,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17950000000005994
+     "t_clear": 0.17900000000005978
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1799999999999886
+     "t_clear": 0.17950000000005994
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1789999999999008
+     "t_clear": 0.17999999999990024
     },
     {
      "cycle": 4,
@@ -13844,28 +13844,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14600000000004876
+     "t_clear": 0.14500000000004842
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15000000000000524
+     "t_clear": 0.14900000000004976
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.1509999999999163
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15349999999991493
+     "t_clear": 0.1529999999999152
     }
    ],
    "jams": 0,
@@ -13899,14 +13899,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15100000000005043
+     "t_clear": 0.15350000000005126
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14750000000000663
+     "t_clear": 0.14750000000004926
     },
     {
      "cycle": 3,
@@ -13920,7 +13920,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15149999999991604
+     "t_clear": 0.1509999999999163
     }
    ],
    "jams": 0,
@@ -13954,21 +13954,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16250000000005427
+     "t_clear": 0.16300000000005443
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16349999999999776
+     "t_clear": 0.16250000000005427
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.16049999999991105
+     "t_clear": 0.15849999999991216
     },
     {
      "cycle": 4,
@@ -14009,14 +14009,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19950000000006662
+     "t_clear": 0.19900000000006646
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1994999999999778
+     "t_clear": 0.19950000000006662
     },
     {
      "cycle": 3,
@@ -14071,7 +14071,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21649999999996838
+     "t_clear": 0.21600000000007213
     },
     {
      "cycle": 3,
@@ -14085,7 +14085,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.2159999999998803
+     "t_clear": 0.21649999999988
     }
    ],
    "jams": 0,
@@ -14119,21 +14119,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2195000000000733
+     "t_clear": 0.21900000000007314
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21849999999996728
+     "t_clear": 0.2195000000000733
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21899999999987863
+     "t_clear": 0.21949999999987835
     },
     {
      "cycle": 4,
@@ -14181,7 +14181,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18949999999998335
+     "t_clear": 0.19000000000006345
     },
     {
      "cycle": 3,
@@ -14229,28 +14229,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17950000000005994
+     "t_clear": 0.17900000000005978
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17849999999998944
+     "t_clear": 0.17800000000005944
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18099999999989969
+     "t_clear": 0.1814999999998994
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18399999999989802
+     "t_clear": 0.1814999999998994
     }
    ],
    "jams": 0,
@@ -14284,28 +14284,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19150000000006395
+     "t_clear": 0.19100000000006379
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19149999999998224
+     "t_clear": 0.19150000000006395
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1919999999998936
+     "t_clear": 0.19099999999989414
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19099999999989414
+     "t_clear": 0.19049999999989442
     }
    ],
    "jams": 0,
@@ -14346,21 +14346,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1839999999999864
+     "t_clear": 0.18400000000006145
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1834999999998983
+     "t_clear": 0.18399999999989802
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18599999999989691
+     "t_clear": 0.18399999999989802
     }
    ],
    "jams": 0,
@@ -14394,14 +14394,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.19600000000006546
+     "t_clear": 0.19650000000006562
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1949999999999803
+     "t_clear": 0.19500000000006512
     },
     {
      "cycle": 3,
@@ -14415,7 +14415,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1944999999998922
+     "t_clear": 0.19549999999989165
     }
    ],
    "jams": 0,
@@ -14456,7 +14456,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18699999999998473
+     "t_clear": 0.18700000000006245
     },
     {
      "cycle": 3,
@@ -14470,7 +14470,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18899999999989525
+     "t_clear": 0.18749999999989608
     }
    ],
    "jams": 0,
@@ -14511,21 +14511,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16949999999999443
+     "t_clear": 0.1695000000000566
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17399999999990357
+     "t_clear": 0.17349999999990384
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17299999999990412
+     "t_clear": 0.17349999999990384
     }
    ],
    "jams": 0,
@@ -14566,7 +14566,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2144999999999695
+     "t_clear": 0.21450000000007163
     },
     {
      "cycle": 3,
@@ -14580,7 +14580,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.2139999999998814
+     "t_clear": 0.21349999999988167
     }
    ],
    "jams": 0,
@@ -14614,28 +14614,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.17200000000005744
+     "t_clear": 0.17300000000005777
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1709999999999936
+     "t_clear": 0.17150000000005727
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17749999999990163
+     "t_clear": 0.17549999999990273
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17649999999990218
+     "t_clear": 0.17549999999990273
     }
    ],
    "jams": 0,
@@ -14669,21 +14669,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.20850000000006963
+     "t_clear": 0.20800000000006946
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2079999999999731
+     "t_clear": 0.20800000000006946
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.207499999999885
+     "t_clear": 0.20799999999988472
     },
     {
      "cycle": 4,
@@ -14731,7 +14731,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.2144999999999695
+     "t_clear": 0.2150000000000718
     },
     {
      "cycle": 3,
@@ -14779,14 +14779,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14600000000004876
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15100000000000469
+     "t_clear": 0.15200000000005076
     },
     {
      "cycle": 3,
@@ -14800,7 +14800,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15549999999991382
+     "t_clear": 0.15599999999991354
     }
    ],
    "jams": 0,
@@ -14834,14 +14834,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1815000000000606
+     "t_clear": 0.18050000000006028
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18149999999998778
+     "t_clear": 0.1815000000000606
     },
     {
      "cycle": 3,
@@ -14855,7 +14855,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18099999999989969
+     "t_clear": 0.1834999999998983
     }
    ],
    "jams": 0,
@@ -14889,28 +14889,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1635000000000546
+     "t_clear": 0.16250000000005427
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16099999999999914
+     "t_clear": 0.16150000000005393
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15999999999991132
+     "t_clear": 0.1594999999999116
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15799999999991243
+     "t_clear": 0.15649999999991326
     }
    ],
    "jams": 0,
@@ -14944,28 +14944,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15850000000005293
+     "t_clear": 0.1590000000000531
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15650000000000164
+     "t_clear": 0.1575000000000526
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15399999999991465
+     "t_clear": 0.15349999999991493
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1529999999999152
+     "t_clear": 0.15249999999991548
     }
    ],
    "jams": 0,
@@ -14999,28 +14999,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.21900000000007314
+     "t_clear": 0.2195000000000733
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21949999999996672
+     "t_clear": 0.22000000000007347
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.21949999999987835
+     "t_clear": 0.21999999999987807
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21999999999987807
+     "t_clear": 0.21949999999987835
     }
    ],
    "jams": 0,
@@ -15061,14 +15061,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1754999999999911
+     "t_clear": 0.1740000000000581
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1724999999999044
+     "t_clear": 0.17349999999990384
     },
     {
      "cycle": 4,
@@ -15116,21 +15116,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.19549999999998002
+     "t_clear": 0.1955000000000653
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.19549999999989165
+     "t_clear": 0.19599999999989137
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.19599999999989137
+     "t_clear": 0.19549999999989165
     }
    ],
    "jams": 0,
@@ -15164,28 +15164,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15250000000005093
+     "t_clear": 0.15200000000005076
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15200000000000413
+     "t_clear": 0.15250000000005093
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15149999999991604
+     "t_clear": 0.15199999999991576
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15399999999991465
+     "t_clear": 0.15449999999991437
     }
    ],
    "jams": 0,
@@ -15226,7 +15226,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21799999999996755
+     "t_clear": 0.2180000000000728
     },
     {
      "cycle": 3,
@@ -15240,7 +15240,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.21799999999987918
+     "t_clear": 0.2184999999998789
     }
    ],
    "jams": 0,
@@ -15274,14 +15274,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14300000000004776
+     "t_clear": 0.14200000000004742
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.145000000000008
+     "t_clear": 0.14500000000004842
     },
     {
      "cycle": 3,
@@ -15329,14 +15329,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.2165000000000723
+     "t_clear": 0.21700000000007247
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.21649999999996838
+     "t_clear": 0.2165000000000723
     },
     {
      "cycle": 3,
@@ -15384,14 +15384,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1440000000000481
+     "t_clear": 0.14450000000004826
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14550000000000773
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 3,
@@ -15405,7 +15405,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1509999999999163
+     "t_clear": 0.1504999999999166
     }
    ],
    "jams": 0,
@@ -15439,21 +15439,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15400000000005143
+     "t_clear": 0.15550000000005193
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15050000000000496
+     "t_clear": 0.15100000000005043
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15249999999991548
+     "t_clear": 0.15149999999991604
     },
     {
      "cycle": 4,
@@ -15494,28 +15494,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14300000000004776
+     "t_clear": 0.14450000000004826
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1490000000000058
+     "t_clear": 0.1485000000000496
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14899999999991742
+     "t_clear": 0.14949999999991714
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15199999999991576
+     "t_clear": 0.15149999999991604
     }
    ],
    "jams": 0,
@@ -15556,14 +15556,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17699999999999028
+     "t_clear": 0.17750000000005928
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.17649999999990218
+     "t_clear": 0.17799999999990135
     },
     {
      "cycle": 4,
@@ -15604,14 +15604,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16900000000005644
+     "t_clear": 0.1695000000000566
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16799999999999526
+     "t_clear": 0.1680000000000561
     },
     {
      "cycle": 3,
@@ -15625,7 +15625,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1639999999999091
+     "t_clear": 0.16449999999990883
     }
    ],
    "jams": 0,
@@ -15666,7 +15666,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18049999999998834
+     "t_clear": 0.18050000000006028
     },
     {
      "cycle": 3,
@@ -15680,7 +15680,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.18299999999989858
+     "t_clear": 0.1814999999998994
     }
    ],
    "jams": 0,
@@ -15714,14 +15714,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.20250000000006763
+     "t_clear": 0.2030000000000678
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20199999999997642
+     "t_clear": 0.20250000000006763
     },
     {
      "cycle": 3,
@@ -15735,7 +15735,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.2029999999998875
+     "t_clear": 0.20249999999988777
     }
    ],
    "jams": 0,
@@ -15769,14 +15769,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.15700000000005243
+     "t_clear": 0.1545000000000516
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15200000000000413
+     "t_clear": 0.1515000000000506
     },
     {
      "cycle": 3,
@@ -15790,7 +15790,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15149999999991604
+     "t_clear": 0.15199999999991576
     }
    ],
    "jams": 0,
@@ -15831,21 +15831,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18749999999998446
+     "t_clear": 0.18700000000006245
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18599999999989691
+     "t_clear": 0.18649999999989664
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1854999999998972
+     "t_clear": 0.18699999999989636
     }
    ],
    "jams": 0,
@@ -15879,28 +15879,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16100000000005377
+     "t_clear": 0.16150000000005393
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.15949999999999998
+     "t_clear": 0.1605000000000536
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15599999999991354
+     "t_clear": 0.15649999999991326
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15449999999991437
+     "t_clear": 0.15399999999991465
     }
    ],
    "jams": 0,
@@ -15941,7 +15941,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14650000000000718
+     "t_clear": 0.14650000000004892
     },
     {
      "cycle": 3,
@@ -15955,7 +15955,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1504999999999166
+     "t_clear": 0.14999999999991687
     }
    ],
    "jams": 0,
@@ -15989,21 +15989,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14600000000004876
+     "t_clear": 0.1455000000000486
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.1445000000000083
+     "t_clear": 0.1440000000000481
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.14699999999991853
+     "t_clear": 0.1464999999999188
     },
     {
      "cycle": 4,
@@ -16044,14 +16044,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14450000000004826
+     "t_clear": 0.14350000000004792
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14600000000000746
+     "t_clear": 0.1455000000000486
     },
     {
      "cycle": 3,
@@ -16106,14 +16106,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.18799999999998418
+     "t_clear": 0.18750000000006262
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18749999999989608
+     "t_clear": 0.1879999999998958
     },
     {
      "cycle": 4,
@@ -16154,28 +16154,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16900000000005644
+     "t_clear": 0.1710000000000571
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17049999999999388
+     "t_clear": 0.17000000000005677
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.1684999999999066
+     "t_clear": 0.16949999999990606
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.16549999999990828
+     "t_clear": 0.16499999999990855
     }
    ],
    "jams": 0,
@@ -16209,14 +16209,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.16600000000005544
+     "t_clear": 0.16550000000005527
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16349999999999776
+     "t_clear": 0.16450000000005494
     },
     {
      "cycle": 3,
@@ -16230,7 +16230,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.1594999999999116
+     "t_clear": 0.1614999999999105
     }
    ],
    "jams": 0,
@@ -16271,21 +16271,21 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.20299999999997587
+     "t_clear": 0.2030000000000678
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.20349999999988722
+     "t_clear": 0.20399999999988694
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.20399999999988694
+     "t_clear": 0.20449999999988666
     }
    ],
    "jams": 0,
@@ -16326,14 +16326,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.186499999999985
+     "t_clear": 0.18700000000006245
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.18699999999989636
+     "t_clear": 0.18649999999989664
     },
     {
      "cycle": 4,
@@ -16381,7 +16381,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.17749999999999
+     "t_clear": 0.1770000000000591
     },
     {
      "cycle": 3,
@@ -16395,7 +16395,7 @@
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.17949999999990052
+     "t_clear": 0.18049999999989996
     }
    ],
    "jams": 0,
@@ -16429,28 +16429,28 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.1650000000000551
+     "t_clear": 0.1635000000000546
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.16099999999999914
+     "t_clear": 0.16100000000005377
     },
     {
      "cycle": 3,
      "fed": 1,
      "early": 0,
      "remaining": 1,
-     "t_clear": 0.15849999999991216
+     "t_clear": 0.15799999999991243
     },
     {
      "cycle": 4,
      "fed": 1,
      "early": 0,
      "remaining": 0,
-     "t_clear": 0.15599999999991354
+     "t_clear": 0.15649999999991326
     }
    ],
    "jams": 0,
@@ -16484,14 +16484,14 @@
      "fed": 1,
      "early": 0,
      "remaining": 3,
-     "t_clear": 0.14800000000004943
+     "t_clear": 0.1470000000000491
     },
     {
      "cycle": 2,
      "fed": 1,
      "early": 0,
      "remaining": 2,
-     "t_clear": 0.14650000000000718
+     "t_clear": 0.14450000000004826
     },
     {
      "cycle": 3,

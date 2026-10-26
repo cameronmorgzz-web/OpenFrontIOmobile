@@ -684,7 +684,7 @@
 <text x="56" y="1842" font-size="13" text-anchor="start" font-weight="normal" fill="#111111">• R2/R3 10k pull-downs keep the bridge off while the ESP32 is in reset/flashing (EN pins are tied high).</text>
 <text x="56" y="1862" font-size="13" text-anchor="start" font-weight="normal" fill="#111111">• IBT-2 logic VCC from 3V3 so its input buffer accepts 3.3 V levels; R_IS/L_IS unused.</text>
 <text x="56" y="1882" font-size="13" text-anchor="start" font-weight="normal" fill="#111111">• D2 1N5819 across a magnetic buzzer (cathode to +12V); not needed for a piezo / LED-only beacon.</text>
-<text x="56" y="1902" font-size="13" text-anchor="start" font-weight="normal" fill="#111111">• Safety pin = one actuator, two contacts: pole A to GPIO7 (NO), pole B in latch-servo V+ (NC).</text>
+<text x="56" y="1902" font-size="13" text-anchor="start" font-weight="normal" fill="#111111">• Safety pin presses TWO KW11 switches: A to GPIO7 (NO), B in latch-servo V+ (NC).</text>
 <text x="56" y="1922" font-size="13" text-anchor="start" font-weight="normal" fill="#111111">• Debounce 100 nF on GPIO4/5/6/7 only. No cap on GPIO9 (strap) or GPIO3 (encoder).</text>
 <text x="56" y="1942" font-size="13" text-anchor="start" font-weight="normal" fill="#111111">• Flash over USB with the 12 V brick unplugged: GPIO2's pull-up switches the beeper on in download mode.</text>
 <rect x="1320" y="1780" width="300" height="156" rx="6" fill="#ffffff" stroke="#999" stroke-width="1.5"/>

@@ -27,8 +27,8 @@ Datasheets can be wrong, and AliExpress parts have none. Measure.
 ## 2. Mechanical zero
 
 1. Safety pin **in**, arm resting on the absorber, power off.
-2. Set both M6 preload adjusters to the **4 m starting value: 43 mm** of exposed thread between yoke face and wing nut (the scale on the yoke; 1 turn = 1 mm).
-3. Set the release-angle stop to the **middle detent (138°)** for the first throws.
+2. Set both M6 preload adjusters to the **4 m starting value: 55 mm** of exposed thread between yoke face and wing nut (the scale on the yoke; 1 turn = 1 mm).
+3. Set the release-angle stop to the **142° detent** (the simulation's 4 m setting: the can rolls out about 5° low).
 4. Check the cord runs in the pulley groove and is not twisted.
 
 ## 3. First throws (water cans, 330 ml)
@@ -39,7 +39,7 @@ Datasheets can be wrong, and AliExpress parts have none. Measure.
 
 ## 4. Adjust range with preload (fine knob)
 
-Change preload by **ΔX = (4.00 − R̄) / 0.067 mm**: 0.067 m of range per mm, i.e. per full turn of the wing nuts. Turn both nuts by the same amount. Half turns are fine.
+Change preload by **ΔX = (4.00 − R̄) / 0.065 mm**: about 0.065 m of range per mm (0.064 in the hand calc, 0.067 in the simulation), i.e. per full turn of the wing nuts. Turn both nuts by the same amount. Half turns are fine.
 
 - Example: R̄ = 3.70 m → ΔX = 4.5 mm → tighten 4½ turns each.
 - Limits: 0–70 mm of adjuster travel. If you need more than 70 mm, a spring is weak (re-measure, §1).
@@ -56,12 +56,14 @@ If the throw is too **flat** (peaks below head height, hard to catch), move the 
 
 ## 6. Settings table (starting points; your values will differ)
 
-| Range | Detent | Preload (exposed thread) | Note |
+| Range | Detent | Preload (exposed thread) | Source |
 |---|---|---|---|
-| 3 m | 138° | ~28 mm | |
-| 4 m | 142° | ~43 mm | default |
-| 5 m | 142° | ~59 mm | springs at 85 % Fn; latency 2.8 s |
+| 3 m | 142° | ~40 mm | 4 m value − 1.0 m / 0.065 m/mm |
+| 4 m | 142° | ~55 mm | Monte Carlo nominal (`sim/mc_results.json`) |
+| 5 m | 142° | ~70 mm (the adjuster limit) | 4 m value + 1.0 m / 0.065 m/mm. Springs reach about 93 % of Fn when cocked; see KNOWN_LIMITATIONS #16 |
 | 500 ml, ≤ 3.3 m | 142° | find with §4 | reprint `mag_bridge` × 2 with `CAN_SIZE = "500"` |
+
+The hand calc (`calc/RESULTS.md`) gives 29 / 45 / 61 mm at 138°. It assumes the can leaves perpendicular to the arm, which the simulation shows it does not (REPORT, validation table). Trust your own §4 numbers over both.
 
 Write your final numbers on the yoke with the felt pen.
 

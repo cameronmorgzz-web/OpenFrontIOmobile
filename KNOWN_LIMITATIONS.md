@@ -7,9 +7,9 @@ These are honest gaps between this kit and the brief, ordered by how much they m
 1. **Catch speed ≤ 4 m/s is physically impossible at 4 m.**
    - **The physics.** With 0.48 m between launch and catch height, the minimum-energy arc gives 4 m/s only out to 2.06 m. At 4 m the floor is 5.82 m/s, even before drag. The design flies that minimum-catch-speed arc (D2); the Monte Carlo study gives about 5.8 m/s at 4 m.
    - **Your options.** Catch with two hands and a soft glove. Or throw at 2 m, if catch speed matters more than range.
-2. **Press → launch at 5 m is 2.7–2.8 s, against the 2.5 s target.**
-   - **The cause.** Cocking 90° against the springs takes 1.75 s at the 5 m preload with the 37GB555 motor at 30:1. Add the 1.5 s warning overlap, the 0.6 s feed and the 0.4 s escapement settle.
-   - **At 4 m** it passes: 2.39 s in the calc, 2.30 s in the firmware plant model.
+2. **Press → launch at 5 m is 2.7–2.9 s, against the 2.5 s target.**
+   - **The cause.** Cocking 90° against the springs takes 1.82 s at the 5 m preload with the 37GB555 motor at 30:1. The 1.5 s warning runs in parallel with cocking, so the sequence is button 0.26 s + cock 1.82 s + feed 0.6 s (the 0.4 s escapement settle overlaps it) + settle and trip 0.13 s.
+   - **At 4 m** it passes: 2.42 s in the calc, 2.33 s in the firmware plant model (`firmware/launcher/test`, cock time set to the calc's 1.38 s).
    - **Possible fix.** A faster motor (for example 12 V 200 rpm with the same gearbox frame) would meet it, but the stall torque then sits at about 80 % of the 5 m load. That margin was not accepted.
 3. **BOM is about €143 for hardware and electronics (+€56 filament), against the €80 target.**
    - **The fixed costs.** Four items alone cost €65: a genuine CE power supply (€25), springs with a datasheet (€17), an encoder gearmotor (€14) and a hydraulic absorber (€8.5).
@@ -18,7 +18,7 @@ These are honest gaps between this kit and the brief, ordered by how much they m
 
 ## Not verified (simulation is not reality)
 
-4. **No ESP32 build was compiled.** The PlatformIO registry and GitHub were blocked by the build environment's network policy. All 81 firmware tests pass as host C++ (`firmware/tools/host_tests.sh`), but `pio run -e esp32c3` has never run. Expect possible API drift in the ESP-IDF / Arduino core (ESP-NOW callback signatures changed in core 3.x).
+4. **No ESP32 build was compiled.** The PlatformIO registry and GitHub were blocked by the build environment's network policy. All 82 firmware tests pass as host C++ (`firmware/tools/host_tests.sh`), but `pio run -e esp32c3` has never run. Expect possible API drift in the ESP-IDF / Arduino core (ESP-NOW callback signatures changed in core 3.x).
 5. **Prices and links are not live-checked.** Most AliExpress prices came from search snippets and USD mirrors at 1 USD = 0.90 EUR. Three lines (motor, pinion, cord) are estimates (`BOM.md`, "unverified").
 6. **PETG properties are book values:** E_xy 1.8 GPa, UTS_xy 34 MPa / UTS_z 19 MPa, fatigue 0.6 × UTS at 10³ cycles, creep allowable 0.25 × UTS at 24 h. Your printer and filament will differ. The 2.5 safety factor is the margin for that, not a guarantee.
 7. **The FEA has limits:**
@@ -50,3 +50,12 @@ These are honest gaps between this kit and the brief, ordered by how much they m
     - the beeper is on during download mode;
     - the motor driver inputs float during reset, so 10 k pull-downs are added in the wiring;
     - both servos move at power-on.
+16. **5 m runs the springs past the 85 % design margin.**
+    - **Hand calc.** 61 mm of preload loads the springs to 86.5 % of the Z-141HI's rated Fn when cocked; the margin was 85 %. The heavier cup the review required (FEA) added the last 1.5 %.
+    - **Simulation.** Roll-out lowers the real launch angle, so 5 m needs about 70 mm, which is the adjuster's end. That loads the springs to about 155 N, 93 % of Fn: still under the rating, but with little reserve.
+    - **Printed parts.** Their 5 m loads rise up to 9 % above what the FEA used. The lowest 5 m safety factor in REPORT drops from about 2.75 to 2.5.
+    - **What to do.** Treat 4.5 m as the everyday maximum. Use 5 m only with springs measured as in CALIBRATION §1. A fourth spring would fix this, but there is no room for it on the drum.
+17. **500 ml cans need two printed parts reprinted, not one:** `mag_bridge_top` and `mag_bridge_back`. They are the same design (one cross-member printed twice), and `tests/test_can_size.py` proves nothing else changes. Their 3.3 m range cap is the hand calc at 138°; check yours with CALIBRATION §4.
+18. **The absorber has a speed limit.** The AC1416-1 is rated 2.6 m/s, and normal shots hit it at 2.0–2.5 m/s. A dry fire (no can) reaches about 5 m/s at the absorber, twice its rating. The firmware prevents dry fires through the can-in-cup interlock, so one needs a sensor fault. After any dry fire, check the absorber for oil and replace it if it leaks (€8.5). The calc's dry-fire SF 1.9 assumes the absorber still works at that speed, which is not verified.
+19. **The pairing key travels in clear text.** The button sends its new key in the PAIR_REQ packet, so anyone listening on ESP-NOW during the 30 s pairing window could copy it. Pair at home, away from strangers' radios. After pairing, every packet is authenticated.
+20. **Limit-switch and sensor positions are set on assembly**, not fixed in the CAD (ASSEMBLY_GUIDE §7b). Their adjustment slots are 18 mm long.

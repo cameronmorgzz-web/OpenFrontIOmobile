@@ -25,7 +25,7 @@ uses UART0.
 | 4 | `kPinArmHome` | SW_ARM_HOME | in, active LOW | internal pull-up + 100 nF to GND | microswitch NO, COM to GND | LOW = arm on its forward stop |
 | 5 | `kPinArmCocked` | SW_ARM_COCKED | in, active LOW | internal pull-up + 100 nF | microswitch NO | LOW = arm/ring at the cocked angle |
 | 6 | `kPinRingHome` | SW_RING_HOME | in, active LOW | internal pull-up + 100 nF | microswitch NO | LOW = cocking ring parked |
-| 7 | `kPinSafetyPin` | SW_SAFETY_PIN | in, active LOW | internal pull-up + 100 nF | safety-pin switch, pole A (NO) | LOW = pin inserted (safe). Pole B (NC) of the same actuator breaks the latch servo's V+ |
+| 7 | `kPinSafetyPin` | SW_SAFETY_PIN | in, active LOW | internal pull-up + 100 nF | safety-pin switch, pole A (NO) | LOW = pin inserted (safe). A second KW11 (switch B, NC) pressed by the same pin breaks the latch servo's V+ |
 | 8 | `kPinServoEsc` | SERVO_ESC | out (50 Hz servo PWM) | on-board LED + resistor to 3V3 acts as pull-up | MG996R escapement servo SIG via 330 Ω | **Strapping pin**: it only matters when GPIO9 is LOW (download mode), where it must be HIGH, and the on-board LED pulls it HIGH. A servo input is high impedance, so it cannot pull the pin LOW. The on-board LED flickers with the servo PWM; this is cosmetic |
 | 9 | `kPinTestBtn` | BTN_TEST | in, active LOW | internal pull-up (plus the board's BOOT circuit) | panel push button in parallel with the on-board BOOT button | **Strapping pin**: holding it at power-up enters download mode, which is safe because nothing moves. **No debounce capacitor** (a slow rise at reset could select download mode); the firmware debounces for 20 ms |
 | 10 | `kPinServoLatch` | SERVO_LATCH | out (50 Hz servo PWM) | none | MG996R latch servo SIG via 330 Ω | the 330 Ω limits the current fed back into the unpowered servo while the safety pin cuts its V+ |
@@ -55,17 +55,8 @@ Unused on the button: GPIO0, 2, 6, 7, 8, 9, 10, 20, 21. Desolder the SuperMini's
 
 I have not edited any firmware. These are wiring consequences and possible improvements.
 
-1. **Escapement and latch servos can move at the same time.** `firmware/common/src/launcher_sm.cpp:590-592` sends the
-   escapement to CLOSED 450 ms after RELEASE. If the can landed during RELEASE (the sim says within 0.23 s), `canStable()`
-   (`launcher_sm.cpp:598`, 100 ms, `config.h:96`) is already true. FEED then ends on the next tick, and ARMED trips the
-   latch (`launcher_sm.cpp:385-391`) as soon as the 1.5 s warning has run, which it normally has by then (cock 1.29-1.63 s
-   + 0.45 s). The escapement is still travelling 133° (about 0.35-0.4 s for an MG996R) when the latch servo starts.
-   Electrically this fits the budget, because both servos are lightly loaded (see WIRING.md). Mechanically, the shot
-   happens while the escapement pushrod has not yet locked past dead centre. Consider a minimum dwell of about 400 ms
-   after CLOSED before FIRE.
-2. **Both servos start together at power-up.** `hal_esp32.cpp:88-91` attaches both servo channels and commands
-   CLOSED/HOLD in the same microsecond. This is the only planned simultaneous servo motion, and the worst-case inrush on
-   the 5 V buck. Attaching the latch servo about 300 ms after the escapement servo would remove it.
+1. ~~Escapement and latch servos can move at the same time.~~ **Fixed:** FIRE now waits until the escapement has been at HOLD for 400 ms (`kEscSettleMs` in `config.h`, test `test_s1_fast_can_waits_for_escapement_hold`).
+2. ~~Both servos start together at power-up.~~ **Fixed:** `hal_esp32.cpp` attaches the latch servo 300 ms after the escapement servo.
 3. **The bridge inputs float until LEDC is set up.** `hal_esp32.cpp:18-19, 84-87`: GPIO0/1 are undriven from reset until
    line 84, and during flashing. With R_EN = L_EN = 3V3 the bridge follows whatever they float to. The hardware fix is the
    10k pull-downs R2/R3 (in the wiring). Nothing to change in firmware.

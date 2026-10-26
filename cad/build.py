@@ -51,6 +51,8 @@ SPECS = {s.name: s for s in L.PARTS + BUTTON_SPECS}
 def solids_rest() -> dict[str, bd.Part]:
     asm = L.assembly("rest", with_hardware=False, with_can=False)
     asm["foot"] = L.foot()
+    asm["switch_bracket"] = L.switch_bracket()
+    asm["sensor_bracket"] = L.sensor_bracket()
     b = BTN.assembly(0.0)
     asm.update({k: v for k, v in b.items() if not k.startswith("hw_")})
     return asm

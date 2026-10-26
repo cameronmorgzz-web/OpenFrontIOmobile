@@ -8,6 +8,14 @@
 using namespace beer;
 using namespace beer::btn;
 
+void test_held_button_never_refires() {
+  // a puck left under a book: the stuck-switch timer wake must not send FIRE
+  TEST_ASSERT_FALSE(btn::shouldSendFire(btn::Wake::Timer, true));
+  TEST_ASSERT_FALSE(btn::shouldSendFire(btn::Wake::PowerOn, true));
+  TEST_ASSERT_TRUE(btn::shouldSendFire(btn::Wake::Press, true));
+  TEST_ASSERT_FALSE(btn::shouldSendFire(btn::Wake::Press, false));
+}
+
 void setUp() {}
 void tearDown() {}
 
@@ -159,5 +167,6 @@ int main(int, char**) {
   RUN_TEST(test_retry_policy_ack_on_retry);
   RUN_TEST(test_pairing_schedule);
   RUN_TEST(test_feedback_patterns);
+  RUN_TEST(test_held_button_never_refires);
   return UNITY_END();
 }

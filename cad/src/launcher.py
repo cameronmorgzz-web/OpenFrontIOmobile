@@ -237,8 +237,8 @@ def catch_pin_local():
 # ---------------------------------------------------------------------------
 CUP_Y = (-30.0, 30.0)
 CUP_SCREW_X = (183.0, 191.5)
-CUP_WALL = 5.0
-CUP_FLOOR = 6.0
+CUP_WALL = 6.5
+CUP_FLOOR = 8.0
 
 
 def _cup_geom():
@@ -273,7 +273,8 @@ def cup_local() -> bd.Part:
     stiff3d = slab(stiff, *CUP_Y) - slab(G.round2d(win, 3.0), CUP_Y[0] - 1, CUP_Y[1] + 1)
     cup = slab(G.round2d(shell2d, 1.5), *CUP_Y) + stiff3d
     # socket around the arm tongue (x 170..196, |z| <= 17.8, |y| <= 14.2) with 3 mm walls
-    sock = box(176.0, x_lip, CUP_Y[0], CUP_Y[1], zc - 18.2, back_in - 13.0) \
+    # socket runs full height into the back wall: no notch at the inner lip (FEA hotspot)
+    sock = box(176.0, x_lip, CUP_Y[0], CUP_Y[1], zc - 18.2, back_in + w) \
         - box(166.0, 196.2, P.Y_ARM[0] - 0.2, P.Y_ARM[1] + 0.2, zc - 14.2, zc + 14.2)   # ceiling = 28.4 mm bridge
     cup = cup + sock
     # ribs on the back of the back wall and floor (stiffen the L, 3 mm)
@@ -415,6 +416,13 @@ def side_plate(right: bool) -> bd.Part:
         # latch-servo mount inserts
         for hx, hz in _servo_mount_holes():
             pl = pl - ycyl(hx, hz, P.M3_CLEAR / 2, y0 - 1, y1 + 1)
+        # gear guard: screws from outside into the guard bosses
+        for hx, hz in _guard_boss_xz() + _pinion_hood_boss_xz():
+            pl = pl - ycyl(hx, hz, P.M3_CLEAR / 2, y0 - 1, y1 + 1)
+            pl = pl - ycyl(hx, hz, P.M3_HEAD_D / 2 + 0.3, y1 - P.M3_HEAD_H, y1 + 1)
+        # motor cover: inserts in the outer face
+        for hx, hz in _motor_cover_holes():
+            pl = pl - ycyl(hx, hz, P.M3_INSERT_HOLE / 2, y1 - P.M3_INSERT_DEPTH, y1 + 1)
     else:
         # 3 detent hole pairs for the stop bracket (release 134/138/142 deg)
         for d in (-4.0, 0.0, 4.0):
@@ -620,20 +628,20 @@ CHEEK_FLANGE_Y = Y_IN + T_PL + 6.5
 CHEEK_SCREW_X = (-110.0, -150.0, -200.0, -300.0)
 
 
-# pulley cheeks: 15.5 mm each so the axle-hole bearing stress stays below the 24 h creep limit
-PB_HALF_W = 19.5
+# pulley cheeks: 14.5 mm each so the axle-hole bearing stress stays below the 24 h creep limit
+PB_HALF_W = 18.5
 
 
 def _pulley_bracket_holes():
     px = PULLEY_C[0]
-    yo = PB_HALF_W + 4.5
+    yo = PB_HALF_W + 3.9          # base insert >= 1.6 mm from the channel, bracket hole >= 1.6 mm from its edge
     return [(px - 16, P.Y_DRUM - yo), (px + 16, P.Y_DRUM - yo), (px - 16, P.Y_DRUM + yo), (px + 16, P.Y_DRUM + yo)]
 
 
 def pulley_bracket() -> bd.Part:
     """Bridge over the spring channel carrying the 608 redirect pulley on an 8 mm axle."""
     px, pz = PULLEY_C
-    y0, y1 = P.Y_DRUM - PB_HALF_W - 6.3, P.Y_DRUM + PB_HALF_W + 6.3   # left plate flange at y -76
+    y0, y1 = P.Y_DRUM - 26.0, P.Y_DRUM + 26.0   # left plate flange face at y -76
     top = bd.fillet(box(px - 26, px + 26, y0, y1, BASE_H, BASE_H + 10).edges().filter_by(bd.Axis.Z), 5)
     cheeks = None
     # cheeks root along the whole plate (creep: held cocked 24 h, sim/fea.py)
@@ -642,11 +650,11 @@ def pulley_bracket() -> bd.Part:
                            (px - 13, pz - 2)]) + circle((px, pz), 14.5), yc0, yc1)
         cheeks = c if cheeks is None else cheeks + c
     br = top + (cheeks & box(-1000, 1000, -1000, 1000, -1000, BASE_H + 8))
-    br = br - ycyl(px, pz, 4.05, P.Y_DRUM - 17, P.Y_DRUM + 17)
+    br = br - ycyl(px, pz, 4.05, P.Y_DRUM - PB_HALF_W - 1, P.Y_DRUM + PB_HALF_W + 1)   # through: the 37 mm axle is held by the base channel walls
     for hx, hy in _pulley_bracket_holes():
         br = br - zcyl(hx, hy, BASE_H - 1, BASE_H + 6, P.M3_CLEAR / 2)
     # cord passes down through the deck plate
-    br = br - box(px - 15, px - 8, P.Y_DRUM - 4.8, P.Y_DRUM + 4.8, BASE_H - 1, BASE_H + 9)
+    br = br - box(px - 15, px - 8, P.Y_DRUM - 4.8, P.Y_DRUM + 4.8, BASE_H - 1, BASE_H + 11)
     return br
 
 
@@ -981,16 +989,50 @@ def esc_servo_mount() -> bd.Part:
 # ---------------------------------------------------------------------------
 # Cosmetic / guards
 # ---------------------------------------------------------------------------
+GUARD_BOSS_ANG = (230.0, 302.0)                # gear guard screw bosses: where the right plate has material
+PINION_TIP = PINION_R + P.GEAR_MODULE
+
+
+def _guard_boss_xz():
+    return [polar(RING_TIP + 9.0, a, (0.0, PZ)) for a in GUARD_BOSS_ANG]
+
+
+def _pinion_hood_boss_xz():
+    mx, mz = abs_xz(MOTOR_C)
+    return [polar(36.0, 340.0, (mx, mz))]
+
+
 def gear_guard() -> bd.Part:
+    """Rim band + inner side disk over the ring teeth, and a hood over the pinion mesh
+    (SAFETY: no exposed teeth). 3 x M3 from outside the right plate into inserts in the bosses."""
     c0 = (0.0, PZ)
     band = circle(c0, RING_TIP + 6.5) - circle(c0, RING_TIP + 3.5)
-    sector = bd.Polygon(c0, polar(200, 25, c0), polar(200, 100, c0), polar(200, 180, c0), polar(200, 250, c0))
-    g = slab(band & sector, P.Y_LATCH[0] - 2, Y_IN)
-    # side disk on the inside (y = Y_LATCH[0]-2..) only above the hub (keeps fingers off the teeth)
+    sector = bd.Polygon(c0, polar(200, 25, c0), polar(200, 100, c0), polar(200, 180, c0), polar(200, 250, c0),
+                        polar(200, 290, c0), polar(200, 312, c0))      # stops short of the opened latch (335 deg)
+    mx, mz = abs_xz(MOTOR_C)
+    g = slab((band & sector) - circle((mx, mz), PINION_TIP + 3.0), P.Y_LATCH[0] - 2, Y_IN)
     side = (circle(c0, RING_TIP + 6.5) - circle(c0, 62.0)) & sector
     g = g + slab(side, P.Y_LATCH[0] - 4, P.Y_LATCH[0] - 2)
-    # clamp tabs to the plate (2 x M3 inserts in the plate's inner face)
+    # pinion hood: wall around the pinion outside the ring tip, end cap on the inner side
+    hood = (circle((mx, mz), PINION_TIP + 6.0) - circle((mx, mz), PINION_TIP + 3.0)) - circle(c0, RING_TIP + 3.5)
+    g = g + slab(hood, P.Y_LATCH[0] - 2, Y_IN)
+    cap = circle((mx, mz), PINION_TIP + 6.0) - circle(c0, 62.0)
+    g = g + slab(cap, P.Y_LATCH[0] - 4, P.Y_LATCH[0] - 2)
+    hb = _pinion_hood_boss_xz()[0]
+    g = g + slab(circles_hull([(hb[0], hb[1], 4.5), (mx + 27.0 * math.cos(math.radians(340)), mz + 27.0 * math.sin(math.radians(340)), 3.0)]),
+                 Y_IN - 12.0, Y_IN)
+    for bx, bz in _guard_boss_xz() + _pinion_hood_boss_xz():
+        g = g + ycyl(bx, bz, 4.5, Y_IN - 12.0, Y_IN)
+        g = g - ycyl(bx, bz, P.M3_INSERT_HOLE / 2, Y_IN - P.M3_INSERT_DEPTH, Y_IN + 1)
     return g
+
+
+MOTOR_COVER_HOLE_ANG = (20.0, 190.0)            # where the right plate has material at r 36
+
+
+def _motor_cover_holes():
+    mx, mz = abs_xz(MOTOR_C)
+    return [polar(36.0, a, (mx, mz)) for a in MOTOR_COVER_HOLE_ANG]
 
 
 def motor_cover() -> bd.Part:
@@ -1006,6 +1048,10 @@ def motor_cover() -> bd.Part:
         + (ycyl(mx, mz, 30.0, y0, y0 + 1.5) - ycyl(mx, mz, 21.5, y0 - 1, y0 + 2))
     cov = cov + (cone - ycyl(mx, mz, 21.5, y0 - 1, y0 + 9))
     cov = cov - box(mx - 6, mx + 6, y0 + 20, y0 + 110, mz - 30, mz - 18)  # vent slots underneath
+    # 2 x M3 into inserts in the plate's outer face
+    for hx, hz in _motor_cover_holes():
+        cov = cov + slab(circles_hull([(mx, mz, 24.0), (hx, hz, 4.5)]), y0, y0 + 4.0) - ycyl(mx, mz, 21.5, y0 - 1, y0 + 5)
+        cov = cov - ycyl(hx, hz, P.M3_CLEAR / 2, y0 - 1, y0 + 7) - ycyl(hx, hz, P.M3_HEAD_D / 2 + 0.3, y0 + 3.0, y0 + 30)
     return cov
 
 
@@ -1064,6 +1110,26 @@ def ebox_lid() -> bd.Part:
 
 def foot() -> bd.Part:
     return zcyl(0, 0, -6.0, 2.0, 15.0)
+
+
+def switch_bracket() -> bd.Part:
+    """Adjustable holder for one KW11-3Z micro switch (2 x M2 on 9.5 mm) with an 18 mm slot for an
+    M3 x 12 self-tapping screw into a 2.8 mm pilot hole drilled at the place ASSEMBLY_GUIDE §7b gives.
+    The slot lets you set the switch so it closes 1-2 mm before the part it senses comes to rest."""
+    b = bd.fillet(box(-8, 36, -8, 8, 0, 4).edges().filter_by(bd.Axis.Z), 2.0)
+    b = b + box(-8, 2, -8, 8, 0, 14)                                 # upright the switch body screws to
+    for yy in (-4.75, 4.75):
+        b = b - xcyl(-9, 3, yy, 7.0, 1.1)                            # M2 pass-through for the switch
+    b = b - box(12, 30, -1.7, 1.7, -1, 5) - zcyl(12, 0, -1, 5, 1.7) - zcyl(30, 0, -1, 5, 1.7)
+    return b
+
+
+def sensor_bracket() -> bd.Part:
+    """L bracket for a TCRT5000 module (one M3 hole on the board) with an 18 mm adjustment slot."""
+    b = bd.fillet(box(-8, 36, -8, 8, 0, 4).edges().filter_by(bd.Axis.Z), 2.0) + box(-8, -4, -8, 8, 0, 26)
+    b = b - xcyl(-9, -3, 0, 18, 1.7)
+    b = b - box(12, 30, -1.7, 1.7, -1, 5) - zcyl(12, 0, -1, 5, 1.7) - zcyl(30, 0, -1, 5, 1.7)
+    return b
 
 
 def safety_pin_handle() -> bd.Part:
@@ -1231,7 +1297,7 @@ PARTS: list[PartSpec] = [
              note="deck down on the bed; open ribbed underside"),
     PartSpec("base_rear", "PETG", 1, UPSIDE, walls=4, infill=25, plate="H", color=WHITE),
     PartSpec("pulley_bracket", "PETG", 1, UPSIDE, walls=5, infill=50, plate="C", color=GREY,
-             note="top plate on the bed; cheeks grow up (pulley load across layers is low: 3.6 MPa)"),
+             note="top plate on the bed; cheeks grow up (creep SF 3.4 at 24 h cocked, sim/fea.py)"),
     PartSpec("stop_bracket", "PETG", 1, ON_YNEG, walls=6, infill=60, plate="C", color=GREY),
     PartSpec("latch_servo_mount", "PETG", 1, ON_YNEG, walls=4, infill=40, plate="C", color=GREY),
     PartSpec("gear_guard", "PETG", 1, ON_YNEG, walls=3, infill=15, plate="D", loaded=False, color=GREY),
@@ -1260,4 +1326,8 @@ PARTS: list[PartSpec] = [
     PartSpec("side_cheek_right", "PETG", 1, ON_YNEG, walls=3, infill=15, plate="L", loaded=False, color=GREY),
     PartSpec("safety_pin_handle", "PETG", 1, ON_YNEG, walls=4, infill=40, plate="C", loaded=False, color=(0.85, 0.1, 0.1)),
     PartSpec("foot", "TPU", 4, FLAT, walls=3, infill=40, plate="T", loaded=False, color=BLACK),
+    PartSpec("switch_bracket", "PETG", 6, FLAT, walls=4, infill=60, plate="C", loaded=False, color=GREY,
+             note="3 limit switches + 2 safety-pin switches + 1 spare"),
+    PartSpec("sensor_bracket", "PETG", 1, FLAT, walls=4, infill=60, plate="C", loaded=False, color=GREY,
+             note="can-in-cup TCRT5000"),
 ]

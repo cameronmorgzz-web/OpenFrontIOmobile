@@ -20,10 +20,10 @@
    ],
    "loaded": true,
    "note": "deck down on the bed; open ribbed underside",
-   "volume_solid_mm3": 375337.01,
-   "volume_printed_mm3": 286452.81,
-   "grams": 363.8,
-   "minutes": 546.25,
+   "volume_solid_mm3": 376772.93,
+   "volume_printed_mm3": 287627.81,
+   "grams": 365.29,
+   "minutes": 548.48,
    "height": 30.0
   },
   "base_rear": {
@@ -67,15 +67,15 @@
    "bed_zrot": 0,
    "size": [
     52.0,
-    51.6,
-    28.500000000000004
+    52.00000000000001,
+    28.499999999999996
    ],
    "loaded": true,
-   "note": "top plate on the bed; cheeks grow up (pulley load across layers is low: 3.6 MPa)",
-   "volume_solid_mm3": 39009.37,
-   "volume_printed_mm3": 28042.82,
-   "grams": 35.61,
-   "minutes": 55.52,
+   "note": "top plate on the bed; cheeks grow up (creep SF 3.4 at 24 h cocked, sim/fea.py)",
+   "volume_solid_mm3": 38055.75,
+   "volume_printed_mm3": 27396.31,
+   "grams": 34.79,
+   "minutes": 54.3,
    "height": 28.5
   },
   "side_plate_left": {
@@ -120,14 +120,14 @@
    "size": [
     240.0,
     254.0,
-    22.000000000000014
+    22.00000000000002
    ],
    "loaded": true,
    "note": "outer face down; loads in the layer plane",
-   "volume_solid_mm3": 350640.32,
-   "volume_printed_mm3": 201817.24,
-   "grams": 256.31,
-   "minutes": 382.8,
+   "volume_solid_mm3": 350085.28,
+   "volume_printed_mm3": 202057.86,
+   "grams": 256.61,
+   "minutes": 383.28,
    "height": 22.0
   },
   "hub_drum": {
@@ -222,16 +222,16 @@
    ],
    "bed_zrot": 42,
    "size": [
-    98.65273648973223,
-    110.36000451879977,
-    60.00000000000008
+    100.145932895132,
+    112.49363728106886,
+    60.00000000000009
    ],
    "loaded": true,
    "note": "",
-   "volume_solid_mm3": 159232.92,
-   "volume_printed_mm3": 74188.86,
-   "grams": 94.22,
-   "minutes": 146.02,
+   "volume_solid_mm3": 202709.92,
+   "volume_printed_mm3": 84883.25,
+   "grams": 107.8,
+   "minutes": 165.95,
    "height": 60.0
   },
   "cup_pad": {
@@ -315,7 +315,7 @@
   "stop_bracket": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_7",
+   "plate": "PETG_9",
    "walls": 6,
    "infill": 60,
    "layer": 0.2,
@@ -367,7 +367,7 @@
   "gear_guard": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_9",
+   "plate": "PETG_7",
    "walls": 3,
    "infill": 15,
    "layer": 0.2,
@@ -376,18 +376,18 @@
     0,
     0
    ],
-   "bed_zrot": 3,
+   "bed_zrot": 60,
    "size": [
-    210.06304014777982,
-    209.33502902631608,
-    37.5000000000001
+    229.4253331742774,
+    226.0875922708242,
+    37.500000000000114
    ],
    "loaded": false,
    "note": "",
-   "volume_solid_mm3": 76520.36,
-   "volume_printed_mm3": 72256.59,
-   "grams": 91.77,
-   "minutes": 141.78,
+   "volume_solid_mm3": 111254.41,
+   "volume_printed_mm3": 103999.77,
+   "grams": 132.08,
+   "minutes": 202.4,
    "height": 37.5
   },
   "motor_cover": {
@@ -402,18 +402,18 @@
     0,
     0
    ],
-   "bed_zrot": 0,
+   "bed_zrot": 60,
    "size": [
-    60.0,
-    60.0,
+    62.077600018277764,
+    62.07759973970855,
     122.00000000000001
    ],
    "loaded": false,
    "note": "",
-   "volume_solid_mm3": 42849.09,
-   "volume_printed_mm3": 39559.64,
-   "grams": 50.24,
-   "minutes": 87.76,
+   "volume_solid_mm3": 43929.06,
+   "volume_printed_mm3": 40458.59,
+   "grams": 51.38,
+   "minutes": 89.47,
    "height": 122.0
   },
   "ebox": {
@@ -861,7 +861,7 @@
   "esc_servo_mount": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_9",
+   "plate": "PETG_10",
    "walls": 4,
    "infill": 40,
    "layer": 0.2,
@@ -887,7 +887,7 @@
   "side_cheek_left": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_7",
+   "plate": "PETG_8",
    "walls": 3,
    "infill": 15,
    "layer": 0.2,
@@ -913,7 +913,7 @@
   "side_cheek_right": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_8",
+   "plate": "PETG_9",
    "walls": 3,
    "infill": 15,
    "layer": 0.2,
@@ -939,7 +939,7 @@
   "safety_pin_handle": {
    "material": "PETG",
    "qty": 1,
-   "plate": "PETG_7",
+   "plate": "PETG_9",
    "walls": 4,
    "infill": 40,
    "layer": 0.2,
@@ -987,6 +987,58 @@
    "grams": 4.55,
    "minutes": 21.68,
    "height": 8.0
+  },
+  "switch_bracket": {
+   "material": "PETG",
+   "qty": 6,
+   "plate": "PETG_9",
+   "walls": 4,
+   "infill": 60,
+   "layer": 0.2,
+   "print_rot": [
+    0,
+    0,
+    0
+   ],
+   "bed_zrot": 45,
+   "size": [
+    41.59797974644666,
+    41.59797974644667,
+    14.0
+   ],
+   "loaded": false,
+   "note": "3 limit switches + 2 safety-pin switches + 1 spare",
+   "volume_solid_mm3": 4051.99,
+   "volume_printed_mm3": 3807.05,
+   "grams": 4.83,
+   "minutes": 8.62,
+   "height": 14.0
+  },
+  "sensor_bracket": {
+   "material": "PETG",
+   "qty": 1,
+   "plate": "PETG_9",
+   "walls": 4,
+   "infill": 60,
+   "layer": 0.2,
+   "print_rot": [
+    0,
+    0,
+    0
+   ],
+   "bed_zrot": 45,
+   "size": [
+    41.59797974644666,
+    41.59797974644667,
+    26.0
+   ],
+   "loaded": false,
+   "note": "can-in-cup TCRT5000",
+   "volume_solid_mm3": 3899.7,
+   "volume_printed_mm3": 3855.86,
+   "grams": 4.9,
+   "minutes": 9.93,
+   "height": 26.0
   },
   "btn_shell": {
    "material": "PETG",
@@ -1133,7 +1185,7 @@
     "side_plate_right"
    ],
    "material": "PETG",
-   "grams": 256.3,
+   "grams": 256.6,
    "minutes": 389.0
   },
   "PETG_3": {
@@ -1161,8 +1213,8 @@
     "shaft_spacer_mid"
    ],
    "material": "PETG",
-   "grams": 375.7,
-   "minutes": 575.0
+   "grams": 377.2,
+   "minutes": 577.0
   },
   "PETG_6": {
    "parts": [
@@ -1174,38 +1226,45 @@
   },
   "PETG_7": {
    "parts": [
+    "gear_guard"
+   ],
+   "material": "PETG",
+   "grams": 132.1,
+   "minutes": 208.0
+  },
+  "PETG_8": {
+   "parts": [
     "side_cheek_left",
+    "switch_bracket",
+    "switch_bracket",
+    "switch_bracket",
+    "switch_bracket",
+    "switch_bracket"
+   ],
+   "material": "PETG",
+   "grams": 146.1,
+   "minutes": 234.0
+  },
+  "PETG_9": {
+   "parts": [
+    "side_cheek_right",
+    "switch_bracket",
+    "sensor_bracket",
     "safety_pin_handle",
     "stop_bracket"
    ],
    "material": "PETG",
-   "grams": 185.9,
-   "minutes": 291.0
-  },
-  "PETG_8": {
-   "parts": [
-    "side_cheek_right"
-   ],
-   "material": "PETG",
-   "grams": 122.0,
-   "minutes": 191.0
-  },
-  "PETG_9": {
-   "parts": [
-    "gear_guard",
-    "esc_servo_mount"
-   ],
-   "material": "PETG",
-   "grams": 104.9,
-   "minutes": 172.0
+   "grams": 195.6,
+   "minutes": 309.0
   },
   "PETG_10": {
    "parts": [
-    "ring_gear"
+    "ring_gear",
+    "esc_servo_mount"
    ],
    "material": "PETG",
-   "grams": 239.0,
-   "minutes": 362.0
+   "grams": 252.1,
+   "minutes": 386.0
   },
   "PETG_11": {
    "parts": [
@@ -1227,7 +1286,7 @@
     "pulley_bracket"
    ],
    "material": "PETG",
-   "grams": 155.8,
+   "grams": 156.1,
    "minutes": 256.0
   },
   "PETG_13": {
@@ -1258,8 +1317,8 @@
     "hub_drum"
    ],
    "material": "PETG",
-   "grams": 320.3,
-   "minutes": 496.0
+   "grams": 333.9,
+   "minutes": 515.0
   },
   "PETG_16": {
    "parts": [

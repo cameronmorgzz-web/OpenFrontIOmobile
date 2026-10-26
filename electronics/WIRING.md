@@ -29,7 +29,7 @@ Mains ─┤ Mean Well GST60A12 (12 V 5 A, CE, sealed) ├─ 5.5x2.1 plug
   C1 1000 µF 25 V + D1 SMBJ15A  U1 MP1584 → 5.0 V            Q2 AO3400 low side
   IBT-2 B+/B- → M1 37GB555       │ +5V_SERVO (C2 1000 µF)      12 V buzzer + beacon
   (C4 100 nF on motor tabs)      ├─ SERVO_ESC (MG996R)          (D2 1N5819 across)
-                                 ├─ SW_SAFETY_PIN pole B (NC) ─ SERVO_LATCH (MG996R)
+                                 ├─ SW_SAFETY_PIN_B (2nd KW11, NC) ─ SERVO_LATCH (MG996R)
                                  └─ D3 1N5819 → +5V_LOGIC (C3 470 µF)
                                         ├─ ESP32-C3 SuperMini 5V pin → on-board LDO → 3V3
                                         └─ 2 x TCRT5000 modules
@@ -91,12 +91,7 @@ The MP1584EN's "3 A" is a peak rating; for continuous load keep it under about 2
   - The latch servo only changes position at ARMED→FIRE (line 391, TRIP) and back to HOLD (line 416). During COCK, FEED
     and ARMED it is held at HOLD.
   - The escapement moves in COCK (STAGE), FEED (RELEASE, then CLOSED at line 591) and is forced CLOSED in ARMED (line 380).
-  - **Exceptions where both move:**
-    1. At power-up both servos are commanded at once (`hal_esp32.cpp:88-91`).
-    2. The escapement may still be closing when the latch trips (PINMAP.md finding 1).
-
-    In both cases the loads are light, the realistic combined peak is about 1-1.5 A, and C2 (1000 µF low-ESR) absorbs
-    the starting spikes.
+  - **No planned overlap remains.** The firmware now starts the servos 300 ms apart at power-up (`hal_esp32.cpp`), and it holds FIRE until the escapement has been at HOLD for 400 ms (`kEscSettleMs`). Both were findings of this review.
 - **If you see brownouts or the buck runs hot:** swap U1 for an XL4015 (5 A) module, or add the separate logic buck
   described above. Nothing else in the wiring needs to change.
 
@@ -122,7 +117,7 @@ The MP1584EN's "3 A" is a peak rating; for continuous load keep it under about 2
 - **Servos:** their stock 3-pin JR/Futaba plug onto a 3-pin male header on the perfboard. Mark the orientation: brown =
   GND, red = V+, orange = SIG. Fix it with a dab of hot glue or a printed clip.
 - **SuperMini:** solder it to the perfboard on headers. Dupont jumpers are only acceptable for bench testing.
-- **Safety-pin pole B** carries servo current (≤ 2.5 A). Use a microswitch rated ≥ 5 A (KW11 / SS-5 class) and 0.5 mm²
+- **The safety pin needs two KW11 micro switches,** mounted side by side behind the pin hole so the pin's tip presses both: A (NO contact, to GPIO7) and B (NC contact, in the latch-servo V+). A KW11 is a single SPDT switch with a shared COM, so one switch cannot do both jobs. **Switch B** carries servo current (≤ 2.5 A). Use a microswitch rated ≥ 5 A (KW11 / SS-5 class) and 0.5 mm²
   wire.
 - **Button:** solder everything; no connectors. The LiPo JST-PH plug may stay if the TP4056 board has a matching socket.
 

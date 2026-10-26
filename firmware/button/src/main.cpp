@@ -310,13 +310,16 @@ void setup() {
 
   loadState(warm);
 
-  if (!woke_by_press && !pressed) sleepNow();  // power-up / stuck-switch recheck
+  // Power-up, or the timer re-check of a held/stuck switch: never fire. A held switch keeps the
+  // timer wake; a released one re-arms the GPIO wake, so only the NEXT real press can fire.
+  if (!woke_by_press) sleepNow();
+  (void)pressed;
 
   const uint16_t batt_mv = readBatteryMv();  // before the radio draws current spikes
   g_rtc.low_batt = btn::updateLowBattery(g_rtc.low_batt, batt_mv);
 
   bool radio_up = false;
-  if (g_rtc.paired) {
+  if (btn::shouldSendFire(btn::Wake::Press, g_rtc.paired)) {
     radio_up = radioInit();
     const bool acked = radio_up && sendFire(batt_mv);
     showFeedback(acked);

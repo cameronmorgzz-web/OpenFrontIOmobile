@@ -28,16 +28,16 @@ static const uint8_t kWrongKey[16] = {0xA5, 0xEE, 0x6D, 0xFC, 0x1B, 0x8A, 0xD9, 
 // Fault codes seen by any test (checked by the last test).
 static std::set<int> g_faults_seen;
 
-// cock_ms from calc/RESULTS.md (motor torque-speed model, 4 m: 1.35 s, 5 m: 1.75 s)
+// cock_ms from calc/RESULTS.md (motor torque-speed model, 4 m: 1.38 s, 5 m: 1.82 s)
 static PlantParams plant4m() {
   PlantParams p;
-  p.cock_ms = 1350;
+  p.cock_ms = 1380;
   p.return_ms = 670;
   return p;
 }
 static PlantParams plant5m() {
   PlantParams p = plant4m();
-  p.cock_ms = 1750;
+  p.cock_ms = 1820;
   return p;
 }
 
@@ -204,7 +204,7 @@ static void nominalFromPacket(const PlantParams& pp, const char* label, long max
 // 4 m: press -> fire <= 2.5 s (brief) = 0.25 s button wake/TX + 2.25 s packet -> fire.
 void test_s1_nominal_cycle_from_button_packet_4m() { nominalFromPacket(plant4m(), "4m", 2250); }
 // 5 m misses the 2.5 s target (KNOWN_LIMITATIONS.md); this pins the expected value instead.
-void test_s1_nominal_cycle_from_button_packet_5m() { nominalFromPacket(plant5m(), "5m", 2500); }
+void test_s1_nominal_cycle_from_button_packet_5m() { nominalFromPacket(plant5m(), "5m", 2550); }
 
 void test_s1_two_cycles_back_to_back() {
   Rig r;

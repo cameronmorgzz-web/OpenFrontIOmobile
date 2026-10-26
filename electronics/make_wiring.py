@@ -470,7 +470,7 @@ def launcher() -> str:
         "• R2/R3 10k pull-downs keep the bridge off while the ESP32 is in reset/flashing (EN pins are tied high).",
         "• IBT-2 logic VCC from 3V3 so its input buffer accepts 3.3 V levels; R_IS/L_IS unused.",
         "• D2 1N5819 across a magnetic buzzer (cathode to +12V); not needed for a piezo / LED-only beacon.",
-        "• Safety pin = one actuator, two contacts: pole A to GPIO7 (NO), pole B in latch-servo V+ (NC).",
+        "• Safety pin presses TWO KW11 switches: A to GPIO7 (NO), B in latch-servo V+ (NC).",
         "• Debounce 100 nF on GPIO4/5/6/7 only. No cap on GPIO9 (strap) or GPIO3 (encoder).",
         "• Flash over USB with the 12 V brick unplugged: GPIO2's pull-up switches the beeper on in download mode.",
     ]
