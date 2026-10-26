@@ -1,0 +1,60 @@
+# Bill of materials
+
+Prices are what you pay for the pack you have to buy (AliExpress Choice / EU shop, EUR incl. VAT, seen 2026-10-25). `approx` = taken from a listing snippet or a USD mirror at 1 USD = 0.90 EUR; `unverified` = no price seen, estimate. Re-check in the app before ordering (research/parts_notes.md).
+
+**Hardware + electronics: EUR 143.49** (budget EUR 80: **over by EUR 63.49**)  
+**Filament: EUR 56.00**  
+**Everything: EUR 199.49**
+
+## Electronics
+
+| id | item | spec | need | buy | EUR | price | AliExpress | Amazon.it | notes |
+|---|---|---|---|---|---|---|---|---|---|
+| E1 | ESP32-C3 SuperMini | 4 MB flash; one for the launcher and one for the button | 2 | 2 | 5.00 | approx | [link](https://www.aliexpress.com/item/1005006406538478.html) | [link](https://www.amazon.it/dp/B0FR91DDGB) | Desolder the red power LED on the button board (1 mA) |
+| E2 | MG996R servo (metal gear) | 0.92 N m at 5 V; latch trip + escapement | 2 | 2 | 6.40 | approx | [link](https://www.aliexpress.com/w/wholesale-mg996r.html) | [link](https://www.amazon.it/s?k=MG996R) | An MG90S was simulated for the escapement and jams (sim/feed_sim.py) |
+| E3 | 37GB555 gearmotor 12 V 30:1 with Hall encoder | 133 rpm no-load; 10 kg cm rated; 6 mm D shaft | 1 | 1 | 14.00 | unverified | [link](https://www.aliexpress.us/item/3256801126522235.html) | [link](https://www.amazon.it/s?k=37GB555+encoder+12V) | Ask the seller to confirm ratio + encoder before ordering (research/parts_notes.md section 7) |
+| E4 | BTS7960 (IBT-2) H-bridge | 43 A module; 20 kHz PWM | 1 | 1 | 4.50 | approx | [link](https://www.aliexpress.com/w/wholesale-bts7960.html) | [link](https://www.amazon.it/s?k=BTS7960) |  |
+| E5 | MP1584EN buck module | set to 5.0 V before connecting anything | 1 | 1 | 1.00 | approx | [link](https://www.aliexpress.com/item/32261885063.html) | [link](https://www.amazon.it/dp/B07DJZMD26) |  |
+| E6 | Mean Well GST60A12-P1J 12 V 5 A desktop PSU | CE-marked; 5.5 x 2.1 mm plug; you never touch mains | 1 | 1 | 25.00 | unverified | [link](https://www.alimentatorishop.com/) | [link](https://www.amazon.it/s?k=GST60A12-P1J) | Buy a genuine Mean Well from an EU distributor; no unbranded bricks |
+| E7 | DC-022B panel jack 5.5 x 2.1 | 3 A+ | 1 | 10 | 1.00 | approx | [link](https://www.aliexpress.com/item/1005005780993062.html) | [link](https://www.amazon.it/s?k=DC-022B) |  |
+| E8 | Inline ATO blade fuse holder + 5 A fuses | F1; 1.0 mm² leads | 1 | 10 | 2.00 | approx | [link](https://www.aliexpress.com/w/wholesale-ato-fuse-holder-inline.html) | [link](https://www.amazon.it/s?k=portafusibile+lama+ATO) |  |
+| E9 | Passives kit | Q1 IRF4905; ZD1 15 V zener; Q2 AO3400; D1 SMBJ15A; D2/D3 1N5819; C1/C2 1000 uF 25 V; C3 470 uF; 6 x 100 nF; 10k/1k/100R/1M resistors; screw terminal block (electronics/WIRING.md) | 1 | 1 | 3.50 | approx | [link](https://www.aliexpress.com/w/wholesale-smbj15a.html) | [link](https://www.amazon.it/s?k=kit+condensatori) |  |
+| E10 | KW11-3Z micro switches | 3 arm/ring limit + safety pin + button switch | 5 | 10 | 1.50 | approx | [link](https://www.aliexpress.com/item/1005006259880729.html) | [link](https://www.amazon.it/dp/B0B5PLGSFS) |  |
+| E11 | TCRT5000 reflective sensor module | can-in-cup + magazine-empty | 2 | 2 | 1.20 | approx | [link](https://www.aliexpress.com/w/wholesale-tcrt5000.html) | [link](https://www.amazon.it/dp/B0CNHCHPNK) |  |
+| E12 | Active 5 V buzzer + red LED beacon | warning signal | 1 | 1 | 2.20 | approx | [link](https://www.aliexpress.com/w/wholesale-ws2812-buzzer.html) | [link](https://www.amazon.it/s?k=buzzer+attivo+5V) |  |
+| E13 | 16 mm momentary push button | launcher TEST button | 1 | 1 | 0.50 | approx | [link](https://www.aliexpress.com/item/32867071630.html) | [link](https://www.amazon.it/dp/B0DPSDCNGS) |  |
+| E14 | Wiring kit | 5 x 7 perfboard; JST-XH set; 22 + 18 AWG silicone wire; heat-shrink | 1 | 1 | 6.00 | approx | [link](https://www.aliexpress.us/item/2251832829997304.html) | [link](https://www.amazon.it/dp/B07V1DBQZJ) |  |
+
+## Button
+
+| id | item | spec | need | buy | EUR | price | AliExpress | Amazon.it | notes |
+|---|---|---|---|---|---|---|---|---|---|
+| B1 | LiPo 1S 500 mAh 503035 | JST-PH 2.0; with protection | 1 | 1 | 6.90 | approx | [link](https://www.aliexpress.us/item/2251832628547931.html) | [link](https://www.amazon.it/s?k=lipo+503035+500mah) |  |
+| B2 | TP4056 + DW01A USB-C charger | 1 A | 1 | 1 | 1.00 | approx | [link](https://www.aliexpress.com/item/1005005315322989.html) | [link](https://www.amazon.it/dp/B0D9TSG6VB) | Set the charge resistor to 500 mA (R_PROG 2.4 kOhm) for a 500 mAh cell |
+| B3 | 1027 coin vibration motor | 3 V | 1 | 20 | 5.10 | approx | [link](https://www.aliexpress.com/w/wholesale-coin-vibration-motor-1027.html) | [link](https://www.amazon.it/s?k=motore+vibrazione+1027) |  |
+| B4 | Compression springs 0.5 x 10 x 15 mm (6 coils) | cap return; measure k with CALIBRATION.md | 4 | 20 | 2.00 | approx | [link](https://www.aliexpress.com/w/wholesale-compression-spring-assortment.html) | [link](https://www.amazon.it/s?k=molle+compressione+assortimento) |  |
+
+## Mechanical
+
+| id | item | spec | need | buy | EUR | price | AliExpress | Amazon.it | notes |
+|---|---|---|---|---|---|---|---|---|---|
+| M1 | Gutekunst Z-141HI extension spring | R 1.2 N/mm; F0 14.5 N; Fn 166.7 N | 3 | 3 | 17.34 | approx | [link](https://www.federnshop.com/en/products/extension_springs/z-141hi.html) | [link](https://www.federnshop.com/en/products/extension_springs/z-141hi.html) | 3 x 2.93 + 8.55 shipping to Italy; only source with a datasheet |
+| M2 | AC1416-2 hydraulic shock absorber | M14 x 1.5; 16 mm stroke; 20 J | 1 | 1 | 8.50 | approx | [link](https://www.aliexpress.com/item/32694169348.html) | [link](https://www.amazon.it/dp/B0FDX1VBBM) | Pick the -2 (medium speed) variant |
+| M3 | Steel spur pinion m2.5 16T | 6 mm bore with grub screw | 1 | 1 | 4.00 | unverified | [link](https://www.aliexpress.com/w/wholesale-module-2.5-16-teeth-gear.html) | [link](https://www.amazon.it/s?k=ingranaggio+modulo+2.5+16+denti) | Steel is mandatory (PETG pinion fails fatigue: calc/stress.py) |
+| M4 | 608ZZ bearing | 8 x 22 x 7 | 4 | 10 | 2.85 | approx | [link](https://www.aliexpress.us/item/3256803520974023.html) | [link](https://www.amazon.it/dp/B07JJ1SKL4) |  |
+| M5 | 8 mm h6 hardened shaft 160 mm | main pivot | 1 | 1 | 1.50 | approx | [link](https://www.aliexpress.com/i/32355305302.html) | [link](https://www.amazon.it/dp/B07VTS6RFJ) |  |
+| M6 | UHMWPE (Dyneema) cord 2 mm | >= 2.4 kN break; 2 m used | 1 | 10 | 3.00 | unverified | [link](https://www.aliexpress.com/w/wholesale-dyneema-rope-2mm.html) | [link](https://www.amazon.it/s?k=corda+dyneema+2mm) |  |
+| M7 | M6 threaded rod 2 x 130 mm + 4 nuts + 2 wing nuts + washers | spring preload adjusters | 1 | 1 | 4.00 | approx | [link](https://www.aliexpress.com/item/1005003371084392.html) | [link](https://www.amazon.it/dp/B0848V9K61) | A ferramenta is cheaper |
+| M8 | Hardened dowel pins 4 x 20 (hub + latch + roller) and 4 x 30 (rocker) | DIN 6325 / ISO 8734 m6 | 8 | 20 | 2.00 | approx | [link](https://www.aliexpress.com/item/1005003780227334.html) | [link](https://www.amazon.it/dp/B07DGSBBQP) |  |
+| M9 | 2 mm steel RC pushrod (Z-bend) + 4 mm starlock washer | escapement drive | 1 | 1 | 1.50 | approx | [link](https://www.aliexpress.com/w/wholesale-rc-pushrod-2mm.html) | [link](https://www.amazon.it/s?k=rinvio+acciaio+2mm+rc) |  |
+| M10 | M3 heat-set inserts OD 4.0-4.2 x L 4-5.7 | brass knurled | 49 | 100 | 1.50 | approx | [link](https://www.aliexpress.us/item/3256802711669116.html) | [link](https://www.amazon.it/dp/B0BNHZDCMW) | Most M3 x 5.7 inserts are OD 4.6: then set M3_INSERT_HOLE = 4.4 in cad/params.py and rebuild |
+| M11 | M3 socket screw assortment DIN 912 6-20 mm | >= 60 used | 60 | 250 | 4.00 | approx | [link](https://www.aliexpress.us/item/2251832660603421.html) | [link](https://www.amazon.it/dp/B093LLJSNR) |  |
+| M12 | PTFE adhesive tape 0.13 x 25 mm | cup floor + chute rails | 1 | 1 | 3.00 | approx | [link](https://www.aliexpress.com/w/wholesale-ptfe-tape-adhesive.html) | [link](https://www.amazon.it/s?k=nastro+ptfe+adesivo) |  |
+| M13 | M6 x 60 steel bolt (safety pin) + 8 x 30 hardened dowel (catch pin) | DIN 6325 | 1 | 1 | 1.50 | approx | [link](https://www.aliexpress.com/w/wholesale-m6-bolt.html) | [link](https://www.amazon.it/dp/B09TTKDZXW) |  |
+
+## Filament
+
+| id | item | spec | need | buy | EUR | price | AliExpress | Amazon.it | notes |
+|---|---|---|---|---|---|---|---|---|---|
+| F1 | PETG filament | see cad/manifest.json | 3.36 | 4 | 56.00 | approx | [link](https://www.aliexpress.com/w/wholesale-petg-filament.html) | [link](https://www.amazon.it/s?k=petg+1kg) | kg; 4 x 1 kg spools at ~14 EUR |
+| F2 | TPU 95A filament | feet + cup pad + button foot | 0.04 | 0 | 0.00 | approx | [link](https://www.aliexpress.com/w/wholesale-tpu-filament.html) | [link](https://www.amazon.it/s?k=tpu+95a) | optional; assumed owned (36 g) |

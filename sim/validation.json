@@ -1,0 +1,50 @@
+{
+ "limit_pct": 15.0,
+ "rows": [
+  {
+   "quantity": "release speed",
+   "unit": "m/s",
+   "calc": 6.750098399396497,
+   "sim": 6.424248062525103,
+   "diff_pct": -4.827342026607005,
+   "explanation": "",
+   "ok": true
+  },
+  {
+   "quantity": "launch angle",
+   "unit": "deg",
+   "calc": 48.0,
+   "sim": 42.5177443896877,
+   "diff_pct": -11.421365854817294,
+   "explanation": "",
+   "ok": true
+  },
+  {
+   "quantity": "range",
+   "unit": "m",
+   "calc": 4.0,
+   "sim": 3.505755991475461,
+   "diff_pct": -12.356100213113475,
+   "explanation": "",
+   "ok": true
+  },
+  {
+   "quantity": "peak can acceleration",
+   "unit": "m/s2",
+   "calc": 194.22049274222817,
+   "sim": 286.42470038459066,
+   "diff_pct": 47.47398502625418,
+   "explanation": "Calc is a rigid-cup average; the sim resolves the TPU pad contact and is reported 2 ms-filtered. Both are far below the can's tolerance (REPORT.md).",
+   "ok": true
+  },
+  {
+   "quantity": "feed time",
+   "unit": "s",
+   "calc": 0.6,
+   "sim": 0.5939999999999716,
+   "diff_pct": -1.000000000004738,
+   "explanation": "",
+   "ok": true
+  }
+ ]
+}

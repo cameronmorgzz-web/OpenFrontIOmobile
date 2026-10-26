@@ -145,6 +145,9 @@ def _read_frd(path: Path):
     return U, S
 
 
+LOAD_ZONE = 3.0   # mm
+
+
 def run_case(case: Case, keep=False) -> dict:
     work = Path(tempfile.mkdtemp(prefix=f"fea_{case.part}_"))
     import build123d as bd
@@ -165,6 +168,17 @@ def run_case(case: Case, keep=False) -> dict:
     vm = np.sqrt(0.5 * ((sxx - syy) ** 2 + (syy - szz) ** 2 + (szz - sxx) ** 2) + 3 * (sxy ** 2 + syz ** 2 + szx ** 2))
     sz = syy if case.print_axis == "y" else szz            # normal stress across the layers
     vm_p = float(np.percentile(vm, 99.5))
+    # St-Venant: nodal loads on a half hole and rigid BCs give local peaks that are an artefact of
+    # the load model. Static/fatigue use all nodes (conservative); the 24 h creep check uses the
+    # structure more than LOAD_ZONE mm from any loaded/fixed node (DECISIONS.md D17).
+    from scipy.spatial import cKDTree
+    pts = nodes[[i for i, t in enumerate(tags) if t in S]]
+    zone = np.zeros(len(pts), bool)
+    for item in list(case.bcs) + list(case.loads):
+        sel = pts[item.select(pts)]
+        if len(sel):
+            zone |= cKDTree(sel).query(pts, distance_upper_bound=LOAD_ZONE)[0] < LOAD_ZONE
+    vm_far = float(np.percentile(vm[~zone], 99.5)) if (~zone).sum() > 50 else vm_p
     sz_p = float(max(np.percentile(sz, 99.5), 0.0))
     umax = float(np.max(np.linalg.norm(u, axis=1)))
     sf_xy = PETG.sut_xy / vm_p
@@ -172,7 +186,8 @@ def run_case(case: Case, keep=False) -> dict:
     res = dict(part=case.part, case=case.case, nodes=len(tags), elements=len(conn), vm_p995=vm_p,
                vm_max=float(vm.max()), sz_tension_p995=sz_p, u_max_mm=umax, sf_xy=sf_xy, sf_z=sf_z,
                sf_static=min(sf_xy, sf_z), sf_fatigue=PETG.fatigue_ratio_1e3 * min(sf_xy, sf_z),
-               sf_creep=(PETG.creep_limit_ratio * PETG.sut_xy / (vm_p * case.sustained_factor)) if case.sustained else None,
+               vm_far_p995=vm_far,
+               sf_creep=(PETG.creep_limit_ratio * PETG.sut_xy / (vm_far * case.sustained_factor)) if case.sustained else None,
                note=case.note)
     if keep:
         res["_nodes"], res["_vm"], res["_u"] = nodes, vm, u
@@ -255,12 +270,12 @@ def cases() -> list[Case]:
     out.append(Case("hub_catch", "cocked 5 m: latch force on the catch pin", "y",
                     [BC("FIX", any_of(*[near_ycyl(x, z, 2.0, 0.8) for x, z in hj]))],
                     [Load("PIN", near_ycyl(pin_c[0], pin_c[1], 3.95, 0.6, toward=(-tdir[0], -tdir[1])),
-                          (-F_c * tdir[0], 0.0, -F_c * tdir[1]))], size=3.0, pose=to_hub))
+                          (-F_c * tdir[0], 0.0, -F_c * tdir[1]))], size=3.0, pose=to_hub, sustained=True))
     # 3) hub_drum: cord tension (tangential at the drum, pulling down at the front in the cocked pose)
     out.append(Case("hub_drum", "cocked 5 m: cord tension on the drum", "y",
                     [BC("FIX", any_of(*[near_ycyl(x, z, 2.0, 0.8) for x, z in hj]))],
                     [Load("CORD", near_ycyl(0.0, PZ, 29.0, 0.8, P.Y_DRUM - 3, P.Y_DRUM + 3, toward=(1.0, 0.0)), (0.0, 0.0, -F_cord))],
-                    size=3.0, pose=_rot(-L.A_REST + 0.0)))
+                    size=3.0, pose=_rot(-L.A_REST + 0.0), sustained=True))
     # 4) ring gear: bore fixed, latch-pin force in, tooth reaction at the mesh carried by the bore
     lo = (L.LATCH_O[0], PZ + L.LATCH_O[1])
     mesh_pt = L.polar(L.RING_R, L.MOTOR_ANGLE - L.PSI_COCKED, (0.0, PZ))
@@ -268,7 +283,7 @@ def cases() -> list[Case]:
                     [BC("BORE", near_ycyl(0.0, PZ, 11.0, 0.6)),
                      BC("MESH", lambda n: (np.hypot(n[:, 0] - mesh_pt[0], n[:, 2] - mesh_pt[1]) < 4.0), (1, 3))],
                     [Load("LATCH", near_ycyl(lo[0], lo[1], 1.95, 0.6, toward=(0.643, 0.766)), (F_c * 0.643, 0.0, F_c * 0.766))],
-                    size=3.0, pose=to_ring,
+                    size=3.0, pose=to_ring, sustained=True,
                     note="ring frame (latched pose); latch force along the contact normal"))
     # 5) ring latch: pivot fixed, nose dowel load along the contact normal (into the latch)
     nd = (L.NOSE_DOWEL[0], PZ + L.NOSE_DOWEL[1])
@@ -276,7 +291,7 @@ def cases() -> list[Case]:
                     [BC("PIV", near_ycyl(lo[0], lo[1], 2.1, 0.6)),
                      BC("STOP", lambda n: np.hypot(n[:, 0] - (lo[0] + 10), n[:, 2] - (lo[1] + 6)) < 3.0, (1, 3))],
                     [Load("NOSE", near_ycyl(nd[0], nd[1], 1.95, 0.6, toward=(0.643, -0.766)), (F_c * 0.643, 0.0, -F_c * 0.766))],
-                    size=2.0, pose=to_ring))
+                    size=2.0, pose=to_ring, sustained=True))
     # 6) side plates: flange screws fixed, half the hub reaction at the shaft bore
     F_hub = math.hypot(F_cord, F_c)
     for side, right in (("side_plate_left", False), ("side_plate_right", True)):
@@ -284,7 +299,7 @@ def cases() -> list[Case]:
                         [BC("FLANGE", plane("z", L.BASE_H, 0.4)),
                          BC("AXIAL", near_ycyl(0.0, PZ, 4.1, 0.6), (2,))],      # shaft + spacer stack + caps
                         [Load("SHAFT", near_ycyl(0.0, PZ, 4.1, 0.6, toward=(F_c, -F_cord)), (F_c / 2, 0.0, -F_cord / 2))],
-                        size=4.0))
+                        size=4.0, sustained=True))
     # 7) cup: fixed at the socket screws; 500 ml can centripetal on the floor + tangential on the back wall
     Lr, r = P.ARM_L, P.CAN_D / 2
     # envelope of the allowed settings: 330 ml at 5 m, 500 ml up to its spring-limited range (~3.3 m)
@@ -314,7 +329,7 @@ def cases() -> list[Case]:
     out.append(Case("spring_yoke_front", "cocked 5 m: 3 springs", "z",
                     [BC("RODS", any_of(*[near_xcyl(y, P.SPRING_Z, 3.3, 0.6) for y in L.SPRING_ROD_Y]), (1, 2, 3))],
                     [Load("HOOKS", near_ycyl(None, None, 0, 0) if False else _yoke_dowel_sel(), (F_cord, 0, 0))],
-                    size=2.0, sustained=True, sustained_factor=rest_ratio))
+                    size=2.0, sustained=True))      # held cocked 24 h (brief), not just the rest preload
     return out
 
 
@@ -334,10 +349,15 @@ def _yoke_dowel_sel():
     return lambda n: (np.abs(np.hypot(n[:, 0] - xc, n[:, 2] - P.SPRING_Z) - 2.05) < 0.6)
 
 
-def main():
+def main(only: set[str] | None = None):
     OUT.mkdir(parents=True, exist_ok=True)
     rows = []
+    old = {r["part"]: r for r in json.loads((OUT / "results.json").read_text())["cases"]} \
+        if only and (OUT / "results.json").exists() else {}
     for c in cases():
+        if only and c.part not in only:
+            rows.append(old[c.part])
+            continue
         try:
             r = run_case(c)
         except Exception as e:  # noqa: BLE001
@@ -355,4 +375,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--only", help="comma-separated parts to re-run (others are kept from results.json)")
+    a = ap.parse_args()
+    main(set(a.only.split(",")) if a.only else None)

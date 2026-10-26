@@ -24,6 +24,7 @@ INTENDED = {
     frozenset({"hw_safety_pin", "safety_pin_handle"}),
     frozenset({"hw_shaft", "shaft_cap_left"}), frozenset({"hw_shaft", "shaft_cap_right"}),
     frozenset({"hw_pinion", "side_plate_right"}),      # pinion hub inside the plate clearance hole
+    frozenset({"hw_esc_servo", "esc_servo_mount"}),    # servo tabs screwed onto the frame
 }
 TOL_VOL = 2.0   # mm^3: below this an intersection is numerical noise / face contact
 SMALL_HOLE = 8.5  # mm: holes / slots up to this width print without support (DECISIONS.md D14)

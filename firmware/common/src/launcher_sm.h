@@ -241,6 +241,8 @@ class LauncherSM {
   FeedStep feed_step_ = FeedStep::NotStarted;
   FaultCode feed_fail_ = FaultCode::None;
   uint32_t feed_t0_ = 0;
+  uint32_t esc_closed_at_ = 0;     // escapement commanded back to HOLD
+  bool esc_settle_needed_ = false;  // a RELEASE happened in this feed
   bool can_low_ = false;
   uint32_t can_low_since_ = 0;
   bool preloaded_ = false;

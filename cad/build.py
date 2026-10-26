@@ -254,6 +254,8 @@ def _export_stl(part, path):
 def build(render=True):
     for d in DIRS.values():
         d.mkdir(parents=True, exist_ok=True)
+    for old in list(DIRS["3mf"].glob("*.3mf")) + list(DIRS["stl"].glob("*.stl")):
+        old.unlink()                     # plate names change when the packing changes
     solids = solids_rest()
     manifest = {}
     plates: dict[str, list] = {}

@@ -72,6 +72,7 @@ T_RADIO = 0.01
 T_ESC_OPEN = 0.23         # pre-staged escapement 65 -> 125 deg until can1 is 60 mm past the gate (sim/feed_sim.py max of 1500 cycles)
 T_ROLL = 0.37             # 60 mm past the gate -> seated in the cup (sim/launch.py t_feed_after_60mm)
 T_FEED = T_ESC_OPEN + T_ROLL
+T_ESC_DWELL, T_ESC_RETURN = 0.30, 0.40   # firmware kEscReleaseMs, kEscSettleMs: escapement back at HOLD before FIRE
 T_SEAR_TRIP = 0.08        # MG90S 60 deg in 0.1 s; finger needs ~45 deg
 T_SETTLE = 0.05
 T_WARN_MIN = 1.5
@@ -79,7 +80,7 @@ T_WARN_MIN = 1.5
 
 def latency(c: dict) -> dict:
     # latch rides on the ring: no retract before FIRE; ring returns during RESET
-    seq = c["t_cock"] + T_FEED + T_SETTLE
+    seq = c["t_cock"] + max(T_FEED + T_SETTLE, T_ESC_DWELL + T_ESC_RETURN)
     t_fire_after_warn_start = max(T_WARN_MIN, seq)
     total = T_BUTTON_WAKE_TX + T_RADIO + t_fire_after_warn_start + T_SEAR_TRIP
     return dict(total=total, mech_sequence=seq, warning=t_fire_after_warn_start)

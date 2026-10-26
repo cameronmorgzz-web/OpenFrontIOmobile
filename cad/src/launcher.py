@@ -344,11 +344,12 @@ def ring_latch_local(open_deg: float = 0.0) -> bd.Part:
     c0 = (0.0, PZ)
     o = (c0[0] + LATCH_O[0], c0[1] + LATCH_O[1])
     nd = (c0[0] + NOSE_DOWEL[0], c0[1] + NOSE_DOWEL[1])
-    body_c = (nd[0] + 4.5 * _n[0], nd[1] + 4.5 * _n[1])
+    body_c = (nd[0] + 6.5 * _n[0], nd[1] + 6.5 * _n[1])    # reaches 1.5 mm past the dowel towards the roller
     tail = (c0[0] + LATCH_TAIL[0], c0[1] + LATCH_TAIL[1])
     ph = (c0[0] + LATCH_PINHOLE[0], c0[1] + LATCH_PINHOLE[1])
-    prof = circles_hull([(o[0], o[1], 8.0), (body_c[0], body_c[1], 6.0)]) \
-        + circles_hull([(o[0], o[1], 8.0), (ph[0], ph[1], 7.0), (tail[0], tail[1], 5.5)])
+    # sized for creep: held cocked 24 h at the 5 m setting (sim/fea.py, SF_creep >= 2.5)
+    prof = circles_hull([(o[0], o[1], 11.0), (body_c[0], body_c[1], 8.0)]) \
+        + circles_hull([(o[0], o[1], 11.0), (ph[0], ph[1], 9.5), (tail[0], tail[1], 7.0)])
     lat = slab(prof, *P.Y_LATCH)
     lat = lat - ycyl(o[0], o[1], 2.1, P.Y_LATCH[0] - 1, P.Y_LATCH[1] + 1)      # pivot (sliding on 4 mm)
     lat = lat - ycyl(nd[0], nd[1], 1.95, P.Y_LATCH[0] - 1, P.Y_LATCH[1] + 1)   # nose dowel (press)
@@ -580,7 +581,7 @@ def _base(x0, x1, front: bool) -> bd.Part:
     xn = CHANNEL_NARROW_X
     b = b - box(x0 - 1, min(x1, xn) + 0.01, SPR_CH_Y[0], SPR_CH_Y[1], -1, BASE_H + 1)
     if x1 > xn:
-        b = b - box(xn, x1 + 1, P.Y_DRUM - 16.5, P.Y_DRUM + 16.5, -1, BASE_H + 1)
+        b = b - box(xn, x1 + 1, P.Y_DRUM - PB_HALF_W - 0.3, P.Y_DRUM + PB_HALF_W + 0.3, -1, BASE_H + 1)
     b = b + box(x0, min(x1, xn), SPR_CH_Y[0] - 3, SPR_CH_Y[0], 0, BASE_H) \
         + box(x0, min(x1, xn), SPR_CH_Y[1], SPR_CH_Y[1] + 3, 0, BASE_H)
     wx0, wx1 = max(CUP_WELL_X[0], x0 - 1), min(CUP_WELL_X[1], x1 + 1)
@@ -619,20 +620,26 @@ CHEEK_FLANGE_Y = Y_IN + T_PL + 6.5
 CHEEK_SCREW_X = (-110.0, -150.0, -200.0, -300.0)
 
 
+# pulley cheeks: 15.5 mm each so the axle-hole bearing stress stays below the 24 h creep limit
+PB_HALF_W = 19.5
+
+
 def _pulley_bracket_holes():
     px = PULLEY_C[0]
-    return [(px - 16, P.Y_DRUM - 21), (px + 16, P.Y_DRUM - 21), (px - 16, P.Y_DRUM + 21), (px + 16, P.Y_DRUM + 21)]
+    yo = PB_HALF_W + 4.5
+    return [(px - 16, P.Y_DRUM - yo), (px + 16, P.Y_DRUM - yo), (px - 16, P.Y_DRUM + yo), (px + 16, P.Y_DRUM + yo)]
 
 
 def pulley_bracket() -> bd.Part:
     """Bridge over the spring channel carrying the 608 redirect pulley on an 8 mm axle."""
     px, pz = PULLEY_C
-    y0, y1 = P.Y_DRUM - 25, P.Y_DRUM + 25
-    top = bd.fillet(box(px - 26, px + 26, y0, y1, BASE_H, BASE_H + 8).edges().filter_by(bd.Axis.Z), 5)
+    y0, y1 = P.Y_DRUM - PB_HALF_W - 6.3, P.Y_DRUM + PB_HALF_W + 6.3   # left plate flange at y -76
+    top = bd.fillet(box(px - 26, px + 26, y0, y1, BASE_H, BASE_H + 10).edges().filter_by(bd.Axis.Z), 5)
     cheeks = None
-    for yc0, yc1 in ((P.Y_DRUM - 16.4, P.Y_DRUM - 5.2), (P.Y_DRUM + 5.2, P.Y_DRUM + 16.4)):
-        c = slab(G.hull2d([(px - 14, BASE_H + 5), (px + 14, BASE_H + 5), (px + 12, pz - 2), (px, pz - 13),
-                           (px - 12, pz - 2)]) + circle((px, pz), 11.0), yc0, yc1)
+    # cheeks root along the whole plate (creep: held cocked 24 h, sim/fea.py)
+    for yc0, yc1 in ((P.Y_DRUM - PB_HALF_W, P.Y_DRUM - 4.0), (P.Y_DRUM + 4.0, P.Y_DRUM + PB_HALF_W)):
+        c = slab(G.hull2d([(px - 25, BASE_H + 5), (px + 25, BASE_H + 5), (px + 13, pz - 2), (px, pz - 14),
+                           (px - 13, pz - 2)]) + circle((px, pz), 14.5), yc0, yc1)
         cheeks = c if cheeks is None else cheeks + c
     br = top + (cheeks & box(-1000, 1000, -1000, 1000, -1000, BASE_H + 8))
     br = br - ycyl(px, pz, 4.05, P.Y_DRUM - 17, P.Y_DRUM + 17)
@@ -736,12 +743,13 @@ def _mag_wall_profile():
     zc2 = PZ + CAN2[1]
     r = P.CAN_D / 2
     a0, a1, d = _chute_pts()
-    col = rect(xc - r - 9, xc + r + 9, zc2 + 10, MAG_TOP)
+    xback = xc - r - COL_CLR - 23.0              # encloses the back guide and the bridges behind it
+    col = rect(xback, xc + r + COL_CLR + 8.0, zc2 + 10, MAG_TOP)
     # chute web under the rails, down to the floor at the back and the base deck at the front
     web = G.hull2d([(a0[0] - 6, a0[1] + 8), (a1[0], a1[1] + 6), (a1[0], a1[1] - 16),
-                    (MAG_FOOT_X[1] + 15, BASE_H), (BASE_REAR_X[0] - 0.5, BASE_H), (xc - r - 9, zc2 + 20)])
-    rear_foot = G.hull2d([(BASE_REAR_X[0] - 0.5, 0.0), (BASE_REAR_X[0] - 0.5, BASE_H + 20), (xc - r - 9, BASE_H + 60),
-                          (xc - r - 9, 0.0)])
+                    (MAG_FOOT_X[1] + 15, BASE_H), (BASE_REAR_X[0] - 0.5, BASE_H), (xback, zc2 + 20)])
+    rear_foot = G.hull2d([(BASE_REAR_X[0] - 0.5, 0.0), (BASE_REAR_X[0] - 0.5, BASE_H + 20), (xback, BASE_H + 60),
+                          (xback, 0.0)])
     return G.round2d(col + web + rear_foot, 5.0)
 
 
@@ -765,14 +773,15 @@ def mag_wall(right: bool, part: str):
     # column window
     w = w - slab(G.round2d(rect(xc - 16, xc + 16, zc2 + 50, MAG_TOP - 22), 8), y0 - 1, y1 + 1)
     if not right:
-        # TCRT5000 looks at can1's end face; escapement slots through the ledge; rocker axle
+        # TCRT5000 looks at can1's end face; rocker axle (the fingers rise inboard of the ledge)
         c1 = abs_xz(CAN1)
         w = w - ycyl(c1[0], c1[1], 5.5, y0 - 1, y1 + 1)
         ax = rocker_axle()
-        w = w - ycyl(ax[0], ax[1], 1.6, y0 - 1, y1 + 1)
-        for sc in (ROCKER_S1, ROCKER_S2):
-            q = chute_s(sc)
-            w = w - slab(bd.Pos(*q) * bd.Rot(0, 0, -30) * bd.Rectangle(12, 50), -yin, -yin + 13.01)
+        w = w - ycyl(ax[0], ax[1], ROCKER_PIN_D / 2 - 0.05, y0 - 1, y1 + 1)     # 4 mm dowel, press fit
+        # escapement servo bracket: 2 x M3 from outside into inserts in the bracket arm
+        for hx, hz in esc_mount_holes():
+            w = w - ycyl(hx, hz, P.M3_CLEAR / 2, y0 - 1, y1 + 1)
+            w = w - ycyl(hx, hz, P.M3_HEAD_D / 2 + 0.3, y0 - 1, y0 + 3.0)
     # base screws: front foot onto base_rear (2 x M3 vertical)
     ym = (y0 + y1) / 2
     for x in MAG_FOOT_X:
@@ -809,7 +818,8 @@ MAG_X_CUT = BASE_REAR_X[0] + 55.0   # lower-wall / chute split (keeps both under
 def _bridge_points():
     zc2 = PZ + CAN2[1]
     r = P.CAN_D / 2
-    return [(MAG_XC - r - 14, MAG_TOP - 14), (MAG_XC - r - 14, zc2 + 30)]
+    xb = MAG_XC - r - COL_CLR - 13.0          # just behind the back column guide
+    return [(xb, MAG_TOP - 14), (xb, zc2 + 30)]
 
 
 def mag_bridge(which: int) -> bd.Part:
@@ -832,13 +842,14 @@ def mag_bridge(which: int) -> bd.Part:
 # the direct-drive version was back-driven by the column in sim/feed_sim.py.
 ROCKER_F1_H = 38.0
 ROCKER_F2_H = -4.5                            # f2 tip centre at hold: its 3.5 mm round top sits 1 mm below the rail
-ROCKER_S1 = P.CAN_D / 2 + 3.5 - 0.3           # f1 post face touches can1 at centre height
+ROCKER_S1 = P.CAN_D / 2 + 3.5                 # f1 post face touches can1 at centre height
 ROCKER_S2 = -33.0                             # f2 under the can1/can2 V
 ROCKER_RATIO = 1.2                            # f2 rises ~21 mm: can2 + falling column cannot climb it (1.8 double-fed 1.4 %)
 ROCKER_SM = (ROCKER_S1 + ROCKER_RATIO * ROCKER_S2) / (1 + ROCKER_RATIO)
 ROCKER_L1 = ROCKER_S1 - ROCKER_SM
 ROCKER_DEPTH = 10.0                           # axle below the rail surface
-ROCKER_Y = (-48.0, -40.0)                     # acts on the can's straight body (the 330 neck tapers beyond |y| 50)
+ROCKER_Y = (-MAG_Y_IN + 13.5, -MAG_Y_IN + 21.5)   # 0.5 mm inboard of the rail ledge, on the can's straight body;
+                                                # tied to the left wall so 500 ml changes only mag_bridge
 ROCKER_HOLD_DEG = 0.0
 ROCKER_RELEASE_DEG = -48.0                    # clockwise: f1 top 2 mm below the rail, f2 ~21 mm up
 ESC_PHI_HOLD = -8.0                           # servo horn angle at hold (past dead centre, locks)
@@ -863,7 +874,7 @@ def rocker_axle():
     return (q[0] + ROCKER_DEPTH * nrm[0], q[1] + ROCKER_DEPTH * nrm[1])
 
 
-def escapement_rocker(released: bool = False) -> bd.Part:
+def escapement_rocker(released: bool = False, theta_deg: float | None = None) -> bd.Part:
     """Seesaw: arm along the chute under the rail, two finger posts up through the ledge slots.
     Hold pose: f1 tip 41 mm above the rail (blocks can1), f2 tip 1 mm below.
     Release: rotate clockwise so f2 rises into the can1/can2 V-gap, then f1 drops below the rail."""
@@ -878,10 +889,93 @@ def escapement_rocker(released: bool = False) -> bd.Part:
     prof = circles_hull([(ax[0], ax[1], 7.0), (b1[0], b1[1], 4.5), (b2[0], b2[1], 4.5)]) \
         + circles_hull([(b1[0], b1[1], 4.0), (t1[0], t1[1], 3.5)]) \
         + circles_hull([(b2[0], b2[1], 4.0), (t2[0], t2[1], 3.5)])
-    rk = slab(prof, *ROCKER_Y) - ycyl(ax[0], ax[1], 1.6, ROCKER_Y[0] - 1, ROCKER_Y[1] + 1)
+    pin = esc_rocker_pin()
+    prof = prof + circles_hull([(ax[0], ax[1], 7.0), (pin[0], pin[1], 4.5)])
+    rk = slab(prof, *ROCKER_Y) - ycyl(ax[0], ax[1], ROCKER_PIN_D / 2 + 0.1, ROCKER_Y[0] - 1, ROCKER_Y[1] + 1)
+    rk = rk - ycyl(pin[0], pin[1], 1.15, ROCKER_Y[0] - 1, ROCKER_Y[1] + 1)          # 2 mm Z-bend pushrod
     # sign: negative rotation (clockwise) lowers f1 (downhill side) and raises f2
-    ang = ROCKER_RELEASE_DEG if released else ROCKER_HOLD_DEG
+    ang = theta_deg if theta_deg is not None else (ROCKER_RELEASE_DEG if released else ROCKER_HOLD_DEG)
     return G.rot_about_pivot(rk, ang, pivot=ax) if ang else rk
+
+
+# Escapement drive (D8b): MG996R under the chute, shaft along -y; 12 mm horn + 2 mm steel Z-bend
+# pushrod to a crank pin on the rocker. Rocker arm _|_ rod, horn in line with the rod at phi = 0:
+# theta ~ -(rc/ra)((1 - cos phi) - (1 - cos phi_hold)), so rc/ra = -ESC_K.
+ROCKER_PIN_D = 4.0
+ESC_RC = 12.0
+ESC_RA = ESC_RC / -ESC_K
+ESC_ROD = 40.0                     # pushrod centre distance
+ESC_ROD_Y = ROCKER_Y[1] + 1.5      # pushrod plane between the rocker crank face and the horn
+ESC_CASE_TOP_Y = ESC_ROD_Y + 5.5   # servo case top (horn side); MG996R case 36.5 deep, tabs 9.5-12 from the top
+_U = (-0.866, 0.5)                 # uphill along the chute
+_N = (0.5, 0.866)                  # rail normal, up
+
+
+def esc_rocker_pin(theta_deg: float = 0.0):
+    ax = rocker_axle()
+    a = math.radians(240.0 + theta_deg)            # -_N direction at hold
+    return (ax[0] + ESC_RA * math.cos(a), ax[1] + ESC_RA * math.sin(a))
+
+
+def esc_shaft():
+    p = esc_rocker_pin()
+    return (p[0] + (ESC_ROD + ESC_RC) * _U[0], p[1] + (ESC_ROD + ESC_RC) * _U[1])
+
+
+def _esc_frame(u, n):
+    sh = esc_shaft()
+    return (sh[0] + u * _U[0] + n * _N[0], sh[1] + u * _U[1] + n * _N[1])
+
+
+def _esc_box(u0, u1, n0, n1, y0, y1):
+    return slab(G.hull2d([_esc_frame(u0, n0), _esc_frame(u1, n0), _esc_frame(u1, n1), _esc_frame(u0, n1)]), y0, y1)
+
+
+def esc_mount_holes():
+    return [_esc_frame(-22.0, -9.0), _esc_frame(-22.0, -19.0)]   # downhill of the servo, below the pushrod sweep
+
+
+def esc_servo_solid(phi_deg: float = ESC_PHI_HOLD):
+    yt = ESC_CASE_TOP_Y
+    body = _esc_box(-10.0, 30.7, -9.85, 9.85, yt, yt + 36.5)
+    tabs = _esc_box(-17.0, 37.7, -9.85, 9.85, yt + 9.5, yt + 12.0)
+    sh = esc_shaft()
+    a = math.atan2(-_U[1], -_U[0]) + math.radians(phi_deg)      # horn points at the rocker at phi = 0
+    tip = (sh[0] + ESC_RC * math.cos(a), sh[1] + ESC_RC * math.sin(a))
+    horn = ycyl(sh[0], sh[1], 5.0, yt - 4.0, yt) + slab(circles_hull([(sh[0], sh[1], 5.0), (tip[0], tip[1], 3.0)]), yt - 4.0, yt - 2.0)
+    return body + tabs + horn
+
+
+def esc_rod_solid(phi_deg: float = ESC_PHI_HOLD, theta_deg: float = 0.0):
+    sh = esc_shaft()
+    a = math.atan2(-_U[1], -_U[0]) + math.radians(phi_deg)
+    tip = (sh[0] + ESC_RC * math.cos(a), sh[1] + ESC_RC * math.sin(a))
+    pin = esc_rocker_pin(theta_deg)
+    return slab(circles_hull([(tip[0], tip[1], 1.0), (pin[0], pin[1], 1.0)]), ESC_ROD_Y - 1.0, ESC_ROD_Y + 1.0)
+
+
+def escapement_pose(phi_deg: float) -> dict:
+    """Rocker, servo (horn) and pushrod at servo horn angle phi (ideal toggle kinematics)."""
+    th = math.degrees(esc_theta(phi_deg))
+    return {"escapement_rocker": escapement_rocker(theta_deg=th), "hw_esc_servo": esc_servo_solid(phi_deg),
+            "hw_esc_rod": esc_rod_solid(phi_deg, th)}
+
+
+def esc_servo_mount() -> bd.Part:
+    """Frame under the servo tabs + arm along y to the left magazine wall (2 x M3 from outside)."""
+    yt = ESC_CASE_TOP_Y
+    y_plate = (yt + 12.0, yt + 17.0)
+    plate = _esc_box(-27.0, 37.7, -13.85, 13.85, *y_plate) - _esc_box(-10.6, 31.3, -10.35, 10.35, y_plate[0] - 1, y_plate[1] + 1)
+    plate = plate + _esc_box(-27.0, -17.0, -24.0, -4.0, *y_plate)
+    arm = _esc_box(-27.0, -17.0, -24.0, -4.0, -MAG_Y_IN, y_plate[1])
+    m = plate + arm
+    for u in (-13.5, 34.2):                      # MG996R tab holes, M3 self-tapping into the plate
+        for n in (-5.0, 5.0):
+            c = _esc_frame(u, n)
+            m = m - ycyl(c[0], c[1], 1.25, y_plate[0] - 1, y_plate[1] + 1)
+    for hx, hz in esc_mount_holes():
+        m = m - ycyl(hx, hz, P.M3_INSERT_HOLE / 2, -MAG_Y_IN - 1, -MAG_Y_IN + P.M3_INSERT_DEPTH)
+    return m
 
 
 # ---------------------------------------------------------------------------
@@ -1084,6 +1178,7 @@ def assembly(state="rest", with_hardware=True, with_can=True) -> dict[str, bd.Pa
     out["mag_bridge_top"] = mag_bridge(0)
     out["mag_bridge_back"] = mag_bridge(1)
     out["escapement_rocker"] = escapement_rocker(False)
+    out["esc_servo_mount"] = esc_servo_mount()
     out["side_cheek_left"] = side_cheek(False)
     out["side_cheek_right"] = side_cheek(True)
     out["safety_pin_handle"] = safety_pin_handle()
@@ -1098,6 +1193,8 @@ def assembly(state="rest", with_hardware=True, with_can=True) -> dict[str, bd.Pa
         out["hw_motor"] = motor_solid()
         out["hw_pinion"] = pinion_solid(psi)
         out["hw_latch_servo"] = latch_servo_solid()
+        out["hw_esc_servo"] = esc_servo_solid()
+        out["hw_esc_rod"] = esc_rod_solid()
         out["hw_springs"] = springs_solid(xb, xaf)
         out["hw_safety_pin"] = safety_pin_steel()
     if with_can:
@@ -1158,6 +1255,7 @@ PARTS: list[PartSpec] = [
     PartSpec("mag_bridge_back", "PETG", 1, FLAT, walls=4, infill=30, plate="K", body="mag", loaded=False, color=ORANGE,
              note="ONLY part to reprint for 500 ml (CAN_SIZE)"),
     PartSpec("escapement_rocker", "PETG", 1, ON_YNEG, walls=6, infill=100, plate="C", body="mag", color=ORANGE),
+    PartSpec("esc_servo_mount", "PETG", 1, ON_YNEG, walls=4, infill=40, plate="C", body="mag", color=GREY),
     PartSpec("side_cheek_left", "PETG", 1, ON_YPOS, walls=3, infill=15, plate="L", loaded=False, color=GREY),
     PartSpec("side_cheek_right", "PETG", 1, ON_YNEG, walls=3, infill=15, plate="L", loaded=False, color=GREY),
     PartSpec("safety_pin_handle", "PETG", 1, ON_YNEG, walls=4, infill=40, plate="C", loaded=False, color=(0.85, 0.1, 0.1)),

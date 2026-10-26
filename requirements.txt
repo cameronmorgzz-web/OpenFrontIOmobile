@@ -1,0 +1,12 @@
+# Python 3.13. Also needs CalculiX ccx 2.21 on PATH (apt install calculix-ccx / brew install calculix) and g++ for the firmware host tests.
+build123d==0.13.0
+gmsh==4.15.2
+manifold3d==3.5.4
+matplotlib==3.11.2
+mujoco==3.17.0
+networkx==3.7
+numpy==2.5.4
+pytest==9.1.1
+rtree==1.4.1
+scipy==1.18.1
+trimesh==5.2.0

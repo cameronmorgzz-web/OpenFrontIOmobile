@@ -38,11 +38,11 @@ Preload adjustment needed 3->5 m: **31.0 mm** of anchor travel (available 70 mm 
 
 | range | t_cock s | t_retract s | peak motor torque N m (% stall) | peak current A | peak ring torque N m | press->launch s | min fire->fire s | I_rms (8 s cycle) / rated |
 |---|---|---|---|---|---|---|---|---|
-| 3 m | 1.10 | 0.64 | 2.27 (57%) | 3.14 | 9.6 | **1.94** | 2.62 | 0.88/1.5 = 0.58 |
-| 4 m | 1.35 | 0.64 | 2.67 (68%) | 3.66 | 11.4 | **2.19** | 2.86 | 1.19/1.5 = 0.79 |
-| 5 m | 1.75 | 0.64 | 3.09 (78%) | 4.19 | 13.1 | **2.59** | 3.27 | 1.61/1.5 = 1.08 |
+| 3 m | 1.10 | 0.64 | 2.27 (57%) | 3.14 | 9.6 | **2.14** | 2.82 | 0.88/1.5 = 0.58 |
+| 4 m | 1.35 | 0.64 | 2.67 (68%) | 3.66 | 11.4 | **2.39** | 3.06 | 1.19/1.5 = 0.79 |
+| 5 m | 1.75 | 0.64 | 3.09 (78%) | 4.19 | 13.1 | **2.79** | 3.47 | 1.61/1.5 = 1.08 |
 
-Latency budget: button wake+TX 0.25s, radio 0.01s, cock, feed 0.45s, settle 0.05s, latch trip 0.08s (the ring returns to park during RESET, after the shot, so it is not in the latency path); the 1.5 s warning starts with the motor (cocking is fully enclosed) and FIRE is blocked until it has run >= 1.5 s.
+Latency budget: button wake+TX 0.25s, radio 0.01s, cock, feed 0.6s, settle 0.05s, latch trip 0.08s (the ring returns to park during RESET, after the shot, so it is not in the latency path); the 1.5 s warning starts with the motor (cocking is fully enclosed) and FIRE is blocked until it has run >= 1.5 s.
 
 ## 4. Ring latch / servo trip (`calc/latch.py`)
 
@@ -108,9 +108,9 @@ Cap springs: 4 x k=0.120 N/mm -> rest 0.72 N, actuation **4.32 N**, bottomed 4.6
 |---|---|---|
 | Peak height <= 2.3 m (5 m shot) | 1.963 | PASS |
 | Catch speed <= 4 m/s at 4 m | 5.821 | **FAIL** |
-| Press->launch <= 2.5 s at 4 m | 2.187 | PASS |
-| Press->launch <= 2.5 s at 5 m | 2.592 | **FAIL** |
-| Cycle <= 8 s | 3.268 | PASS |
+| Press->launch <= 2.5 s at 4 m | 2.387 | PASS |
+| Press->launch <= 2.5 s at 5 m | 2.792 | **FAIL** |
+| Cycle <= 8 s | 3.468 | PASS |
 | Motor < 90% stall at 5 m | 0.783 | PASS |
 | Servo trip margin >= 2 (worst mu, max e) | 4.483 | PASS |
 | Latch self-locking at min e | 1.000 | PASS |

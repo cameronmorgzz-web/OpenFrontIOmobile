@@ -91,7 +91,8 @@ constexpr uint32_t kCockedLostMs = 30;          // SW_ARM_COCKED open this long 
 constexpr uint32_t kHoldSettledEdges = 10;      // FIRE only with |error| <= this
 
 // FEED [MECH] (starts at the SW_ARM_COCKED edge, while holding)
-constexpr uint32_t kEscReleaseMs = 450;         // escapement RELEASE dwell (horn 65->125 deg + can clears f1: <=0.23 s in sim)
+constexpr uint32_t kEscReleaseMs = 300;         // RELEASE dwell: can1 clears f1 in <= 0.223 s (sim/feed_sim.py, 1500 cycles)
+constexpr uint32_t kEscSettleMs = 400;          // escapement back at HOLD (pushrod locked) before FIRE
 constexpr uint32_t kFeedWaitMs = 800;           // after CLOSED, wait this long for the can
 constexpr uint32_t kCanStableMs = 100;          // SNS_CAN_IN_CUP must be LOW this long
 

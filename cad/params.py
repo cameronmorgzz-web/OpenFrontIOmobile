@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 # --------------------------------------------------------------------------
 # Can (THE parameter for 330 vs 500 ml: CAN_SIZE). Reprint only the magazine.
 # --------------------------------------------------------------------------
-CAN_SIZE = "330"  # "330" or "500"
+CAN_SIZE = __import__("os").environ.get("BEER_CAN_SIZE", "330")  # "330" or "500" (edit here; the env var is for tests)
 
 CANS = {
     # diameter / length per research/SOURCES.md [C1][C2]; masses [C3]
@@ -86,7 +86,7 @@ Y_ABS = (-58.0, -44.0)                  # absorber strike ear slab, absorber axi
 Y_ARM = (-14.0, 14.0)                   # arm beam
 Y_CATCH_EAR = (37.0, 56.0)              # hub ear carrying the 8x30 catch pin
 Y_ROLLER = (58.5, 65.5)                 # 608 catch roller
-Y_LATCH = (57.0, 67.0)                  # ring latch slab (10 mm thick)
+Y_LATCH = (56.5, 68.5)                  # ring latch slab (12 mm: 24 h creep, sim/fea.py)
 Y_RING = (69.0, 89.0)                   # ring gear (face 20), 1 mm running gap to the plate
 SPRING_Y = (-67.0, -50.0, -33.0)
 SPRING_Z = 13.0

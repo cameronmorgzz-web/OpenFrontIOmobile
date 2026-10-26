@@ -106,7 +106,7 @@ def build_xml(v: dict) -> str:
 </mujoco>"""
 
 
-T_STAGE, T_RELEASE, T_RETURN = 0.40, 0.45, 0.60
+T_STAGE, T_RELEASE, T_RETURN = 0.40, 0.30, 0.60   # firmware: COCK time, kEscReleaseMs, return + settle
 ESC_SERVO_TAU, ESC_SERVO_S60 = 0.92, 0.17   # MG996R at 5 V (an MG90S, 0.18 N m, jammed 129 of 480 cycles)
 
 

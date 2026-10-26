@@ -382,7 +382,9 @@ void LauncherSM::tickArmed(uint32_t now) {
     enterFault(FaultCode::HoldLost, now);
     return;
   }
-  const bool ready = in_.arm_cocked && holdSettled() && in_.can_in_cup && !in_.safety_pin_in &&
+  // the escapement servo must be back at HOLD (pushrod past dead centre) before the shot
+  const bool esc_settled = !esc_settle_needed_ || now - esc_closed_at_ >= cfg::kEscSettleMs;
+  const bool ready = in_.arm_cocked && holdSettled() && in_.can_in_cup && !in_.safety_pin_in && esc_settled &&
                      now - seq_warn_start_ >= cfg::kWarnMinBeforeFireMs;
   if (ready) {
     setState(State::Fire, now);
@@ -568,6 +570,7 @@ bool LauncherSM::holdSettled() const {
 
 void LauncherSM::feedStart(uint32_t now) {
   feed_t0_ = now;
+  esc_settle_needed_ = false;
   feed_fail_ = FaultCode::None;
   if (preloaded_ || in_.can_in_cup) {
     // A can is already in the cup (lowered by a DECOCK): never drop a second one.
@@ -589,6 +592,8 @@ void LauncherSM::feedTick(uint32_t now) {
       out_.esc = Escapement::Release;
       if (now - feed_t0_ >= cfg::kEscReleaseMs) {
         out_.esc = Escapement::Closed;
+        esc_closed_at_ = now;
+        esc_settle_needed_ = true;
         feed_step_ = FeedStep::Wait;
         feed_t0_ = now;
       }

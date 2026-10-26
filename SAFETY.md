@@ -1,0 +1,61 @@
+# Safety
+
+This machine stores up to **13 J in its springs** at the 5 m setting. That is roughly a 1.3 kg weight dropped from 1 m, released in 0.1 s through an arm moving at 28 rad/s.
+
+It throws a 0.36 kg can at 6–7 m/s. A full can hitting a face can break teeth or a nose. Treat the launcher like a nail gun: it is safe when you follow the rules, and dangerous when you don't.
+
+## Hard rules
+
+1. **Mains.** Use only the CE-marked Mean Well GST60A12 brick, or another genuine CE brick rated 12 V ≥ 5 A. Never open the brick, never cut its cable, and never wire anything that carries 230 V. Everything inside the launcher runs at 12 V or below.
+2. **Safety pin in whenever you work on the machine.** The M6 pin passes through the side plate, the ring and the latch tail. With the pin in, the ring cannot rotate and the latch cannot open, even if the electronics misbehave. The firmware refuses to cock or fire while it senses the pin.
+3. **Firing zone.**
+   - Keep a clear 5 m × 2 m lane in front of the launcher.
+   - Keep the catcher at least 3 m away.
+   - Nobody stands beside the arm: it sweeps 90 deg up to about 0.5 m above the table.
+   - Never point the launcher at a window, a TV or a person who is not ready to catch.
+4. **The warning cannot be skipped.** Every shot starts with at least 1.5 s of beeping and flashing before the arm moves, and FIRE happens no sooner than 1.5 s after the warning begins (`kWarnMinBeforeFireMs`). No setting removes it.
+5. **No fingers in the frame while it is powered.** The ring gear, pinion and latch are behind the gear guard. The arm and cup sweep an open volume. Before reaching in: unplug the 12 V barrel jack, insert the safety pin, and check the arm is at rest on the absorber.
+6. **Children and pets:** keep them out of the firing lane and away from the button. The button is not child-proof.
+7. **Cans:**
+   - Only sealed, undamaged 330 ml or 500 ml aluminium cans.
+   - No glass bottles.
+   - No dented cans: a dented can can burst under the 30 g launch load.
+   - No cans colder than 0 °C: frozen contents expand and the can can split.
+
+## Releasing stored energy safely
+
+| Situation | What to do |
+|---|---|
+| Arm cocked, sequence aborted (button not ready, fault) | The firmware **decocks automatically**: the motor runs in reverse at 35 % PWM until the home switches close. The can stays in the cup. |
+| FAULT with the arm cocked | Clear the firing lane. Hold the TEST button for 2 s: the firmware clears the fault and runs DECOCK. |
+| Power cut while cocked | The latch is self-locking and holds. Do **not** try to trip it by hand. Clear the lane, insert the safety pin if it will go in, restore power, then hold TEST for 2 s to DECOCK. |
+| DECOCK fails (motor or encoder fault) | Leave it plugged out with the safety pin in. The springs can then be unloaded by hand: back off both M6 preload wing nuts **evenly, one turn at a time** with the safety pin in. This removes the preload without releasing the arm. Then remove the pin. |
+| Dry fire (no can) | Designed for it. The absorber takes 15.1 J at 5 m and the arm keeps SF 1.9. Inspect the absorber for oil leaks after any dry fire. |
+
+## Pinch points while cocking
+
+- **Ring gear and pinion:** enclosed by the gear guard and the motor cover. Never run the machine without them.
+- **Cup and arm path:** cocking is slow (about 1.3 s for 90 deg), but the motor is strong enough to hurt. The firmware stops on stall within 350 ms.
+- **Escapement fingers:** can trap a fingertip between the rocker and a can. Load the magazine from the top only, never through the chute.
+
+## Firmware safety features (tested in `firmware/launcher/test`)
+
+- **Interlocks:**
+  - Safety-pin sensor: blocks COCK, FIRE and DECOCK start.
+  - Can-in-cup sensor: no FIRE on an empty cup.
+  - Magazine-empty sensor: a press is refused with 3 beeps.
+- **Fault detection:**
+  - Real limit switches (arm home, arm cocked, ring home), not timing.
+  - Stall detection from the encoder, plus a cock timeout.
+  - Hold-lost detection while ARMED.
+  - A sensor-conflict fault when both arm switches read closed.
+- **Button link:** every press is authenticated (HMAC-SHA256 over a sequence number). Replayed or forged packets never fire.
+- **FAULT behaviour:** the motor coasts or brakes, never drives, and the beacon shows the fault code.
+
+## Legal (Italy)
+
+This is a home-built toy machine, not a CE-marked product.
+- **Private use:** using it on your own premises is your own responsibility.
+- **Selling or giving the machine away:** this would make you its "fabbricante" under the Machinery Directive 2006/42/CE and the Toy Safety Directive (D.Lgs. 54/2011), with the CE marking duties that follow.
+- **Selling the files:** this is different, but still check product-liability exposure (Codice del Consumo, artt. 114 ff.).
+- **Public venues:** a bar using it would need its own risk assessment (D.Lgs. 81/2008).
