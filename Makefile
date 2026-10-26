@@ -2,7 +2,7 @@
 # make all   -> rebuild everything from params (CAD ~2 min, FEA ~15 min, feed 2 min, Monte Carlo ~20 min)
 PY ?= .venv/bin/python
 
-.PHONY: test test-fast all cad calc sim fea feed mc validate docs bom firmware zip clean
+.PHONY: test test-fast all cad calc sim fea feed mc validate docs bom firmware zip clean video
 
 test:
 	$(PY) -m pytest tests electronics/test_electronics.py -q
@@ -44,3 +44,6 @@ firmware:
 
 zip:
 	cd .. && rm -f beer-launcher.zip && zip -qr beer-launcher.zip beer-launcher -x "beer-launcher/.venv/*" "*/__pycache__/*" "beer-launcher/.git/*" "*.pytest_cache*"
+
+video:
+	$(PY) -m sim.video

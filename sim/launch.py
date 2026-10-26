@@ -71,8 +71,16 @@ def _can_in_contact_with_arm(m, d, arm_id):
 
 
 def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_traj=False,
-        release_deg: float | None = None) -> Result:
+        release_deg: float | None = None, trace: list | None = None, flight_to_floor=False) -> Result:
+    """trace: if a list is given, every physics step appends (phase, qpos, mocap_pos) for the video
+    (sim/video.py); it does not change the physics. flight_to_floor: keep simulating after the catch
+    height until the can reaches the floor (video only; the Result still reports the catch point)."""
     m, d = build(var, can_start="chute")
+
+    def _step(phase):
+        mujoco.mj_step(m, d)
+        if trace is not None:
+            trace.append((phase, d.qpos.copy(), d.mocap_pos.copy()))
     arm_id = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, "arm")
     can_id = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, "can")
     j_arm = m.jnt_qposadr[mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_JOINT, "pivot")]
@@ -99,7 +107,7 @@ def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_
             Tm = Ts * max(0.0, 1 - w_motor / w0)
             d.qfrc_applied[dof_arm] = Tm * GEAR_RATIO * GEAR_EFF + spring_torque(d.qpos[j_arm], var, x_rest) * (1 + var.eta_f)
             # can waits on the chute against the gate
-            mujoco.mj_step(m, d)
+            _step("cock")
             t += dt
         res.t_cock = t
         if d.qpos[j_arm] < a_cock:
@@ -113,7 +121,7 @@ def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_
     mujoco.mj_forward(m, d)
     for _ in range(int(0.15 / dt)):   # can settles against the gate
         hold()
-        mujoco.mj_step(m, d)
+        _step("hold")
     # ---------------- FEED: drop the gate, can rolls down the chute into the cup ----------------
     d.mocap_pos[0] = [0, 0, -1]
     t_feed = 0.0
@@ -123,7 +131,7 @@ def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_
     cs = np.array(L.abs_xz(L.CUP_SEAT_COCKED)) * MM
     while t_feed < 1.2:
         hold()
-        mujoco.mj_step(m, d)
+        _step("feed")
         t_feed += dt
         pos = d.xpos[can_id]
         if t60 is None and (pos[[0, 2]] - c1) @ np.array([0.866, -0.5]) > 0.06:
@@ -143,7 +151,7 @@ def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_
     # latch delay (servo trip time / jitter)
     for _ in range(int(max(var.latch_delay, 0.0) / dt)):
         hold()
-        mujoco.mj_step(m, d)
+        _step("armed")
     # ---------------- RELEASE + swing + absorber + flight ----------------
     released = False
     t_r = 0.0
@@ -169,6 +177,7 @@ def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_
             T += F * r_a
             max_stroke = max(max_stroke, s)
         d.qfrc_applied[dof_arm] = T
+        caught = res.ok
         # aero on the can
         vel = d.cvel[can_id][3:]
         sp = np.linalg.norm(vel)
@@ -179,8 +188,12 @@ def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_
             spin_sign = np.sign(-om_y)
             lift = k_l * sp * np.array([vel[2], 0, -vel[0]]) * spin_sign
             d.xfrc_applied[can_id, :3] = drag + lift
-        mujoco.mj_step(m, d)
+        _step("flight" if released else "fire")
         t_r += dt
+        if caught:
+            if d.xpos[can_id][2] <= var.can_d / 2 * MM:
+                break
+            continue
         acc = (d.cvel[can_id][3:] - vprev) / dt
         vprev = d.cvel[can_id][3:].copy()
         if not released:
@@ -207,7 +220,8 @@ def run(var: Variation = Variation(), range_m: float = 4.0, do_cock=False, keep_
                 res.peak_z = float(peak)
                 res.t_flight = float(t_fl)
                 res.ok = True
-                break
+                if not flight_to_floor:
+                    break
         if t_r > 0.5 and not released:
             res.reason = "can never left the cup"
             break
